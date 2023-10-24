@@ -9,10 +9,7 @@
     <div class="logo" />
     <div class="website-name" />
     <Nav />
-  </div>
-</header>
-
-<!-- Menu - font icon -->
+      <!-- Menu - font icon -->
 <button id="menu-open" on:click={() => (showModal = true)}>
   <i class="fa-solid fa-bars" />
   <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 0 448 512">
@@ -24,6 +21,8 @@
     />
   </svg>
 </button>
+  </div>
+</header>
 
 <Modal bind:showModal>
   <Nav />
@@ -31,5 +30,33 @@
 
 
 <style>
+    header {
+      margin: 10px;
+    }
+    .container {
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    padding: 1em 1em 0em; /* change to 1em to add padding */
+    display: flex;
+    transition: all 0.3s ease;
+    color: transparent;
+  }
 
+  #menu-open {
+    border: none;
+    background-color: transparent;
+    display: none;
+    padding: 0;
+  }
+  @media (max-width: 800px) {
+    #menu-open {
+      display: block;
+    }
+
+    .container {
+      display: none;
+    }
+  }
 </style>

@@ -31,27 +31,26 @@
     text-decoration: none;
     display: flex;
     transition: all 0.3s ease-in-out;
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 10px 20px rgba(107, 74, 2, 0.2);
     padding-block: 0.5rem;
     padding-inline: 1.25rem;
-    background-color: rgba(84, 163, 253, 0.8);
-    justify-content: center;
+    background-color: rgba(224, 193, 17, 0.8);
     color: #ffff;
     border: 3px solid #ffffff4d;
     outline: none;
     overflow: hidden;
   }
 
-  .header > .link:hover {
-    transform: scale(1.04);
+  .link:hover {
+    transform: scale(1.1);
     border-color: #fff9;
   }
 
-  .header > .link:hover::before {
+  .link:hover::before {
     animation: shine 1.5s ease-out infinite;
   }
 
-  .header > .link::before {
+  .link::before {
     content: "";
     position: absolute;
     width: 100px;
@@ -59,7 +58,7 @@
     background-image: linear-gradient(
       120deg,
       rgba(0, 29, 63, 0) 30%,
-      rgba(243, 197, 255, 0.8),
+      rgba(255, 252, 237, 0.8),
       rgba(0, 29, 63, 0) 70%
     );
     top: 0;
