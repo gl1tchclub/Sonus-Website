@@ -32,13 +32,15 @@
 
 <style>
   header {
-    margin: 10px;
+    background: rgba(255, 255, 255, 0.788);
+    height: 80px;
+    box-shadow: 1px 2px 11px 2px rgba(153, 151, 151, 0.75);
   }
 
   .dashboard > h2 {
     margin: 0;
     position: relative;
-    top: -10px;
+    top: -16px;
     left: 12em;
   }
 
