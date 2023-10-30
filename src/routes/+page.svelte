@@ -5,6 +5,7 @@
     import { onMount } from "svelte";
     const BASE_URL = "https://api.unsplash.com/photos/";
     const key = "FkjKMeG-arrW_qolpGUoya8HBCEBUCkjH3j9BB2dwms";
+    let y;
     let imgs = [];
 
     onMount(async() => {
@@ -18,13 +19,7 @@
 
 </div>
 
+
 <style>
-    .fit-page {
-        /* top: 0; */
-        left: 17em;
-        width: 82.7%;
-        height: 150vh;
-        position: absolute;
-        margin: 0 -250px 0 0;
-    }
+
 </style>

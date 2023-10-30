@@ -96,6 +96,7 @@
   </div>
 </div>
 
+
 <style>
   svg {
     fill: rgb(18, 10, 19);
@@ -120,7 +121,7 @@
     left: 0;
     background-color: #9c89b8;
     padding: 10px;
-    box-shadow: 2px 85px 11px 3px rgba(153, 151, 151, 0.75);
+    box-shadow: 2px 0px 11px 3px rgba(153, 151, 151, 0.75);
   }
 
   .sidenav a:not(.branding) {
