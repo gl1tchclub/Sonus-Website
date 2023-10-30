@@ -1,14 +1,14 @@
-<script>
+<!-- <script>
   import Modal from "$lib/components/Modal.svelte";
   let showModal = false;
-</script>
+</script> -->
 
 <header>
   <div class="header-container">
     <div class="dashboard">
       <h2>Dashboard</h2>
     </div>
-    <button id="menu-open" on:click={() => (showModal = true)}>
+    <!-- <button id="menu-open" on:click={() => (showModal = true)}>
       <i class="fa-solid fa-bars"></i>
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -22,13 +22,13 @@
                 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"
         />
       </svg>
-    </button>
+    </button> -->
   </div>
 </header>
-
+<!-- 
 <Modal bind:showModal>
 
-</Modal>
+</Modal> -->
 
 <style>
   header {
@@ -52,7 +52,7 @@
     transition: all 0.3s ease;
   }
 
-  #menu-open {
+  /* #menu-open {
     border: none;
     background-color: transparent;
     display: none;
@@ -64,5 +64,5 @@
     #menu-open {
       display: block;
     }
-  }
+  } */
 </style>
