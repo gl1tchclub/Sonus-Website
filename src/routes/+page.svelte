@@ -20,11 +20,11 @@
 
 <style>
     .fit-page {
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100vh;
+        /* top: 0; */
+        left: 17em;
+        width: 82.7%;
+        height: 150vh;
         position: absolute;
-        transform: translateY(80px);
+        margin: 0 -250px 0 0;
     }
 </style>
