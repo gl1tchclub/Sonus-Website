@@ -14,6 +14,7 @@
         class="icon"
       />
     </a>
+    <!-- pages section -->
     <div class="top-side-nav">
       <a href="/profile">
         <i class="fa-solid fa-user" style="color: rgb(18, 10, 19)" />
@@ -28,7 +29,7 @@
           512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"
           />
         </svg>
-        <div class="nav-text">Profile</div>
+        <p class="nav-text">Profile</p>
       </a>
       <a href="/library">
         <i class="fa-brands fa-hive" />
@@ -52,7 +53,7 @@
               2.187,0,0,0,1.9-1.111l108.8-190.631A2.226,2.226,0,0,0,366.016,284.917Z"
           />
         </svg>
-        <div class="nav-text">Library</div>
+        <p class="nav-text">Library</p>
       </a>
       <a href="/discover">
         <i class="fa-solid fa-compact-disc" />
@@ -70,7 +71,7 @@
               64 240c0 8.8 7.2 16 16 16s16-7.2 16-16z"
           />
         </svg>
-        <div class="nav-text">Discover</div>
+        <p class="nav-text">Discover</p>
       </a>
     </div>
       <!-- exit section -->
@@ -90,7 +91,7 @@
             -32-32l0-256c0-17.7 14.3-32 32-32l64 0z"
             />
           </svg>
-          <div class="nav-text">Exit</div>
+          <p class="nav-text">Exit</p>
         </a>
   </div>
 </div>
@@ -146,14 +147,14 @@
   .top-side-nav {
     border-top: solid 1px rgb(18, 10, 19);
     margin: 40px 0 0 0;
+    padding: 10px;
   }
 
   .bottom-side-nav {
-    position: absolute;
-    bottom: 32px;
-    width: 93%;
+    position: relative;
     border-top: solid 1px rgb(18, 10, 19);
-    bottom: 25px;
+    top: 46%;
+    padding: 10px;
   }
 
   .sidenav a:hover:not(.branding) {
@@ -165,6 +166,11 @@
       width: 70px;
     }
 
+    .sidenav a:not(.branding) {
+      padding: 12px;
+      height: fit-content;
+    }
+
     .branding .logo {
       display: none;
     }
@@ -174,6 +180,15 @@
       position: relative;
       left: -17px;
       top: -10px;
+    }
+
+    svg {
+      position: relative;
+      left: 2px;
+    }
+
+    .bottom-side-nav {
+      top: 60%;
     }
 
     .nav-text {
