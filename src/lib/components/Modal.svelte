@@ -37,6 +37,7 @@
         </a>
       </div>
     </nav>
+    <slot />
     <hr />
   </div>
 </dialog>

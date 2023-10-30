@@ -4,7 +4,9 @@
 
 <script>
     import Header from '$lib/components/Header.svelte';
+    import SideNav from '../lib/components/SideNav.svelte';
 </script>
 
 <Header />
+<SideNav />
 <slot />

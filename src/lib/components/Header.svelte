@@ -6,8 +6,9 @@
 
 <header>
   <div class="header-container">
-    <div class="logo" />
-    <div class="website-name" />
+    <div class="dashboard">
+      <h2>Dashboard</h2>
+    </div>
     <Nav />
     <button id="menu-open" on:click={() => (showModal = true)}>
       <i class="fa-solid fa-bars"></i>
@@ -34,8 +35,13 @@
 <style>
   header {
     margin: 10px;
-    background-color: transparent;
   }
+
+  .dashboard > h2 {
+    margin: 0;
+    transform: translateX(10em);
+  }
+
   .header-container {
     height: 100%;
     justify-content: space-between;
@@ -44,12 +50,11 @@
     padding: 1em 1em 0em; /* change to 1em to add padding */
     display: flex;
     transition: all 0.3s ease;
-    background-color: inherit;
   }
 
   #menu-open {
     border: none;
-    background-color: inherit;
+    background-color: transparent;
     display: none;
     padding: 0;
   }
