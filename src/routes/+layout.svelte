@@ -10,3 +10,9 @@
 <Header />
 <SideNav />
 <slot />
+
+<style>
+    :global(body) {
+        background-color: #edede9;
+    }
+</style>

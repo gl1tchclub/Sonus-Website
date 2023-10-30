@@ -58,11 +58,15 @@
     display: none;
     padding: 0;
 
-  }
+  }*/
 
   @media (max-width: 800px) {
-    #menu-open {
-      display: block;
+
+    .dashboard > h2 {
+      left: 4em;
     }
-  } */
+    /* #menu-open {
+      display: block;
+    } */
+  } 
 </style>
