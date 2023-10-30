@@ -15,14 +15,28 @@
   <!-- svelte-ignore a11y-no-static-element-interactions -->
   <div on:click|stopPropagation>
     <!-- svelte-ignore a11y-autofocus -->
-    <button id="close" autofocus on:click={() => dialog.close()}>
+    <button class="button" autofocus on:click={() => dialog.close()}>
       <span class="X"></span>
       <span class="Y"></span>
       <div class="close">Close</div>
     </button>
     <hr />
-    <p>ABOUT</p>
-    <p>JOIN</p>
+    <nav class="modal-nav">
+      <div class="links">
+        <a href="/about" class="link">
+          <div class="link-text">About</div>
+        </a>
+        <a href="/join" class="link">
+          <div class="link-text">Join</div>
+        </a>
+        <a href="/events" class="link">
+          <div class="link-text">Events</div>
+        </a>
+        <a href="/contact" class="link">
+          <div class="link-text">Contact</div>
+        </a>
+      </div>
+    </nav>
     <hr />
   </div>
 </dialog>
@@ -30,9 +44,12 @@
 <style>
   dialog {
     max-width: 32em;
+    width: 100%;
     border-radius: 0.2em;
     border: none;
     padding: 0;
+    background-color: rgba(255, 251, 251, 0.432);
+    position: sticky;
   }
   dialog::backdrop {
     background: rgba(0, 0, 0, 0.3);
@@ -62,14 +79,78 @@
       opacity: 1;
     }
   }
-  button {
+
+  .modal-nav {
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+      sans-serif;
+    display: flex;
+    position: sticky;
+    padding: 20px;
+  }
+
+  .link {
+    font-size: 70px;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    color: rgb(32, 20, 30);
+  }
+
+  .button {
     display: block;
     border: none;
-    background-color: none;
+    background-color: transparent;
     position: relative;
     width: 6em;
     height: 4em;
+    color: black;
   }
 
+  .X {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 33%;
+    width: 2em;
+    height: 1.5px;
+    transform: rotate(45deg);
+    background-color: black;
+  }
 
+  .Y {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 33%;
+    width: 2em;
+    height: 1.5px;
+    transform: rotate(-45deg);
+    background-color: black;
+  }
+
+  .close {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: -40%;
+    left: 70%;
+    width: 3em;
+    height: 1.7em;
+    font-size: 16px;
+    background-color: inherit;
+    color: #000;
+    border: 1px solid #000;
+    cursor: pointer;
+    opacity: 0;
+  }
+
+  .button:hover > .close {
+    animation: close 0.2s forwards 1.25s;
+  }
+
+  @keyframes close {
+    100% {
+      opacity: 1;
+    }
+  }
 </style>
