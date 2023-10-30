@@ -39,7 +39,9 @@
 
   .dashboard > h2 {
     margin: 0;
-    transform: translateX(10em);
+    position: relative;
+    top: -10px;
+    left: 12em;
   }
 
   .header-container {
@@ -57,7 +59,9 @@
     background-color: transparent;
     display: none;
     padding: 0;
+
   }
+
   @media (max-width: 800px) {
     #menu-open {
       display: block;

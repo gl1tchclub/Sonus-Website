@@ -1,8 +1,8 @@
 <!-- Side navigation bar -->
 <div class="sidenav">
-    <div class="branding">
-        
-    </div>
+    <a href="/" class="branding">
+        <img src="./img/Sonus-logos_transparent.png" alt="logo" height="100px"/>
+    </a>
     <div class="top-side-nav">
       <a href="/dashboard"> 
         Dashboard
@@ -41,17 +41,15 @@
       top: 0;
       left: 0;
       padding-top: 20px;
-      background-color: #333;
+      background-color: #9C89B8;
       padding: 10px;
-      border-right: solid 2px gray;
-      box-shadow: 0 50px 50px rgba(0,0,0,0.11), 
-                0 52px 52px rgba(0,0,0,0.11),
-                0 53px 53px rgba(0,0,0,0.11), 
-                0 54px 54px rgba(0,0,0,0.11);
+      box-shadow: 0 2px 2px rgba(0,0,0,0.11), 
+                0 10px 10px rgba(0,0,0,0.11),
+                0 11px 11px rgba(0,0,0,0.11), 
+                0 12px 12px rgba(0,0,0,0.11);
   }
   
-  
-  .sidenav a {
+  .sidenav a:not(.branding) {
       padding: 15px 25px;
       text-decoration: none;
       font-size: 18px;
@@ -59,9 +57,16 @@
       display: block;
       margin-top: 5px;
     }
+
+    .branding {
+        position: relative;
+        top: 20px;
+        left: 26%;
+
+    }
+
     .top-side-nav{
       border-bottom: solid 1px gray;
-      
     }
     
     .bottom-side-nav {
@@ -71,7 +76,7 @@
       border-top: solid 1px whitesmoke;
   }
   
-  .sidenav a:hover {
+  .sidenav a:hover:not(.branding) {
       background-color: gray;
   }
   </style>
