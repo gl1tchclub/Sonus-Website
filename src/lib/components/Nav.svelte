@@ -80,10 +80,4 @@
     }
   }
 
-  @media (max-width: 800px) {
-    .header-nav {
-      display: none;
-    }
-  }
-
 </style>

@@ -1,6 +1,5 @@
 <script>
   import Modal from "$lib/components/Modal.svelte";
-  import Nav from "$lib/components/Nav.svelte";
   let showModal = false;
 </script>
 
@@ -9,7 +8,6 @@
     <div class="dashboard">
       <h2>Dashboard</h2>
     </div>
-    <Nav />
     <button id="menu-open" on:click={() => (showModal = true)}>
       <i class="fa-solid fa-bars"></i>
       <svg
@@ -29,7 +27,7 @@
 </header>
 
 <Modal bind:showModal>
-  <Nav />
+
 </Modal>
 
 <style>
