@@ -118,27 +118,13 @@
   .sidenav {
     height: 100%;
     max-width: 250px;
-    position: absolute;
+    position: fixed;
     z-index: 1;
     top: 0;
     left: 0;
     background-color: #9c89b8;
     padding: 10px;
     box-shadow: 2px 0px 11px 3px rgba(153, 151, 151, 0.75);
-  }
-
-  .nav-container {
-    display: flex;
-    grid-template-rows: 0.1fr 0.1fr 1fr;
-    row-gap: 10px;
-    width: 100%;
-    height: fit-content;
-    /* justify-content: space-between; */
-    flex-wrap: wrap;
-    flex-grow: 1;
-    /* margin: auto; */
-    /* padding: 2em 2em 2em 0; */
-
   }
 
   .sidenav a:not(.branding) {
@@ -174,9 +160,10 @@
   }
 
   .bottom-side-nav {
-    position: relative;
+    position: absolute;
     border-top: solid 1px rgb(18, 10, 19);
-    top: 46%;
+    bottom: 32px;
+    width: 85%;
     padding: 10px;
     height: fit-content;
   }
