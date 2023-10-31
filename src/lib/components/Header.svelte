@@ -4,10 +4,8 @@
 </script> -->
 
 <header>
-  <div class="header-container">
-    <h2>Dashboard</h2>
-    <div class="welcome"><h2>Welcome to your Sona!</h2></div>
-
+  <!-- <div class="header-container"> -->
+    <h2 class="dashboard">Dashboard</h2>
     <!-- <button id="menu-open" on:click={() => (showModal = true)}>
       <i class="fa-solid fa-bars"></i>
       <svg
@@ -23,7 +21,7 @@
         />
       </svg>
     </button> -->
-  </div>
+  <!-- </div> -->
 </header>
 <!-- 
 <Modal bind:showModal>
@@ -35,24 +33,16 @@
     background: rgba(255, 255, 255, 0.788);
     height: 80px;
     box-shadow: 1px 2px 11px 2px rgba(153, 151, 151, 0.75);
-  }
-
-  .header-container {
-    height: 80px;
-    justify-content: space-between;
-    align-items: center;
     display: flex;
-    transition: all 0.3s ease;
+    align-items: center;
   }
-
-  h2:first-of-type {
+  
+  .dashboard {
     float: left;
     position: relative;
-    margin-left: 300px;
-  }
-
-  .welcome {
-    padding-right: 2em;
+    left: 13em;
+    transition: all 0.5s ease;
+    /* margin-left: 300px; */
   }
 
   /* .dashboard {
@@ -84,17 +74,11 @@
   }*/
 
   @media (max-width: 800px) {
-    .header-container > h2 {
-      left: -7em;
+    .dashboard {
+      left: 5em;
     }
     /* #menu-open {
       display: block;
     } */
   } 
-
-  @media (max-width: 1300px) {
-    .welcome {
-      display: none;
-    }
-  }
 </style>

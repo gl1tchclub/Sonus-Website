@@ -108,6 +108,13 @@
   svg,
   .nav-text {
     display: inline-flex;
+    transition: all 3s ease-in;
+    animation: grow 1s;
+  }
+
+  @keyframes grow {
+    0% {font-size: 1px; opacity: 0;}
+    80% {font-size: 100%; opacity: 1;}
   }
 
   .nav-text {
@@ -118,7 +125,7 @@
 
   .sidenav {
     height: 100%;
-    max-width: 250px;
+    width: 250px;
     position: fixed;
     z-index: 1;
     top: 0;
@@ -126,6 +133,7 @@
     background-color: #9c89b8;
     padding: 10px;
     box-shadow: 2px 0px 11px 3px rgba(153, 151, 151, 0.75);
+    transition: all 0.5s ease;
   }
 
   .sidenav a:not(.branding) {
@@ -149,15 +157,21 @@
     top: 20px;
     left: 26%;
     width: fit-content;
-    
   }
 
   img {
     margin: 0 0 20px;
+    animation: 1.5s fadeIn;
+  }
+
+  @keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
   }
 
   .branding .icon {
     display: none;
+    transition: all 0.8s ease;
   }
 
   .top-side-nav {
@@ -177,6 +191,7 @@
     width: 85%;
     padding: 10px;
     height: fit-content;
+    /* transition: all 1s ease; */
   }
 
   .sidenav a:hover:not(.branding) {
