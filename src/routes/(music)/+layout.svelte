@@ -11,28 +11,23 @@
 <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Agbalumo">
 
+
+<Header />
+<SideNav />
 <div class="grid-container">
-    <div class="header">
-        <Header />
-    </div>
-    <div class="nav">
-        <SideNav />
-    </div>
+    <div class="sidenav"></div>
     <div class="content">
         <slot />
     </div>
-    <div class="footer">
-        <Footer />
-    </div>
+    <div class="footer"></div>
 </div>
+<Footer />
 
 <style>
-    .header {
-        grid-area: header;
-    }
-
-    .nav {
+    .sidenav {
         grid-area: sidenav;
+        grid-template-columns: auto;
+        height: 100vh;
     }
 
     .content {
@@ -46,10 +41,9 @@
     .grid-container {
         display: grid;
         grid-template-areas:
-            'header header header header header header'
-            'sidenav main main main main main'
-            'sidenav main main main main main'
-            'sidenav footer footer footer footer footer'
+            'sidenav main main main'
+            'sidenav main main main'
+            'sidenav footer footer footer';
     }
 
     :global(body) {
