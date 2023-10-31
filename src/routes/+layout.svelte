@@ -8,8 +8,8 @@
 
 </script>
 
-<Header />
 <SideNav />
+<Header />
 <div class="layout-grid">
     <slot />
 </div>

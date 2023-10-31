@@ -1,21 +1,23 @@
 <!-- Side navigation bar -->
 <div class="sidenav">
-    <a href="/" class="branding">
-      <img
-        src="./img/Sonus-logos_transparent.png"
-        alt="logo"
-        height="100px"
-        class="logo"
-      />
-      <img
-        src="./img/just-icon.png"
-        alt="logo icon"
-        height="50px"
-        class="icon"
-      />
-    </a>
+<nav class="nav-container">
+  <a href="/" class="branding">
+    <img
+      src="./img/Sonus-logos_transparent.png"
+      alt="logo"
+      height="100px"
+      class="logo"
+    />
+    <img
+      src="./img/just-icon.png"
+      alt="logo icon"
+      height="50px"
+      class="icon"
+    />
+  </a>
     <!-- pages section -->
     <div class="top-side-nav">
+
       <a href="/profile">
         <i class="fa-solid fa-user" style="color: rgb(18, 10, 19)" />
         <svg
@@ -94,6 +96,7 @@
           <p class="nav-text">Exit</p>
         </a>
   </div>
+</nav>
 </div>
 
 
@@ -114,8 +117,8 @@
   }
   .sidenav {
     height: 100%;
-    width: 250px;
-    position: fixed;
+    max-width: 250px;
+    position: absolute;
     z-index: 1;
     top: 0;
     left: 0;
@@ -124,21 +127,37 @@
     box-shadow: 2px 0px 11px 3px rgba(153, 151, 151, 0.75);
   }
 
+  .nav-container {
+    display: flex;
+    grid-template-rows: 0.1fr 0.1fr 1fr;
+    row-gap: 10px;
+    width: 100%;
+    height: fit-content;
+    /* justify-content: space-between; */
+    flex-wrap: wrap;
+    flex-grow: 1;
+    /* margin: auto; */
+    /* padding: 2em 2em 2em 0; */
+
+  }
+
   .sidenav a:not(.branding) {
     padding: 15px 25px;
     text-decoration: none;
     font-size: 18px;
     color: rgb(18, 10, 19);
-    display: block;
+    display: inline-flex;
     height: 45px;
     border-radius: 50px;
   }
 
   .branding {
-    display: flex;
+    /* display: flex; */
+    height: fit-content;
     position: relative;
     top: 20px;
     left: 26%;
+    width: fit-content;
   }
 
   .branding .icon {
@@ -147,8 +166,11 @@
 
   .top-side-nav {
     border-top: solid 1px rgb(18, 10, 19);
-    margin: 40px 0 0 0;
+    /* margin: 40px 0 0 0; */
     padding: 10px;
+    height: fit-content;
+    flex-wrap: wrap;
+    position: relative;
   }
 
   .bottom-side-nav {
@@ -156,6 +178,7 @@
     border-top: solid 1px rgb(18, 10, 19);
     top: 46%;
     padding: 10px;
+    height: fit-content;
   }
 
   .sidenav a:hover:not(.branding) {
