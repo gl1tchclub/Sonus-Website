@@ -24,11 +24,6 @@
 <Footer />
 
 <style>
-    .sidenav {
-        grid-area: sidenav;
-        grid-template-columns: auto;
-        height: 100vh;
-    }
 
     .content {
         grid-area: main;
@@ -39,11 +34,10 @@
     }
 
     .grid-container {
-        display: grid;
-        grid-template-areas:
-            'sidenav main main main'
-            'sidenav main main main'
-            'sidenav footer footer footer';
+        display: flex;
+        top: 10px;
+        padding: 10px 10px 10px 280px;
+        height: 100vh;
     }
 
     :global(body) {
