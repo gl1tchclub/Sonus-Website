@@ -76,9 +76,10 @@
         <p class="nav-text">Discover</p>
       </a>
     </div>
+  </nav>
       <!-- exit section -->
       <div class="bottom-side-nav">
-        <a href="/login" class="exit-text">
+        <a href="/goodbye" class="exit-text">
           <i class="fa-solid-icons" style="color: #ffffff;" />
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -96,7 +97,6 @@
           <p class="nav-text">Exit</p>
         </a>
   </div>
-</nav>
 </div>
 
 
@@ -112,9 +112,10 @@
 
   .nav-text {
     position: relative;
-    padding: 15px 0;
+    padding: 15px 0 0 15px;
     top: -4px;
   }
+
   .sidenav {
     height: 100%;
     max-width: 250px;
@@ -132,18 +133,27 @@
     text-decoration: none;
     font-size: 18px;
     color: rgb(18, 10, 19);
-    display: inline-flex;
+    display: block;
     height: 45px;
     border-radius: 50px;
   }
 
+  .nav-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
   .branding {
-    /* display: flex; */
     height: fit-content;
     position: relative;
     top: 20px;
     left: 26%;
     width: fit-content;
+    
+  }
+
+  img {
+    margin: 0 0 20px;
   }
 
   .branding .icon {
@@ -152,11 +162,12 @@
 
   .top-side-nav {
     border-top: solid 1px rgb(18, 10, 19);
-    /* margin: 40px 0 0 0; */
+    margin: 40px 0 0 0;
     padding: 10px;
     height: fit-content;
     flex-wrap: wrap;
     position: relative;
+    width: 100%;
   }
 
   .bottom-side-nav {
@@ -199,7 +210,8 @@
     }
 
     .bottom-side-nav {
-      top: 60%;
+      top: 80%;
+      width: 55%;
     }
 
     .nav-text {

@@ -5,9 +5,9 @@
 
 <header>
   <div class="header-container">
-    <div class="dashboard">
-      <h2>Dashboard</h2>
-    </div>
+    <h2>Dashboard</h2>
+    <div class="test"><h2>Welcome to your Sona!</h2></div>
+
     <!-- <button id="menu-open" on:click={() => (showModal = true)}>
       <i class="fa-solid fa-bars"></i>
       <svg
@@ -37,22 +37,43 @@
     box-shadow: 1px 2px 11px 2px rgba(153, 151, 151, 0.75);
   }
 
-  .dashboard > h2 {
-    margin: 0;
-    position: relative;
-    top: -16px;
-    left: 12em;
-  }
-
   .header-container {
-    height: 100%;
+    height: 80px;
     justify-content: space-between;
     align-items: center;
-    margin: 0;
-    padding: 1em 1em 0em; /* change to 1em to add padding */
     display: flex;
     transition: all 0.3s ease;
   }
+
+  h2:first-of-type {
+    float: left;
+    position: relative;
+    margin-left: 300px;
+  }
+
+  .test {
+    padding-right: 2em;
+  }
+
+  /* .dashboard {
+    display: inline-flex;
+    justify-content: space-between;
+  } */
+
+  /* .dashboard > h2 {
+    
+    position: relative;
+    top: -16px;
+    left: 12em;
+  } */
+
+  /* .dashboard > h2:last-of-type {
+    flex: 0;
+  } */
+
+  /* .header-container {
+
+  } */
 
   /* #menu-open {
     border: none;

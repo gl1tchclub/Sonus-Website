@@ -4,18 +4,23 @@
 
 <script>
     import Header from '$lib/components/Header.svelte';
-    import SideNav from '../lib/components/SideNav.svelte';
+    import SideNav from '../../lib/components/SideNav.svelte';
 
 </script>
 
-<SideNav />
-<Header />
-<div class="layout-grid">
-    <slot />
+<link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Agbalumo">
+
+<div class="grid-container">
+    <SideNav />
+    <Header />
+    <div class="content">
+        <slot />
+    </div>
 </div>
 
 <style>
-    .layout-grid {
+    .content {
         display: flex;
         top: 0;
         left: 17em;
