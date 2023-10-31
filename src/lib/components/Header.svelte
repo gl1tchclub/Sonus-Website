@@ -6,7 +6,7 @@
 <header>
   <div class="header-container">
     <h2>Dashboard</h2>
-    <div class="test"><h2>Welcome to your Sona!</h2></div>
+    <div class="welcome"><h2>Welcome to your Sona!</h2></div>
 
     <!-- <button id="menu-open" on:click={() => (showModal = true)}>
       <i class="fa-solid fa-bars"></i>
@@ -51,7 +51,7 @@
     margin-left: 300px;
   }
 
-  .test {
+  .welcome {
     padding-right: 2em;
   }
 
@@ -84,12 +84,17 @@
   }*/
 
   @media (max-width: 800px) {
-
-    .dashboard > h2 {
-      left: 4em;
+    .header-container > h2 {
+      left: -7em;
     }
     /* #menu-open {
       display: block;
     } */
   } 
+
+  @media (max-width: 1300px) {
+    .welcome {
+      display: none;
+    }
+  }
 </style>
