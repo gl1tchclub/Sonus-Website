@@ -17,40 +17,45 @@
 
         sona = temp;
     });
+    
 </script>
 
-<div class="sona-wrapper">
-    <span class="sona"></span>
-</div>
-<div class="welcome">
-    <div class="test">
-    <h1>
-        <span class="reveal">
-            Grow your Sona!
-        </span>
-    </h1>
-</div>
+<div class="wrapper">
+
+    <div class="sona-wrapper">
+        <span class="sona"></span>
+    </div>
+    <div class="welcome">
+        <div class="test">
+            <h1>
+                <span class="reveal">
+                    Grow your Sona!
+                </span>
+            </h1>
+        </div>
         <p>
             <span class="reveal">
                 Here, you will find your unique musical persona, your very own 'Sona', shaped by 
                 your distinctive and defined taste in music!
             </span>
         </p>
+    </div>
 </div>
 
 <style>
-    .sona-wrapper {
-        text-align: center;
-    }
-    .welcome {
+    .wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
         position: relative;
         text-align: center;
         font-size: 20px;
         width: 700px;
         transition: all 3s ease;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
+    }
+
+    .sona-wrapper {
+        text-align: center;
     }
 
     .sona {
@@ -66,11 +71,23 @@
 
     @media (max-width: 1000px) {
 
+    .wrapper {
+        display: block;
+    }
+
     .welcome {
-        position: relative;
+        display: flex;
+        justify-content: center;
+    }
+
+    .test {
         transition: all 0.5s ease;
         display: flex;
-        width: 100%;
+        position: static;
+        width: fit-content;
+        transition: all 3s ease;
+        display: inline-block;
+        margin: 20px;
     }
 }
 
