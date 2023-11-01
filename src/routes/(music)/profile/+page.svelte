@@ -22,7 +22,11 @@
     <div class="sona-wrapper">
         <span class="sona"></span>
     </div>
-    <h1>Grow your Sona!</h1>
+    <h1>
+        <span class="reveal">
+            Grow your Sona!
+        </span>
+    </h1>
     <p>
         <span class="reveal">
             Here, you will find your unique musical persona, your very own 'Sona', shaped by 
@@ -35,6 +39,10 @@
     .welcome {
         position: relative;
         text-align: center;
+    }
+
+    .welcome > p {
+        font-size: 20px;
     }
 
     .sona {

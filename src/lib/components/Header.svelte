@@ -5,7 +5,11 @@
 
 <header>
   <!-- <div class="header-container"> -->
-    <h2 class="dashboard">Dashboard</h2>
+    <h2 class="dashboard">
+      <span class="reveal">
+        Dashboard
+      </span>
+    </h2>
     <!-- <button id="menu-open" on:click={() => (showModal = true)}>
       <i class="fa-solid fa-bars"></i>
       <svg
@@ -42,7 +46,7 @@
     position: relative;
     left: 13em;
     transition: all 0.5s ease;
-    /* margin-left: 300px; */
+    display: block;
   }
 
   /* .dashboard {

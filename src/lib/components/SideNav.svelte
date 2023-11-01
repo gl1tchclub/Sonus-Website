@@ -58,22 +58,22 @@
         <p class="nav-text">Library</p>
       </a>
       <a href="/discover">
-        <i class="fa-solid fa-compact-disc" />
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          height="1.5em"
-          viewBox="0 0 512 512"
-        >
-          <path
-            d="M0 256a256 256 0 1 1 512 0A256 256 
-            0 1 1 0 256zm256 32a32 32 0 1 1 0-64 32 32 0 1 1 0 
-            64zm-96-32a96 96 0 1 0 192 0 96 96 0 1 0 -192 0zM96 
-              240c0-35 17.5-71.1 45.2-98.8S205 96 240 96c8.8 0 16-7.2 
-              16-16s-7.2-16-16-16c-45.4 0-89.2 22.3-121.5 54.5S64 194.6 
-              64 240c0 8.8 7.2 16 16 16s16-7.2 16-16z"
-          />
-        </svg>
-        <p class="nav-text">Discover</p>
+          <i class="fa-solid fa-compact-disc" />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="1.5em"
+            viewBox="0 0 512 512"
+          >
+            <path
+              d="M0 256a256 256 0 1 1 512 0A256 256 
+              0 1 1 0 256zm256 32a32 32 0 1 1 0-64 32 32 0 1 1 0 
+              64zm-96-32a96 96 0 1 0 192 0 96 96 0 1 0 -192 0zM96 
+                240c0-35 17.5-71.1 45.2-98.8S205 96 240 96c8.8 0 16-7.2 
+                16-16s-7.2-16-16-16c-45.4 0-89.2 22.3-121.5 54.5S64 194.6 
+                64 240c0 8.8 7.2 16 16 16s16-7.2 16-16z"
+            />
+          </svg>
+          <p class="nav-text">Discover</p>
       </a>
     </div>
   </nav>
@@ -101,14 +101,13 @@
 
 
 <style>
-  svg {
+  .sidenav svg {
     fill: rgb(18, 10, 19);
   }
 
-  svg,
+  .sidenav svg,
   .nav-text {
     display: inline-flex;
-    transition: all 3s ease-in;
     animation: grow 1s;
   }
 
@@ -159,7 +158,7 @@
     width: fit-content;
   }
 
-  img {
+  .branding img {
     margin: 0 0 20px;
     animation: 1.5s fadeIn;
   }
@@ -182,6 +181,7 @@
     flex-wrap: wrap;
     position: relative;
     width: 100%;
+    animation: fadeIn 2s;
   }
 
   .bottom-side-nav {
@@ -191,7 +191,7 @@
     width: 85%;
     padding: 10px;
     height: fit-content;
-    /* transition: all 1s ease; */
+    animation: fadeIn 2s;
   }
 
   .sidenav a:hover:not(.branding) {
@@ -201,6 +201,11 @@
   @media (max-width: 800px) {
     .sidenav {
       width: 70px;
+      justify-content: center;
+    }
+
+    .sidenav svg {
+      animation: fadeIn 1s;
     }
 
     .sidenav a:not(.branding) {
@@ -211,12 +216,12 @@
     .branding .logo {
       display: none;
     }
+    .branding {
+      left: 1px;
+    }
 
     .branding .icon {
-      display: inline-block;
-      position: relative;
-      left: -17px;
-      top: -10px;
+      display: block;
     }
 
     .bottom-side-nav {

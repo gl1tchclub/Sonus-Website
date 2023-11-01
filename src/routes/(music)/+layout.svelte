@@ -44,10 +44,5 @@
         background-color: #edede9;
     }
 
-    @media (max-width: 800px) {
-        .content {
-            left: 5.2em;
-            width: 100%;
-        }
-    }
+
 </style>

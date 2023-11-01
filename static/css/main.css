@@ -5,7 +5,12 @@
 
 div, h1, h2, p, a {
     font-family: "Agbalumo", serif;
-    animation: reveal 1.5s cubic-bezier(0.77, 0, 0.175, 1) 0.5s;
+    overflow: hidden;
+}
+
+.reveal {
+    animation: reveal 1.5s cubic-bezier(0.77, 0, 0.175, 1);
+    display: block;
 }
 
 @keyframes reveal {
@@ -16,3 +21,12 @@ div, h1, h2, p, a {
       transform: translate(0,0);
     }
   }
+
+  @media (max-width: 800px) {
+    .content {
+        left: 5.2em;
+        width: 100%;
+    }
+
+    
+}
