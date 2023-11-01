@@ -3,10 +3,11 @@
     const BASE_URL = "https://api.unsplash.com/";
     const key = "FkjKMeG-arrW_qolpGUoya8HBCEBUCkjH3j9BB2dwms";
     let sona;
+    let user;
 
     onMount(async () => {
-        const res = await fetch(`${BASE_URL}photos/WjnF1Tp-p3I?client_id=${key}`);
-        const image = await res.json();
+        let res = await fetch(`${BASE_URL}photos/WjnF1Tp-p3I?client_id=${key}`);
+        let json = await res.json();
 
         let temp = {
             small: image.urls.small,
@@ -18,31 +19,38 @@
     });
 </script>
 
+<div class="sona-wrapper">
+    <span class="sona"></span>
+</div>
 <div class="welcome">
-    <div class="sona-wrapper">
-        <span class="sona"></span>
-    </div>
+    <div class="test">
     <h1>
         <span class="reveal">
             Grow your Sona!
         </span>
     </h1>
-    <p>
-        <span class="reveal">
-            Here, you will find your unique musical persona, your very own 'Sona', shaped by 
-            your distinctive and defined taste in music!
-        </span>
-    </p>
+</div>
+        <p>
+            <span class="reveal">
+                Here, you will find your unique musical persona, your very own 'Sona', shaped by 
+                your distinctive and defined taste in music!
+            </span>
+        </p>
 </div>
 
 <style>
+    .sona-wrapper {
+        text-align: center;
+    }
     .welcome {
         position: relative;
         text-align: center;
-    }
-
-    .welcome > p {
         font-size: 20px;
+        width: 700px;
+        transition: all 3s ease;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
     .sona {
@@ -52,5 +60,18 @@
         border-radius: 50%;
         border: 1px solid rgba(128, 128, 128, 0.336);
         display: inline-block;
+        margin: 20px;
+        animation: fadeIn 1s;
     }
+
+    @media (max-width: 1000px) {
+
+    .welcome {
+        position: relative;
+        transition: all 0.5s ease;
+        display: flex;
+        width: 100%;
+    }
+}
+
 </style>

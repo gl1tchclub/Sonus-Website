@@ -163,10 +163,7 @@
     animation: 1.5s fadeIn;
   }
 
-  @keyframes fadeIn {
-    0% {opacity: 0;}
-    100% {opacity: 1;}
-  }
+
 
   .branding .icon {
     display: none;
