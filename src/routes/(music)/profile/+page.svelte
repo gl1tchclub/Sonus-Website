@@ -19,6 +19,9 @@
 </script>
 
 <div class="welcome">
+    <div class="sona-wrapper">
+        <span class="sona"></span>
+    </div>
     <h1>Grow your Sona!</h1>
     <p>
         <span class="reveal">
@@ -31,8 +34,15 @@
 <style>
     .welcome {
         position: relative;
-
         text-align: center;
-        
+    }
+
+    .sona {
+        height: 300px;
+        width: 300px;
+        background-color: transparent;
+        border-radius: 50%;
+        border: 1px solid rgba(128, 128, 128, 0.336);
+        display: inline-block;
     }
 </style>

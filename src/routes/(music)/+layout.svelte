@@ -35,8 +35,9 @@
     .grid-container {
         display: flex;
         top: 10px;
-        padding: 10px 10px 10px 280px;
+        padding: 20px 10px 10px 280px;
         height: 100vh;
+        justify-content: center;
     }
 
     :global(body) {
