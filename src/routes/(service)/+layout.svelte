@@ -32,7 +32,7 @@
     display: flex;
     top: 10px;
     padding: 20px 10px 10px 280px;
-    height: 100vh;
+    height: fit-content;
     justify-content: center;
   }
 

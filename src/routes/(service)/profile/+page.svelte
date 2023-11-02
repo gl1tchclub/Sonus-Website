@@ -71,7 +71,7 @@
           <span class="reveal"> Discover your Sona! </span>
         </h1>
       </div>
-      <p>
+      <p class="responsive-text">
         <span class="reveal">
           Here, you will find your unique musical persona, your very own 'Sona',
           shaped by your distinctive and defined taste in music!
@@ -80,37 +80,38 @@
     </div>
   </div>
   <div class="right-boxes">
-    <div class="small-box" style="background-color: rgb(184, 190, 221)">
-      <span class="reveal">
-        Followers:
-        <h1 class="details">{user.followers}</h1>
-      </span>
+    <div class="small-box right" style="background-color: rgb(184, 190, 221)">
+      <p>Followers:</p>
+      <h1 class="details">
+        <span class="reveal">
+          {user.followers}
+        </span>
+      </h1>
     </div>
-    <div class="small-box" style="background-color: rgb(232,217,231)">
-      <span class="reveal">
-        Following:
-        <h1 class="details">{user.following}</h1>
-      </span>
+    <div class="small-box right" style="background-color: rgb(232,217,231)">
+      <p>Following:</p>
+      <h1 class="details">
+        <span class="reveal">
+          {user.following}
+        </span>
+      </h1>
     </div>
-    <div class="small-box socials" style="background-color: rgb(245,224,236)">
-      Social:
+    <div class="small-box right" style="background-color: rgb(245,224,236)">
+      <p>Social:</p>
       <h2>
         <span class="reveal"> Montreal, QC </span>
       </h2>
       <div class="socials links">
-      <a
-        href="https://www.instagram.com/{user.insta}"
-        target="_blank"
-      >
-      <span class="reveal">
-        <i class="fa-brands fa-instagram" />
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          height="2em"
-          viewBox="0 0 448 512"
-        >
-          <path
-            d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 
+        <a href="https://www.instagram.com/{user.insta}" target="_blank">
+          <span class="reveal">
+            <i class="fa-brands fa-instagram" />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="2em"
+              viewBox="0 0 448 512"
+            >
+              <path
+                d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 
                         114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 
                         189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 
                         33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 
@@ -126,23 +127,20 @@
                         9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 
                         132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 
                         22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"
-          />
-        </svg>
-    </span>
-      </a>
-      <a
-        href="https://www.twitter.com/{user.twt}"
-        target="_blank"
-      >
-      <span class="reveal">
-        <i class="fa-brands fa-twitter" />
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          height="2em"
-          viewBox="0 0 512 512"
-        >
-          <path
-            d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0
+              />
+            </svg>
+          </span>
+        </a>
+        <a href="https://www.twitter.com/{user.twt}" target="_blank">
+          <span class="reveal">
+            <i class="fa-brands fa-twitter" />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="2em"
+              viewBox="0 0 512 512"
+            >
+              <path
+                d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0
                         138.72-105.583 298.558-298.558 298.558-59.452 
                         0-114.68-17.219-161.137-47.106 8.447.974 16.568 
                         1.299 25.34 1.299 49.055 0 
@@ -158,10 +156,10 @@
                         33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 
                         44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 
                         20.791-32.161 39.308-52.628 54.253z"
-          />
-        </svg>
-    </span>
-      </a>
+              />
+            </svg>
+          </span>
+        </a>
       </div>
     </div>
   </div>
@@ -172,13 +170,14 @@
     border-radius: 20px;
     display: grid;
     grid-template-columns: auto auto auto;
+    flex-direction: column;
   }
 
-  .socials .links {
+  .right .links {
     display: inline-flex;
   }
 
-  .socials svg {
+  .right svg {
     padding: 10px 15px 10px 0px;
   }
 
@@ -222,7 +221,7 @@
     box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.3);
   }
 
-  .right-boxes > .socials {
+  .right {
     display: block;
   }
 
@@ -266,6 +265,10 @@
       width: fit-content;
       display: inline-block;
       margin: 20px;
+    }
+
+    .responsive-text {
+      display: none;
     }
   }
 </style>
