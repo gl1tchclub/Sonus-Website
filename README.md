@@ -27,12 +27,14 @@ ___
 
 ## Purpose
 
-Sonus is a 
+Sonus is a music web service that offers access to millions of songs. Sonus is a more personal platform where each user, as they listen and develop their music taste, can see their own unique, individually crafted Sona, a musical persona.
+
+Each Sona is developed using an AI that takes in user data such as favourite songs, genres, artists, those they don't like, their playlists, vibe, mood, how often they listen to music, and more!
 
 
 <div align="center">
 
-**Once you're on the ARC, there's nowhere to go but beyond the horizon to reach Olympus.**
+**A million songs, one Sona**
 
 </div>
 ___
@@ -44,6 +46,7 @@ ___
 
 ### What does the Website Do?
 
+Sonus is a web-based music service that provides its users access to millions of songs, artists, and playlists. Using AI, a Sona is uniquely crafted for each user depending on theri 
 
 ### Technology Usage
 //apis and AI images, frameworks, languages
