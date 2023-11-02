@@ -61,14 +61,14 @@
   </div>
   <div class="wrapper">
     <div class="sona-wrapper">
-      <span class="sona"
-        ><div class="img" style="background-image: url({sona})" /></span
-      >
+      <span class="sona">
+        <div class="img" style="background-image: url({sona})" />
+    </span>
     </div>
     <div class="welcome">
-      <div class="text">
+      <div class="title">
         <h1>
-          <span class="reveal"> Discover your Sona! </span>
+          <span class="reveal"> <span class="wavy">Discover your Sona!</span> </span>
         </h1>
       </div>
       <p class="responsive-text">
@@ -244,8 +244,45 @@
     border: rgba(128, 128, 128, 0.336);
     display: inline-block;
     margin: 20px;
-    animation: fadeIn 1s;
     box-shadow: 0px 0px 12px 8px rgb(240, 166, 202, 0.5);
+  }
+
+  .wavy {
+    animation: wavy 1.3s ease 1s;
+  }
+
+  @keyframes wavy {
+    0% {
+        top: 0px;
+    }
+    50% {
+        top: -15px;
+    }
+    100% {
+        top: 0px;
+    }
+  }
+
+  .sona {
+    animation: fadeIn 1s;
+  }
+
+  .img {
+    animation: rotation 5s infinite linear;
+  }
+
+  @keyframes rotation {
+    0% {
+        transform: scale(1.05);
+    }
+
+    50% {
+        transform: scale(0.95);
+    }
+
+    100% {
+        transform: scale(1.05);
+    }
   }
 
   @media (max-width: 1000px) {
@@ -258,7 +295,7 @@
       justify-content: center;
     }
 
-    .text {
+    .title {
       transition: all 0.5s ease;
       display: flex;
       position: static;

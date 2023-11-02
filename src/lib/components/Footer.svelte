@@ -1,8 +1,7 @@
-<footer>
-    <div class="footer-container">
+<footer class="footer">
+    <div class="border"></div>
         <div class="footer-content">
             <div class="section-left">
-
                 <h2 class="footer-title">
                     <span class="reveal">Company</span>
                 </h2>
@@ -21,47 +20,40 @@
                 </ul>
             </div>
         </div>
-
-    </div>
+        <hr/>
+        <div class="trademark">© 2023 Sonus NZ</div>
 </footer>
 
 <style>
-    footer {
-        background-color: aliceblue;
-        margin-top: 20px;
-        height: 40vh;
-        z-index: 0;
-    }
-    
-    .footer-container {
-        z-index: 1;
-        height: 100%;
+    .footer {
+        width: 82%;
+        height: 30vh;
         position: relative;
-        padding: 20px 0 0 280px;
-        display: flex;
-        justify-content: center;
-    }
-    
-    .footer-content {
-        display: inline-flex;
-        z-index: 1;
-        color: black;
-        height: fit-content;
+        left: 16%;
+        z-index: 0;
+        margin-top: 20px;
     }
 
     .footer-content ul, a {
         color: gray;
         list-style-type: none;
+    } 
+
+    .footer-content {
+        border-bottom: 1px rgba(128, 128, 128, 0.425);
+        padding: 0 0 60px 0;
     }
 
     .section-left {
-        float: right;
-        /* margin-right: 50px; */
-        position: relative;
-    }
-
-    .section-right {
         float: left;
     }
 
+    .section-right {
+        float: right;
+    }
+
+    .trademark {
+        opacity: 0.5;
+        padding: 20px 0 0 0;
+    }
 </style>
