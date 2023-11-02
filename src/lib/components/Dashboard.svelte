@@ -39,6 +39,7 @@
     box-shadow: 1px 2px 11px 2px rgba(153, 151, 151, 0.75);
     display: flex;
     align-items: center;
+    z-index: 1;
   }
   
   .dashboard {
@@ -47,6 +48,7 @@
     left: 13em;
     transition: all 0.5s ease;
     display: block;
+    z-index: 2;
   }
 
   /* .dashboard {
