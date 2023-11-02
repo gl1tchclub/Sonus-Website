@@ -44,7 +44,7 @@ div, h1, h2, p, a {
 }
 
 @media (max-width: 1000px) {
-    .content p {
+    .content .text {
         display: none;
     }
 }
