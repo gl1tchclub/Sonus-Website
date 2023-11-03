@@ -36,6 +36,8 @@
     justify-content: center;
   }
 
+
+
   @media (max-width: 800px) {
     .grid-container {
       padding: 20px 10px 10px 20px;
@@ -45,4 +47,6 @@
       animation: 2s fadeIn;
     }
   }
+
+
 </style>

@@ -1,5 +1,4 @@
-<footer class="footer">
-    <div class="border"></div>
+<footer class="footer" >
         <div class="footer-content">
             <div class="section-left">
                 <h2 class="footer-title">
@@ -7,7 +6,7 @@
                 </h2>
                 <ul>
                     <li><a href="/" style="text-decoration: none">About</a></li>
-                    <li>placeholder</li>
+                    <li>Jobs</li>
                 </ul>
             </div>
             <div class="section-right">
@@ -20,18 +19,21 @@
                 </ul>
             </div>
         </div>
-        <hr/>
-        <div class="trademark">© 2023 Sonus NZ</div>
-</footer>
+    </footer>
+<div class="trademark">© 2023 Sonus NZ</div>
 
 <style>
     .footer {
-        width: 82%;
+        max-width: 83%;
         height: 30vh;
         position: relative;
-        left: 16%;
+        left: 280px;
         z-index: 0;
-        margin-top: 20px;
+        margin-top: 40px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 20px;
     }
 
     .footer-content ul, a {
@@ -40,16 +42,22 @@
     } 
 
     .footer-content {
-        border-bottom: 1px rgba(128, 128, 128, 0.425);
-        padding: 0 0 60px 0;
+        border-bottom: 1px solid rgba(128, 128, 128, 0.425);
+        padding: 0 60px 60px 0;
+        height: fit-content;
+        width: 100%;
+        display: flex;
+        position: relative;
     }
 
     .section-left {
         float: left;
+        width: 300px;
     }
 
     .section-right {
         float: right;
+        width: 100px;
     }
 
     .trademark {

@@ -17,6 +17,7 @@ div, h1, h2, p, a {
     display: block;
 }
 
+
 @keyframes reveal {
     0% {
       transform: translate(0,100%);
