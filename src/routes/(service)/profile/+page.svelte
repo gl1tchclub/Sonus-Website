@@ -1,29 +1,66 @@
 <script>
   import { onMount } from "svelte";
+  import { get } from "svelte/store";
 
-  const BASE_URL = "https://api.unsplash.com/";
-  const key = "FkjKMeG-arrW_qolpGUoya8HBCEBUCkjH3j9BB2dwms";
-  let sona = "";
-  let user = [];
+  const BASE_URL = "https://api.unsplash.com/"
+  const WORD_URL = "https://api.api-ninjas.com/v1/thesaurus?"
+  const photoKey = "FkjKMeG-arrW_qolpGUoya8HBCEBUCkjH3j9BB2dwms"
+  const wordKey = "Ae1hKMbFv0SCDY3vQCEjmw==o7A0rHaDqNpzntyL"
+  let sona = ""
+  let user = []
+  const firstWords = ["elegant", "spiky", "chaotic"]
+  let finalWords;
+
+  function getRandomNumber(max) {
+    return Math.round(Math.random() * max)
+  }
 
   onMount(async () => {
-    let res = await fetch(`${BASE_URL}photos/hNrd99q5peI?client_id=${key}`);
+    let res = await fetch(`${BASE_URL}photos/hNrd99q5peI?client_id=${photoKey}`);
     let json = await res.json();
     sona = json.urls.regular;
+    let tempWords = [];
 
-    res = await fetch(`${BASE_URL}users/danesduet?client_id=${key}`);
+    
+    res = await fetch(`${BASE_URL}users/danesduet?client_id=${photoKey}`);
     json = await res.json();
-
+    
     let temp = {
-      username: json.username,
-      name: json.name,
-      followers: json.followers_count,
-      following: json.following_count,
-      insta: json.instagram_username,
-      twt: json.twitter_username,
+        username: json.username,
+        name: json.name,
+        followers: json.followers_count,
+        following: json.following_count,
+        insta: json.instagram_username,
+        twt: json.twitter_username,
     };
-
+    
     user = temp;
+
+    for(let i = 0; i < firstWords.length; i++) {
+        res = await fetch(`${WORD_URL}word=${firstWords[i]}`, {
+            headers: {
+                'X-API-KEY': wordKey,
+            }
+        })
+
+        json = await res.json()
+
+        let max;
+        let concatWord;
+        if (getRandomNumber(2.1) % 2 === 1) {
+            max = json.antonyms.length - 1;
+            i === 0 ? concatWord = `| ${json.antonyms[getRandomNumber(max)]} |` : concatWord = ` ${json.antonyms[getRandomNumber(max)]} |`
+            tempWords.push(concatWord)
+        }
+        else {
+            max = json.synonyms.length - 1;
+            i === 0 ? concatWord = `| ${json.synonyms[getRandomNumber(max)]} |` : concatWord = ` ${json.synonyms[getRandomNumber(max)]} |`
+            tempWords.push(concatWord)
+        }
+    }
+
+    finalWords = tempWords.join()
+
   });
 </script>
 
@@ -63,12 +100,12 @@
     <div class="sona-wrapper">
       <span class="sona">
         <div class="img" style="background-image: url({sona})" />
-    </span>
+      </span>
     </div>
     <div class="welcome">
       <div class="title">
         <h1>
-          <span class="reveal"> <span class="wavy">Discover your Sona!</span> </span>
+          <span class="reveal"> Discover your Sona! </span>
         </h1>
       </div>
       <p class="responsive-text">
@@ -162,6 +199,12 @@
         </a>
       </div>
     </div>
+    <div class="small-box right" style="background-color: rgb(156,137,184, 0.5)">
+      <p>
+        <span class="reveal">Your Sona:</span>
+      </p>
+      <h2>{finalWords}</h2>
+    </div>
   </div>
 </div>
 
@@ -247,22 +290,6 @@
     box-shadow: 0px 0px 12px 8px rgb(240, 166, 202, 0.5);
   }
 
-  .wavy {
-    animation: wavy 1.3s ease 1s;
-  }
-
-  @keyframes wavy {
-    0% {
-        top: 0px;
-    }
-    50% {
-        top: -15px;
-    }
-    100% {
-        top: 0px;
-    }
-  }
-
   .sona {
     animation: fadeIn 1s;
   }
@@ -273,19 +300,17 @@
 
   @keyframes rotation {
     0% {
-        transform: scale(1.05);
+      transform: scale(1.05);
     }
 
     50% {
-        transform: scale(0.95);
+      transform: scale(0.95);
     }
 
     100% {
-        transform: scale(1.05);
+      transform: scale(1.05);
     }
   }
-
-
 
   @media (max-width: 1000px) {
     .wrapper {
