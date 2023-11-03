@@ -2,65 +2,61 @@
   import { onMount } from "svelte";
   import { get } from "svelte/store";
 
-  const BASE_URL = "https://api.unsplash.com/"
-  const WORD_URL = "https://api.api-ninjas.com/v1/thesaurus?"
-  const photoKey = "FkjKMeG-arrW_qolpGUoya8HBCEBUCkjH3j9BB2dwms"
-  const wordKey = "Ae1hKMbFv0SCDY3vQCEjmw==o7A0rHaDqNpzntyL"
-  let sona = ""
-  let user = []
-  const firstWords = ["elegant", "spiky", "chaotic"]
-  let finalWords;
+  const BASE_URL = "https://api.unsplash.com/";
+  const WORD_URL = "https://api.api-ninjas.com/v1/thesaurus?";
+  const photoKey = "FkjKMeG-arrW_qolpGUoya8HBCEBUCkjH3j9BB2dwms";
+  const wordKey = "Ae1hKMbFv0SCDY3vQCEjmw==o7A0rHaDqNpzntyL";
+  let sona = "";
+  let user = [];
+  const firstWords = ["elegant", "spiky", "chaotic"];
+  let finalWords = "";
 
   function getRandomNumber(max) {
-    return Math.round(Math.random() * max)
+    return Math.round(Math.random() * max);
   }
 
   onMount(async () => {
-    let res = await fetch(`${BASE_URL}photos/hNrd99q5peI?client_id=${photoKey}`);
+    let res = await fetch(
+      `${BASE_URL}photos/hNrd99q5peI?client_id=${photoKey}`
+    );
     let json = await res.json();
     sona = json.urls.regular;
     let tempWords = [];
 
-    
     res = await fetch(`${BASE_URL}users/danesduet?client_id=${photoKey}`);
     json = await res.json();
-    
+
     let temp = {
-        username: json.username,
-        name: json.name,
-        followers: json.followers_count,
-        following: json.following_count,
-        insta: json.instagram_username,
-        twt: json.twitter_username,
+      username: json.username,
+      name: json.name,
+      followers: json.followers_count,
+      following: json.following_count,
+      insta: json.instagram_username,
+      twt: json.twitter_username,
     };
-    
+
     user = temp;
 
-    for(let i = 0; i < firstWords.length; i++) {
-        res = await fetch(`${WORD_URL}word=${firstWords[i]}`, {
-            headers: {
-                'X-API-KEY': wordKey,
-            }
-        })
+    for (let i = 0; i < firstWords.length; i++) {
+      res = await fetch(`${WORD_URL}word=${firstWords[i]}`, {
+        headers: {
+          "X-API-KEY": wordKey,
+        },
+      });
 
-        json = await res.json()
+      json = await res.json();
 
-        let max;
-        let concatWord;
-        if (getRandomNumber(2.1) % 2 === 1) {
-            max = json.antonyms.length - 1;
-            i === 0 ? concatWord = `| ${json.antonyms[getRandomNumber(max)]} |` : concatWord = ` ${json.antonyms[getRandomNumber(max)]} |`
-            tempWords.push(concatWord)
-        }
-        else {
-            max = json.synonyms.length - 1;
-            i === 0 ? concatWord = `| ${json.synonyms[getRandomNumber(max)]} |` : concatWord = ` ${json.synonyms[getRandomNumber(max)]} |`
-            tempWords.push(concatWord)
-        }
+      let max;
+      if (getRandomNumber(2.1) % 2 === 1) {
+        max = json.antonyms.length - 1;
+        tempWords.push(json.antonyms[getRandomNumber(max)]);
+      } else {
+        max = json.synonyms.length - 1;
+        tempWords.push(json.synonyms[getRandomNumber(max)]);
+      }
     }
 
-    finalWords = tempWords.join()
-
+    finalWords = tempWords.join(" || ");
   });
 </script>
 
@@ -199,11 +195,14 @@
         </a>
       </div>
     </div>
-    <div class="small-box right" style="background-color: rgb(156,137,184, 0.5)">
-      <p>
-        <span class="reveal">Your Sona:</span>
-      </p>
-      <h2>{finalWords}</h2>
+    <div
+      class="small-box right"
+      style="background-color: rgb(156,137,184, 0.5)"
+    >
+      <p>Your Sona is...</p>
+      <h2 class="reveal">
+        {finalWords}
+      </h2>
     </div>
   </div>
 </div>
@@ -221,7 +220,7 @@
   }
 
   .right svg {
-    padding: 10px 15px 10px 0px;
+    padding: 10px 15px 0 0px;
   }
 
   .wrapper {
