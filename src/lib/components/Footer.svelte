@@ -24,6 +24,7 @@
     </div>
   </div>
   <div class="trademark">© 2023 Sonus NZ</div>
+  
 </footer>
 
 <style>

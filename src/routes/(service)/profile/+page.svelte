@@ -62,7 +62,10 @@
 
 <div class="box-border">
   <div class="left-boxes">
-    <div class="small-box" style="background-color: rgb(240, 166, 202)">
+    <div
+      class="small-box text-right"
+      style="background-color: rgb(240, 166, 202)"
+    >
       <p>Name:</p>
       <h1 class="details">
         <span class="reveal">
@@ -70,7 +73,10 @@
         </span>
       </h1>
     </div>
-    <div class="small-box" style="background-color: rgb(239, 195, 230)">
+    <div
+      class="small-box text-right"
+      style="background-color: rgb(239, 195, 230)"
+    >
       <p>Username:</p>
       <h1 class="details">
         <span class="reveal">
@@ -113,7 +119,10 @@
     </div>
   </div>
   <div class="right-boxes">
-    <div class="small-box right" style="background-color: rgb(184, 190, 221)">
+    <div
+      class="small-box text-right"
+      style="background-color: rgb(184, 190, 221)"
+    >
       <p>Followers:</p>
       <h1 class="details">
         <span class="reveal">
@@ -121,7 +130,10 @@
         </span>
       </h1>
     </div>
-    <div class="small-box right" style="background-color: rgb(232,217,231)">
+    <div
+      class="small-box text-right"
+      style="background-color: rgb(232,217,231)"
+    >
       <p>Following:</p>
       <h1 class="details">
         <span class="reveal">
@@ -129,7 +141,10 @@
         </span>
       </h1>
     </div>
-    <div class="small-box right" style="background-color: rgb(245,224,236)">
+    <div
+      class="small-box text-right"
+      style="background-color: rgb(245,224,236)"
+    >
       <p>Social:</p>
       <h2>
         <span class="reveal"> Montreal, QC </span>
@@ -196,7 +211,7 @@
       </div>
     </div>
     <div
-      class="small-box right"
+      class="small-box text-right"
       style="background-color: rgb(156,137,184, 0.5)"
     >
       <p>Your Sona is...</p>
@@ -215,14 +230,6 @@
     flex-direction: column;
   }
 
-  .right .links {
-    display: inline-flex;
-  }
-
-  .right svg {
-    padding: 10px 15px 0 0px;
-  }
-
   .wrapper {
     display: flex;
     flex-wrap: wrap;
@@ -232,7 +239,7 @@
     font-size: 20px;
     width: 700px;
     padding: 40px 20px 80px 20px;
-    transition: all 3s ease;
+    transition: all 1s ease;
     background-color: whitesmoke;
     margin: 10px;
     border-radius: 20px;
@@ -248,6 +255,7 @@
     z-index: 1;
     width: 230px;
     height: fit-content;
+    position: relative;
   }
 
   .details {
@@ -263,7 +271,15 @@
     box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.3);
   }
 
-  .right {
+  .text-right .links {
+    display: inline-flex;
+  }
+
+  .text-right svg {
+    padding: 10px 15px 0 0px;
+  }
+
+  .text-right {
     display: block;
   }
 
@@ -311,14 +327,50 @@
     }
   }
 
-  @media (max-width: 1000px) {
-    .wrapper {
-      display: flex;
+  @media (max-width: 1560px) {
+    .left-boxes {
+      display: none;
+    }
+  }
+
+  @media (max-width: 1330px) {
+    .box-border {
+      grid-template-areas:
+        "sona sona"
+        "left right";
+      text-align: center;
     }
 
+    .right-boxes {
+      grid-area: right;
+      width: 300px;
+      position: relative;
+    }
+
+    .left-boxes {
+      display: block;
+      grid-area: left;
+      width: 300px;
+      left: 20px;
+      float: right;
+    }
+
+    .wrapper {
+      grid-area: sona;
+      display: flex;
+      width: 90%;
+      margin-left: 30px;
+    }
+  }
+
+  @media (max-width: 1000px) {
     .welcome {
       display: flex;
       justify-content: center;
+    }
+
+    .wrapper {
+      margin: 10px;
     }
 
     .title {
