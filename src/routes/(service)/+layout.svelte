@@ -38,9 +38,9 @@
 
 
 
-  @media (max-width: 800px) {
+  @media (max-width: 980px) {
     .grid-container {
-      padding: 20px 10px 10px 20px;
+      padding: 20px 10px 10px 120px;
     }
 
     .content {

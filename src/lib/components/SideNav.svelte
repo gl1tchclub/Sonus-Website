@@ -195,7 +195,7 @@
     background-color: #efc3e6;
   }
 
-  @media (max-width: 800px) {
+  @media (max-width: 980px) {
     .sidenav {
       width: 70px;
       justify-content: center;

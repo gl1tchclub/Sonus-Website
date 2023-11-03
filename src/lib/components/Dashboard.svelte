@@ -79,7 +79,7 @@
 
   }*/
 
-  @media (max-width: 800px) {
+  @media (max-width: 980px) {
     .dashboard {
       left: 5em;
     }

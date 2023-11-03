@@ -345,6 +345,7 @@
       grid-area: right;
       width: 300px;
       position: relative;
+      margin-left: 100px;
     }
 
     .left-boxes {
@@ -363,7 +364,7 @@
     }
   }
 
-  @media (max-width: 1000px) {
+  @media (max-width: 1060px) {
     .welcome {
       display: flex;
       justify-content: center;
@@ -380,6 +381,10 @@
       width: fit-content;
       display: inline-block;
       margin: 20px;
+    }
+    
+    .right-boxes {
+        margin: 0;
     }
 
     .responsive-text {
