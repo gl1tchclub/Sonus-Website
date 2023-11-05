@@ -136,12 +136,14 @@
     </div>
   </div>
   <div class="right-boxes">
+    <div class="sona-desc">
     <SonaDesc>
-      <h3>
-        {finalWords}
-      </h3>
-    </SonaDesc>
-    <div class="small-box follow" style="background-color: rgb(232,217,231)">
+        <h3>
+          {finalWords}
+        </h3>
+      </SonaDesc>
+    </div>
+    <div class="small-box follow change-color followers" >
       <p>Followers:</p>
       <h1 class="details">
         <span class="reveal">
@@ -149,7 +151,7 @@
         </span>
       </h1>
     </div>
-    <div class="small-box follow" style="background-color: rgb(245,224,236)">
+    <div class="small-box follow following" style="background-color: rgb(245,224,236)">
       <p>Following:</p>
       <h1 class="details">
         <span class="reveal">
@@ -157,7 +159,7 @@
         </span>
       </h1>
     </div>
-    <div class="small-box" style="background-color: rgb(184, 190, 221)">
+    <div class="small-box social" style="background-color: rgb(184, 190, 221)">
       <p>Social:</p>
       <h2>
         <span class="reveal"> Montreal, QC </span>
@@ -243,6 +245,19 @@
     z-index: 2;
   }
 
+  .change-color {
+    background-color: rgb(239, 195, 230);
+  }
+
+  .sona-desc {
+    background-color: rgba(208, 164, 219, 0.801);
+    padding: 20px 10px;
+    display: block;
+    margin: 20px 0;
+    border-radius: 20px;
+    box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.3);
+  }
+
   .sona-wrapper {
     text-align: center;
     height: fit-content;
@@ -295,48 +310,18 @@
     .user-bio {
       display: block;
     }
+    .sona-desc {
+      background-color: rgb(240, 166, 202);
+    }
   }
 
   @media (max-width: 1330px) {
-
+    .box-border {
+      display: block;
+      justify-content: center;
+    }
     .user-bio p {
       width: 600px;
-    }
-
-    .box-border {
-      display: grid;
-      grid-template-areas:
-        "sona sona"
-        "left right";
-      text-align: center;
-    }
-
-    .right-boxes {
-      grid-area: right;
-      width: 300px;
-      margin-left: 100px;
-    }
-
-    .left-boxes {
-      display: block;
-      grid-area: left;
-      width: 300px;
-      left: 10px;
-      float: right;
-    }
-
-    .wrapper {
-      grid-area: sona;
-      display: flex;
-      max-width: 92%;
-      padding-bottom: 20px;
-    }
-  }
-
-  @media (max-width: 1060px) {
-
-    .box-border {
-      display: block;
     }
 
     .left-boxes {
@@ -350,16 +335,43 @@
     .right-boxes {
       margin: 0;
       padding-top: 0; 
-      display: inline-block;
+      display: grid;
+      grid-template-columns: 50% 50%;
+      grid-template-rows: 35% 30% 35%;
+      grid-template-areas: 
+        "desc desc"
+        "followers following"
+        "socials socials";
+      width: 95%;
+      text-align: center;
+    }
+
+    .follow {
       width: 90%;
     }
-    
-    .right-boxes > .small-box.follow {
-      width: 40%;
+
+    .followers {
+      grid-area: followers;
+    }    
+
+    .following {
+      grid-area: following;
+      position: relative;
+      left: 15px;
+    }
+
+    .sona-desc {
+      grid-area: desc;
+      
     }
     
     .right-boxes > .small-box {
       margin-top: 0;
+    }
+
+    .social {
+      margin: 0;
+      grid-area: socials;
     }
 
     .wrapper {
