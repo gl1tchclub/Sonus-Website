@@ -40,11 +40,14 @@
 
   @media (max-width: 980px) {
     .grid-container {
-      padding: 20px 10px 10px 120px;
+      padding: 20px 10px 10px 100px;
+      justify-content: left;
     }
 
     .content {
       animation: 2s fadeIn;
+      position: relative;
+      left: 0;
     }
   }
 

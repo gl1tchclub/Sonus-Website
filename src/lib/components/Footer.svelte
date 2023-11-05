@@ -98,7 +98,7 @@
     }
   }
 
-  @media (max-width: 800px) {
+  @media (max-width: 980px) {
     .footer {
       left: 100px;
       transition: all 0.8s ease;

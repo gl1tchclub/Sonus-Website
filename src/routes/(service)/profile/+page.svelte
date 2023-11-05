@@ -63,7 +63,7 @@
 <div class="box-border">
   <div class="left-boxes">
     <div
-      class="small-box text-right"
+      class="small-box"
       style="background-color: rgb(240, 166, 202)"
     >
       <p>Name:</p>
@@ -74,7 +74,7 @@
       </h1>
     </div>
     <div
-      class="small-box text-right"
+      class="small-box username"
       style="background-color: rgb(239, 195, 230)"
     >
       <p>Username:</p>
@@ -84,7 +84,7 @@
         </span>
       </h1>
     </div>
-    <div class="small-box" style="background-color: rgb(245,224,236)">
+    <div class="small-box bio" style="background-color: rgb(245,224,236)">
       <p>Bio:</p>
       <h2>
         <span class="reveal"> 🎵 Music Lover | Playlist Guru 🎧 </span>
@@ -120,7 +120,7 @@
   </div>
   <div class="right-boxes">
     <div
-      class="small-box text-right"
+      class="small-box"
       style="background-color: rgb(184, 190, 221)"
     >
       <p>Followers:</p>
@@ -131,7 +131,7 @@
       </h1>
     </div>
     <div
-      class="small-box text-right"
+      class="small-box "
       style="background-color: rgb(232,217,231)"
     >
       <p>Following:</p>
@@ -142,7 +142,7 @@
       </h1>
     </div>
     <div
-      class="small-box text-right"
+      class="small-box"
       style="background-color: rgb(245,224,236)"
     >
       <p>Social:</p>
@@ -211,7 +211,7 @@
       </div>
     </div>
     <div
-      class="small-box text-right"
+      class="small-box desc"
       style="background-color: rgb(156,137,184, 0.5)"
     >
       <p>Your Sona is...</p>
@@ -228,6 +228,7 @@
     display: grid;
     grid-template-columns: auto auto auto;
     flex-direction: column;
+    z-index: 1;
   }
 
   .wrapper {
@@ -264,23 +265,19 @@
 
   .small-box {
     padding: 20px 10px;
-    display: flex;
+    display: block;
     flex-wrap: wrap;
     margin: 20px 0;
     border-radius: 20px;
     box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.3);
   }
 
-  .text-right .links {
+  .links {
     display: inline-flex;
   }
 
-  .text-right svg {
+  .small-box svg {
     padding: 10px 15px 0 0px;
-  }
-
-  .text-right {
-    display: block;
   }
 
   .welcome {
@@ -366,7 +363,6 @@
 
   @media (max-width: 1060px) {
     .welcome {
-      display: flex;
       justify-content: center;
     }
 
@@ -389,6 +385,40 @@
 
     .responsive-text {
       display: none;
+    }
+  }
+
+  @media (max-width: 980px) {
+    .box-border {
+      grid-template-areas:
+        "sona left right";
+      text-align: center;
+    }
+
+    .right-boxes, .left-boxes {
+      width: fit-content;
+    }
+    .wrapper {
+      width: 100%;
+      height: 30%;
+      font-size: 12px;
+    }
+
+    .sona .img {
+      width: 120px;
+      height: 120px;
+    }
+
+    .small-box {
+      width: 50%;
+    }
+
+    /* .small-box.username {
+      display: none;
+    } */
+
+    .small-box.bio {
+      width: 100%;
     }
   }
 </style>

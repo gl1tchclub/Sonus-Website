@@ -32,7 +32,9 @@ div, h1, h2, p, a {
     100% {opacity: 1;}
   }
 
-  @media (max-width: 800px) {
+  
+
+  @media (max-width: 980px) {
     .grid-container {
         padding: 0;
     }
