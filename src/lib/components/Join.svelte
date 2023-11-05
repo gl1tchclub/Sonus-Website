@@ -1,25 +1,17 @@
 <nav class="header-nav">
-  <a href="/about" class="link">
-    <div class="btn-text">About</div>
-  </a>
-  <a href="/contact" class="link">
-    <div class="btn-text">Contact</div>
-  </a>
-  <a href="/join" class="link">
+  <a href="/profile" class="link">
     <div class="btn-text">Join</div>
-  </a>
-  <a href="/events" class="link">
-    <div class="btn-text">Events</div>
   </a>
 </nav>
 
 <style>
   .header-nav {
-    column-gap: 0.5em;
+    /* column-gap: 0.5em; */
     align-items: center;
     display: flex;
     position: static;
     float: right;
+    padding: 10px;
   }
 
   .header-nav > .link {

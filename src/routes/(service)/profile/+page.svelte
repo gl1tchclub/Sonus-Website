@@ -4,6 +4,7 @@
   import SonaDesc from "../../../lib/components/SonaDescription.svelte";
   import Instagram from "../../../lib/components/Instagram.svelte";
   import Twitter from "../../../lib/components/Twitter.svelte";
+  import fetchData from "$lib/components/Fetch.js";
 
   const BASE_URL = "https://api.unsplash.com/";
   const WORD_URL = "https://api.api-ninjas.com/v1/thesaurus?";
@@ -42,7 +43,7 @@
     user = temp;
     bio = `I'm ${user.name}, a music aficionado on a quest to find the perfect
             track for every moment. I create unique playlists for all occasions,
-            and I'm here to show the world my Sona! 🎶🕺💃`
+            and I'm here to show the world my Sona! 🎶🕺💃`;
 
     for (let i = 0; i < firstWords.length; i++) {
       res = await fetch(`${WORD_URL}word=${firstWords[i]}`, {
@@ -136,14 +137,14 @@
     </div>
   </div>
   <div class="right-boxes">
-    <div class="sona-desc">
-    <SonaDesc>
+    <div class="small-box sona-desc">
+      <SonaDesc>
         <h3>
           {finalWords}
         </h3>
       </SonaDesc>
     </div>
-    <div class="small-box follow change-color followers" >
+    <div class="small-box follow change-color followers">
       <p>Followers:</p>
       <h1 class="details">
         <span class="reveal">
@@ -151,7 +152,10 @@
         </span>
       </h1>
     </div>
-    <div class="small-box follow following" style="background-color: rgb(245,224,236)">
+    <div
+      class="small-box follow following"
+      style="background-color: rgb(245,224,236)"
+    >
       <p>Following:</p>
       <h1 class="details">
         <span class="reveal">
@@ -167,12 +171,12 @@
       <div class="socials">
         <a href="https://www.instagram.com/{user.insta}" target="_blank">
           <span class="reveal">
-            <Instagram/>
+            <Instagram />
           </span>
         </a>
         <a href="https://www.twitter.com/{user.twt}" target="_blank">
           <span class="reveal">
-            <Twitter/>
+            <Twitter />
           </span>
         </a>
       </div>
@@ -250,12 +254,7 @@
   }
 
   .sona-desc {
-    background-color: rgba(208, 164, 219, 0.801);
-    padding: 20px 10px;
-    display: block;
-    margin: 20px 0;
-    border-radius: 20px;
-    box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.3);
+    background-color: rgba(213, 158, 226, 0.801);
   }
 
   .sona-wrapper {
@@ -334,11 +333,11 @@
 
     .right-boxes {
       margin: 0;
-      padding-top: 0; 
+      padding-top: 0;
       display: grid;
       grid-template-columns: 50% 50%;
       grid-template-rows: 38% 30% 32%;
-      grid-template-areas: 
+      grid-template-areas:
         "desc desc"
         "followers following"
         "socials socials";
@@ -352,7 +351,7 @@
 
     .followers {
       grid-area: followers;
-    }    
+    }
 
     .following {
       grid-area: following;
@@ -362,9 +361,8 @@
 
     .sona-desc {
       grid-area: desc;
-      
     }
-    
+
     .right-boxes > .small-box {
       margin-top: 0;
     }
@@ -430,10 +428,9 @@
       width: fit-content;
       justify-content: center;
     }
-    
+
     .user-bio {
       text-align: center;
     }
   }
-
 </style>
