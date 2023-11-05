@@ -1,4 +1,4 @@
-<div class="desc-box" style="background-color: rgb(156,137,184, 0.5)">
+<div class="desc-box">
   <p>Your Sona is...</p>
   <h2 class="reveal">
     <slot />
@@ -12,5 +12,6 @@
     margin: 20px 0;
     border-radius: 20px;
     box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.3);
+    background-color: rgb(156,137,184, 0.5)
   }
 </style>
