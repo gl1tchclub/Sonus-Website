@@ -304,6 +304,7 @@
     }
 
     .box-border {
+      display: grid;
       grid-template-areas:
         "sona sona"
         "left right";

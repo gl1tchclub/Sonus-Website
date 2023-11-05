@@ -50,11 +50,48 @@
 </footer>
 
 <style>
+  .footer {
+    max-width: 70%;
+    height: 25vh;
+    position: relative;
+    left: 280px;
+    z-index: 0;
+    margin-top: 40px;
+    padding: 20px;
+    transition: all 0.5s ease;
+  }
+
+  .footer-content {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 300px 300px 225px;
+    grid-template-rows: 100px 100px;
+    grid-template-areas:
+      "company contact socials"
+      "trademark trademark trademark";
+    position: relative;
+    margin: 0 10px 0 0;
+  }
+  .footer-content > div:nth-of-type(1) {
+    grid-area: company;
+  }
+
+  .footer-content > div:nth-of-type(2) {
+    grid-area: contact;
+  }
+
+  .footer-content ul,
+  a {
+    color: gray;
+    list-style-type: none;
+  }
+
   .section-right {
     display: flex;
     align-items: center;
-    width: 300px;
+    width: 200px;
     animation: fadeIn 4s ease;
+    grid-area: socials;
   }
 
   .social-div {
@@ -66,62 +103,36 @@
     position: relative;
   }
 
-  .footer {
-    max-width: 83%;
-    height: 25vh;
-    position: relative;
-    left: 280px;
-    z-index: 0;
-    margin-top: 40px;
-    padding: 20px;
-    transition: all 0.5s ease;
-  }
-
-  .footer-content ul,
-  a {
-    color: gray;
-    list-style-type: none;
-  }
-
-  .footer-content {
-    flex-wrap: wrap;
-    /* border-bottom: 1px solid rgba(128, 128, 128, 0.425); */
-    padding: 0 0 60px 0;
-    width: 100%;
-    display: grid;
-    grid-template-columns: 300px 300px 300px;
-    grid-template-rows: 100px 100px;
-    position: relative;
-    margin: 0 10px 0 0;
-  }
-
   .trademark {
     opacity: 0.5;
     padding: 20px 0 0 0;
     display: block;
     left: 280px;
     transition: all 3s ease;
+    grid-area: trademark;
   }
-
-  /* @media (max-width: 1700px) {
-    .footer {
-      width: 81%;
-    }
-  }
-
-  @media (max-width: 1400px) {
-    .footer {
-      width: 75%;
-    }
-  } */
 
   @media (max-width: 1100px) {
-    
+    .footer-content {
+      grid-template-columns: 300px 300px;
+      grid-template-rows: 100px 100px;
+      grid-template-areas:
+        "company contact"
+        "socials trademark";
+      row-gap: 40px;
+      column-gap: 180px;
+    }
+
   }
 
   @media (max-width: 980px) {
+    .footer-content {
+      grid-template-columns: 200px 200px;
+      column-gap: normal;
+    }
+
     .footer {
-      left: 100px;
+      left: 90px;
       transition: all 0.8s ease;
     }
   }
