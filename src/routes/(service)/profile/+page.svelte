@@ -7,6 +7,7 @@
   const WORD_URL = "https://api.api-ninjas.com/v1/thesaurus?";
   const photoKey = "FkjKMeG-arrW_qolpGUoya8HBCEBUCkjH3j9BB2dwms";
   const wordKey = "Ae1hKMbFv0SCDY3vQCEjmw==o7A0rHaDqNpzntyL";
+  let bio = "";
   let sona = "";
   let user = [];
   const firstWords = ["elegant", "spiky", "chaotic"];
@@ -37,6 +38,9 @@
     };
 
     user = temp;
+    bio = `I'm ${user.name}, a music aficionado on a quest to find the perfect
+            track for every moment. I create unique playlists for all occasions,
+            and I'm here to show the world my Sona! 🎶🕺💃`
 
     for (let i = 0; i < firstWords.length; i++) {
       res = await fetch(`${WORD_URL}word=${firstWords[i]}`, {
@@ -89,9 +93,7 @@
       </h2>
       <p>
         <span class="reveal">
-          I'm {user.name}, a music aficionado on a quest to find the perfect
-          track for every moment. I create unique playlists for all occasions,
-          and I'm here to show the world my Sona! 🎶🕺💃
+          {bio}
         </span>
       </p>
     </div>
@@ -117,7 +119,7 @@
       <div class="user-bio">
         <h1>
           <span class="reveal">
-            {user.name}
+            Welcome, {user.name}
           </span>
         </h1>
         <h2>
@@ -125,9 +127,7 @@
         </h2>
         <p>
           <span class="reveal">
-            I'm {user.name}, a music aficionado on a quest to find the perfect
-            track for every moment. I create unique playlists for all occasions,
-            and I'm here to show the world my Sona! 🎶🕺💃
+            {bio}
           </span>
         </p>
       </div>
@@ -252,7 +252,10 @@
 
   .user-bio {
     display: none;
-    margin-top: 20px;
+  }
+
+  .user-bio h1 {
+    padding-bottom: 10px;
   }
 
   .left-boxes,
@@ -313,10 +316,10 @@
   }
 
   .img {
-    animation: rotation 5s infinite linear;
+    animation: pulse 5s infinite linear;
   }
 
-  @keyframes rotation {
+  @keyframes pulse {
     0% {
       transform: scale(1.05);
     }
@@ -345,6 +348,16 @@
   }
 
   @media (max-width: 1330px) {
+
+    .user-bio p, .user-bio h2 {
+      display: none;
+    }
+
+    .user-bio h1 {
+      display: block;
+
+    }
+
     .box-border {
       grid-template-areas:
         "sona sona"
@@ -355,8 +368,9 @@
     .right-boxes {
       grid-area: right;
       width: 300px;
-      position: relative;
-      margin-left: 100px;
+      float: right;
+      /* position: abs; */
+      margin-left: 120px;
     }
 
     .left-boxes {
