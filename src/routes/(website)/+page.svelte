@@ -12,7 +12,12 @@
 
         bg = json.urls.full;
     });
-    
+
 </script>
+
+<div class="home-container">
+    <div class="fixed-bg"></div>
+    
+</div>
 
 <JoinButton />

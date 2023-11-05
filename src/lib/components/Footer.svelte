@@ -51,10 +51,7 @@
 
 <style>
   .footer {
-    max-width: 70%;
     height: 25vh;
-    position: relative;
-    left: 280px;
     z-index: 0;
     margin-top: 40px;
     padding: 20px;
@@ -122,7 +119,6 @@
       row-gap: 40px;
       column-gap: 180px;
     }
-
   }
 
   @media (max-width: 980px) {
@@ -131,15 +127,10 @@
       column-gap: normal;
     }
 
-    .footer {
-      left: 100px;
-      transition: all 0.8s ease;
-    }
+
   }
 
   @media (max-width: 840px) {
-    .footer {
-      left: 10px;
-    }
+
   }
 </style>

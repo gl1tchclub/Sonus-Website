@@ -20,7 +20,9 @@
     <slot />
   </div>
 </div>
-<Footer />
+<div class="footer-container">
+  <Footer />
+</div>
 
 <style>
   .content {
@@ -36,6 +38,13 @@
     justify-content: center;
   }
 
+  .footer-container {
+    width: fit-content;
+    display: flex;
+    position: relative;
+    left: 280px;
+  }
+
   @media (max-width: 980px) {
     .grid-container {
       padding: 20px 10px 10px 100px;
@@ -47,12 +56,21 @@
       position: relative;
       left: 0;
     }
+
+    .footer-container {
+      left: 100px;
+      transition: all 0.8s ease;
+    }
   }
 
   @media (max-width: 840px) {
     .grid-container {
       padding: 20px 10px 20px 20px;
       justify-content: center;
+    }
+
+    .footer-container {
+      left: 10px;
     }
   }
 
