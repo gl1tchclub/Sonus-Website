@@ -49,7 +49,8 @@
     border-radius: 0.2em;
     border: none;
     padding: 0;
-    background-color: rgba(255, 251, 251, 0.432);
+    background-color: #9c89b8;
+    /* background-color: rgba(255, 251, 251, 0.432); */
     position: sticky;
   }
   dialog::backdrop {
@@ -150,6 +151,12 @@
   @keyframes close {
     100% {
       opacity: 1;
+    }
+  }
+
+  @media (min-width: 720px) {
+    dialog {
+      display: none;
     }
   }
 </style>

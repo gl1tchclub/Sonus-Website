@@ -51,5 +51,16 @@
     }
   }
 
+  @media (max-width: 840px) {
+    .grid-container {
+      padding: 20px 20px;
+    }
+  }
+
+  @media (max-width: 720px) {
+    .grid-container {
+      justify-content: center;
+    }
+  }
 
 </style>

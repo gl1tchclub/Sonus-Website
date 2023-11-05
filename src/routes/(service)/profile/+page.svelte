@@ -337,7 +337,7 @@
       padding-top: 0; 
       display: grid;
       grid-template-columns: 50% 50%;
-      grid-template-rows: 35% 30% 35%;
+      grid-template-rows: 40% 30% 30%;
       grid-template-areas: 
         "desc desc"
         "followers following"
@@ -416,8 +416,23 @@
   }
 
   @media (max-width: 720px) {
+    .box-border {
+      position: relative;
+      /* right: 200px; */
+    }
+
     .follow {
       width: 85%;
     }
+
+    .wrapper {
+      width: fit-content;
+      justify-content: center;
+    }
+    
+    .user-bio {
+      text-align: center;
+    }
   }
+
 </style>

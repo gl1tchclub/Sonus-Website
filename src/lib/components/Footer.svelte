@@ -132,7 +132,7 @@
     }
 
     .footer {
-      left: 90px;
+      left: 10px;
       transition: all 0.8s ease;
     }
   }
