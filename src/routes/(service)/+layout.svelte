@@ -36,8 +36,6 @@
     justify-content: center;
   }
 
-
-
   @media (max-width: 980px) {
     .grid-container {
       padding: 20px 10px 10px 100px;
@@ -53,7 +51,8 @@
 
   @media (max-width: 840px) {
     .grid-container {
-      padding: 20px 20px;
+      padding: 20px 10px 20px 20px;
+      justify-content: center;
     }
   }
 
