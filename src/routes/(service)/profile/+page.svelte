@@ -1,6 +1,7 @@
 <script>
   import { onMount } from "svelte";
   import { get } from "svelte/store";
+  import SonaDesc from "../../../lib/components/SonaDescription.svelte";
 
   const BASE_URL = "https://api.unsplash.com/";
   const WORD_URL = "https://api.api-ninjas.com/v1/thesaurus?";
@@ -62,10 +63,7 @@
 
 <div class="box-border">
   <div class="left-boxes">
-    <div
-      class="small-box"
-      style="background-color: rgb(240, 166, 202)"
-    >
+    <div class="small-box" style="background-color: rgb(240, 166, 202)">
       <p>Name:</p>
       <h1 class="details">
         <span class="reveal">
@@ -105,24 +103,38 @@
       </span>
     </div>
     <div class="welcome">
-      <div class="title">
+      <div class="sona-text title">
         <h1>
           <span class="reveal"> Discover your Sona! </span>
         </h1>
       </div>
-      <p class="responsive-text">
+      <p class="sona-text">
         <span class="reveal">
           Here, you will find your unique musical persona, your very own 'Sona',
           shaped by your distinctive and defined taste in music!
         </span>
       </p>
+      <div class="user-bio">
+        <h1>
+          <span class="reveal">
+            {user.name}
+          </span>
+        </h1>
+        <h2>
+          <span class="reveal"> 🎵 Music Lover | Playlist Guru 🎧 </span>
+        </h2>
+        <p>
+          <span class="reveal">
+            I'm {user.name}, a music aficionado on a quest to find the perfect
+            track for every moment. I create unique playlists for all occasions,
+            and I'm here to show the world my Sona! 🎶🕺💃
+          </span>
+        </p>
+      </div>
     </div>
   </div>
   <div class="right-boxes">
-    <div
-      class="small-box"
-      style="background-color: rgb(184, 190, 221)"
-    >
+    <div class="small-box" style="background-color: rgb(184, 190, 221)">
       <p>Followers:</p>
       <h1 class="details">
         <span class="reveal">
@@ -130,10 +142,7 @@
         </span>
       </h1>
     </div>
-    <div
-      class="small-box "
-      style="background-color: rgb(232,217,231)"
-    >
+    <div class="small-box" style="background-color: rgb(232,217,231)">
       <p>Following:</p>
       <h1 class="details">
         <span class="reveal">
@@ -141,10 +150,7 @@
         </span>
       </h1>
     </div>
-    <div
-      class="small-box"
-      style="background-color: rgb(245,224,236)"
-    >
+    <div class="small-box" style="background-color: rgb(245,224,236)">
       <p>Social:</p>
       <h2>
         <span class="reveal"> Montreal, QC </span>
@@ -210,15 +216,11 @@
         </a>
       </div>
     </div>
-    <div
-      class="small-box desc"
-      style="background-color: rgb(156,137,184, 0.5)"
-    >
-      <p>Your Sona is...</p>
-      <h2 class="reveal">
+    <SonaDesc>
+      <h3>
         {finalWords}
-      </h2>
-    </div>
+      </h3>
+    </SonaDesc>
   </div>
 </div>
 
@@ -248,6 +250,11 @@
     z-index: 1;
   }
 
+  .user-bio {
+    display: none;
+    margin-top: 20px;
+  }
+
   .left-boxes,
   .right-boxes {
     display: block;
@@ -266,7 +273,6 @@
   .small-box {
     padding: 20px 10px;
     display: block;
-    flex-wrap: wrap;
     margin: 20px 0;
     border-radius: 20px;
     box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.3);
@@ -276,7 +282,7 @@
     display: inline-flex;
   }
 
-  .small-box svg {
+  .socials svg {
     padding: 10px 15px 0 0px;
   }
 
@@ -328,6 +334,14 @@
     .left-boxes {
       display: none;
     }
+
+    .sona-text {
+      display: none;
+    }
+
+    .user-bio {
+      display: block;
+    }
   }
 
   @media (max-width: 1330px) {
@@ -378,24 +392,20 @@
       display: inline-block;
       margin: 20px;
     }
-    
-    .right-boxes {
-        margin: 0;
-    }
 
-    .responsive-text {
-      display: none;
+    .right-boxes {
+      margin: 0;
     }
   }
 
   @media (max-width: 980px) {
     .box-border {
-      grid-template-areas:
-        "sona left right";
+      grid-template-areas: "sona left right";
       text-align: center;
     }
 
-    .right-boxes, .left-boxes {
+    .right-boxes,
+    .left-boxes {
       width: fit-content;
     }
     .wrapper {
@@ -405,8 +415,8 @@
     }
 
     .sona .img {
-      width: 120px;
-      height: 120px;
+      width: 160px;
+      height: 160px;
     }
 
     .small-box {
