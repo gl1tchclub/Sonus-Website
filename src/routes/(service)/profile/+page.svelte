@@ -162,7 +162,7 @@
       <h2>
         <span class="reveal"> Montreal, QC </span>
       </h2>
-      <div class="socials links">
+      <div class="socials">
         <a href="https://www.instagram.com/{user.insta}" target="_blank">
           <span class="reveal">
             <Instagram/>
@@ -235,7 +235,7 @@
     box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.3);
   }
 
-  .links {
+  .socials {
     display: inline-flex;
   }
 
@@ -298,14 +298,6 @@
   }
 
   @media (max-width: 1330px) {
-
-    /* .user-bio p, .user-bio h2 {
-      display: none;
-    }
-
-    .user-bio h1 {
-      display: block;
-    } */
 
     .user-bio p {
       width: 600px;

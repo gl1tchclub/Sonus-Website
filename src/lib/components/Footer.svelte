@@ -2,6 +2,7 @@
   import Instagram from "./Instagram.svelte";
   import Twitter from "./Twitter.svelte";
 </script>
+
 <footer class="footer">
   <div class="footer-content">
     <div class="footer-list">
@@ -10,8 +11,14 @@
       </h2>
       <ul>
         <span class="reveal">
-            <li><a href="/" style="text-decoration: none">About</a></li>
-            <li>Jobs</li>
+          <li>
+            <span class="reveal">
+              <a href="/" style="text-decoration: none">About</a>
+            </span>
+          </li>
+          <li>
+            <span class="reveal"> Jobs </span>
+          </li>
         </span>
       </ul>
     </div>
@@ -21,35 +28,42 @@
       </h2>
       <ul>
         <span class="reveal">
-            <li>Support</li>
-            <li>App</li>
+          <li>
+            <span class="reveal"> Support </span>
+          </li>
+          <li>
+            <span class="reveal"> App </span>
+          </li>
         </span>
       </ul>
     </div>
     <div class="section-right">
-      <div class="social-border">
-        <Instagram/>
+      <div class="social-div">
+        <Instagram />
       </div>
-      <div class="social-border">
-        <Twitter/>
+      <div class="social-div">
+        <Twitter />
       </div>
+    </div>
+    <div class="trademark">© 2023 Sonus NZ</div>
   </div>
-  <div class="trademark">© 2023 Sonus NZ</div>
 </footer>
 
 <style>
-
   .section-right {
     display: flex;
     align-items: center;
     width: 300px;
+    animation: fadeIn 4s ease;
   }
 
-  .social-border {
+  .social-div {
     border: 1px solid rgba(128, 128, 128, 0.2);
     border-radius: 30px;
     background-color: rgba(216, 215, 215, 0.411);
     margin: 10px;
+    top: -20px;
+    position: relative;
   }
 
   .footer {
@@ -59,36 +73,26 @@
     left: 280px;
     z-index: 0;
     margin-top: 40px;
-    /* justify-content: space-between; */
     padding: 20px;
     transition: all 0.5s ease;
   }
-  
+
   .footer-content ul,
   a {
     color: gray;
     list-style-type: none;
   }
-  
+
   .footer-content {
     flex-wrap: wrap;
-    border-bottom: 1px solid rgba(128, 128, 128, 0.425);
+    /* border-bottom: 1px solid rgba(128, 128, 128, 0.425); */
     padding: 0 0 60px 0;
-    /* height: fit-content; */
     width: 100%;
-    display: flex;
+    display: grid;
+    grid-template-columns: 300px 300px 300px;
+    grid-template-rows: 100px 100px;
     position: relative;
     margin: 0 10px 0 0;
-  }
-
-  .footer-list {
-    /* float: left; */
-    width: 300px;
-  }
-
-  .footer-list {
-    /* float: right; */
-    width: 300px;
   }
 
   .trademark {
@@ -99,7 +103,7 @@
     transition: all 3s ease;
   }
 
-  @media (max-width: 1700px) {
+  /* @media (max-width: 1700px) {
     .footer {
       width: 81%;
     }
@@ -109,16 +113,10 @@
     .footer {
       width: 75%;
     }
-  }
+  } */
 
-  @media (max-width: 1200px) {
-    .footer-content {
-      border: none;
-    }
-
-    .footer {
-      left: 280px;
-    }
+  @media (max-width: 1100px) {
+    
   }
 
   @media (max-width: 980px) {
