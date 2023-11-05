@@ -132,8 +132,14 @@
     }
 
     .footer {
-      left: 10px;
+      left: 100px;
       transition: all 0.8s ease;
+    }
+  }
+
+  @media (max-width: 840px) {
+    .footer {
+      left: 10px;
     }
   }
 </style>

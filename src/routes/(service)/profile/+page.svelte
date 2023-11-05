@@ -337,7 +337,7 @@
       padding-top: 0; 
       display: grid;
       grid-template-columns: 50% 50%;
-      grid-template-rows: 40% 30% 30%;
+      grid-template-rows: 38% 30% 32%;
       grid-template-areas: 
         "desc desc"
         "followers following"
@@ -372,6 +372,7 @@
     .social {
       margin: 0;
       grid-area: socials;
+      /* padding-bottom: 10px; */
     }
 
     .wrapper {
