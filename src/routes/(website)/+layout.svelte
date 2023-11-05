@@ -22,10 +22,7 @@
 <style>
     .container {
         width: 100%;
-        height: 500px;
-        background-position: center;
-        background-size: cover;
-        background-image: url();
+        height: 100vh;
     }
 
     /* :global(body) {
