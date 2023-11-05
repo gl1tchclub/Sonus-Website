@@ -13,7 +13,7 @@
   on:click|self={() => dialog.close()}
 >
   <!-- svelte-ignore a11y-no-static-element-interactions -->
-  <div class="modal-wrap" on:click|stopPropagation>
+  <div on:click|stopPropagation>
     <!-- svelte-ignore a11y-autofocus -->
     <button class="button" autofocus on:click={() => dialog.close()}>
       <span class="X"></span>
@@ -50,20 +50,17 @@
     border: none;
     padding: 0;
     background-color: #9c89b8;
-    /* background-color: rgba(255, 251, 251, 0.432); */
     position: sticky;
     bottom: 30%;
     left: 25%;
-    display: flex;
     padding-bottom: 20px;
     text-align: center;
   }
   dialog::backdrop {
     background: rgba(0, 0, 0, 0.3);
   }
-  dialog > .modal-wrap {
+  dialog > div {
     padding: 1em;
-    width: 100%;
   }
   dialog[open] {
     animation: zoom 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
