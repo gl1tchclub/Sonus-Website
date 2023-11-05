@@ -4,3 +4,6 @@ grid link
 use deezer for music stuff - mintep1 username
 
 https://www.youtube.com/watch?v=CD95ay53Vho
+
+https://www.w3schools.com/cssref/tryit.php?filename=trycss_background-attachment_fixed
+background iamge
