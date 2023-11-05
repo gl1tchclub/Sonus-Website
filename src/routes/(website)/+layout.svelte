@@ -23,7 +23,7 @@
         background-image: url();
     }
 
-    :global(body) {
+    /* :global(body) {
         height: 300vh;
-    }
+    } */
 </style>

@@ -1,10 +1,8 @@
 <script>
   import { onMount } from "svelte";
-  import { get } from "svelte/store";
   import SonaDesc from "../../../lib/components/SonaDescription.svelte";
   import Instagram from "../../../lib/components/Instagram.svelte";
   import Twitter from "../../../lib/components/Twitter.svelte";
-  import fetchData from "$lib/components/Fetch.js";
 
   const BASE_URL = "https://api.unsplash.com/";
   const WORD_URL = "https://api.api-ninjas.com/v1/thesaurus?";
