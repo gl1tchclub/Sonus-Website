@@ -230,4 +230,10 @@
       display: none;
     }
   }
+
+  @media (max-width: 840px) {
+    .sidenav {
+      display: none;
+    }
+  }
 </style>

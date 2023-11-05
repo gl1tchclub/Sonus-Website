@@ -23,17 +23,17 @@
     <hr />
     <nav class="modal-nav">
       <div class="links">
-        <a href="/about" class="link">
+        <a href="/profile" class="link">
+          <div class="link-text">Profile</div>
+        </a>
+        <a href="/library" class="link">
+          <div class="link-text">Library</div>
+        </a>
+        <a href="/discover" class="link">
+          <div class="link-text">Discover</div>
+        </a>
+        <a href="/" class="link">
           <div class="link-text">About</div>
-        </a>
-        <a href="/join" class="link">
-          <div class="link-text">Join</div>
-        </a>
-        <a href="/events" class="link">
-          <div class="link-text">Events</div>
-        </a>
-        <a href="/contact" class="link">
-          <div class="link-text">Contact</div>
         </a>
       </div>
     </nav>
@@ -82,8 +82,6 @@
   }
 
   .modal-nav {
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-      sans-serif;
     display: flex;
     position: sticky;
     padding: 20px;

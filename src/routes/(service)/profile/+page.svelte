@@ -379,37 +379,45 @@
     }
   }
 
-  @media (max-width: 980px) {
-    .box-border {
-      grid-template-areas: "sona left right";
-      text-align: center;
+  @media (max-width: 840px) {
+    .sona-text {
+      display: none;
     }
 
-    .right-boxes,
-    .left-boxes {
-      width: fit-content;
-    }
     .wrapper {
-      width: 100%;
-      height: 30%;
-      font-size: 12px;
+      position: relative;
+      justify-content: left;
+      align-items: center;
+      padding-bottom: 40px;
+    }
+
+    .sona-wrapper {
+      width: fit-content;
     }
 
     .sona .img {
-      width: 160px;
-      height: 160px;
+      width: 150px;
+      height: 150px;
     }
 
-    .small-box {
-      width: 50%;
+    .user-bio {
+      font-size: 15px;
+      max-width: 100%;
+      text-align: left;
     }
 
-    /* .small-box.username {
+    .welcome {
+      height: fit-content;
+    }
+
+    .user-bio p {
       display: none;
-    } */
+    }
+  }
 
-    .small-box.bio {
-      width: 100%;
+  @media (max-width: 720px) {
+    .follow {
+      width: 85%;
     }
   }
 </style>
