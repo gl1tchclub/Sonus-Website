@@ -31,12 +31,12 @@
             height="100%"
           />
         </div>
-        <span class="reveal-delay">
-          <div class="btn">
-            <JoinButton>Discover your Sona!</JoinButton>
-          </div>
-        </span>
       </div>
+      <span class="reveal-delay">
+        <div class="btn">
+          <JoinButton>Discover your Sona!</JoinButton>
+        </div>
+      </span>
       <div class="" />
     </div>
   </div>
@@ -72,11 +72,16 @@
 
   .header-section {
     z-index: 2;
+    align-items: center;
     width: 100%;
     height: 60%;
     display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: 80% 20%;
+    grid-template-columns: 50%;
+    grid-template-areas:
+      "main"
+      "lower"
+      "button";
+    grid-template-rows: 60% 20% 20%;
     padding-top: 200px;
     flex-wrap: wrap;
     justify-content: center;
@@ -85,20 +90,20 @@
   .header-top-container {
     justify-content: center;
     display: flex;
-    width: fit-content;
-    max-width: 100%;
+    width: 100%;
     height: 100%;
     background-color: transparent;
-    flex-wrap: wrap;
+    grid-area: main;
   }
 
   .brand {
     width: 100%;
-    height: 60%;
+    height: 100%;
     justify-content: center;
     text-align: center;
     animation: pulse 2s infinite linear;
     position: relative;
+    grid-area: main;
   }
 
   .brand-name {
@@ -122,9 +127,13 @@
   }
 
   .btn {
-    width: fit-content;
-    display: block;
-    z-index: 1;
-    grid-area: main;
+}
+
+.header-section:not(.brand) > .reveal-delay {
+    grid-area: button;
+    position: relative;
+    justify-content: center;
+    left: 29%;
+    align-items: center;
   }
 </style>
