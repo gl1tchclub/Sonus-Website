@@ -2,6 +2,7 @@
   import JoinButton from "$lib/components/Join.svelte";
   import { onMount } from "svelte";
   let loading_arr = "LOADING...".split("");
+  let textArr = ["DISCOVER", "CREATE", "LISTEN", "REPEAT"];
 
   onMount(() => {
     setTimeout(async () => {
@@ -10,11 +11,15 @@
   });
 </script>
 
-<!-- <div class="loading">
+<svelte:head>
+  <link rel="stylesheet" href="css/main.css" />
+</svelte:head>
+
+<div class="loading">
     {#each loading_arr as letter, i}
         <span style="--i:{i+1}">{letter}</span>
     {/each}
-</div> -->
+</div>
 
 <div class="home-container">
   <div class="top-section">
@@ -28,7 +33,7 @@
             src="./img/just-icon.png"
             class="brand-logo"
             alt="sona small"
-            height="100%"
+            height="90%"
           />
         </div>
       </div>
@@ -44,10 +49,13 @@
   </div>
   <div class="second-section">
     <div class="middle-container">
-      <h1>DISCOVER</h1>
+        {#each textArr as word, x}
+            <h1 style="--i:{x+1}">{word}</h1>
+        {/each}
+      <!-- <h1>DISCOVER</h1>
       <h1>CREATE</h1>
       <h1>LISTEN</h1>
-      <h1>REPEAT</h1>
+      <h1>REPEAT</h1> -->
     </div>
   </div>
 </div>
@@ -64,7 +72,14 @@
     background-color: #edede9;
     width: 100%;
     text-align: center;
+    font-size: 40px;
+    height: 150vh;
+    align-items: center;
   }
+
+
+
+
 
   .home-container {
     width: 100%;

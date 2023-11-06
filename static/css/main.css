@@ -1,7 +1,7 @@
 :root {
   --purple: #9c89b8;
   --dark-pink: #f0a6ca;
-  --light-pink: #efc386;
+  --light-pink: #efc3e6;
   --gray-pink: #f0e6ef;
   --light-purple: #b8bedd;
   --text-color: #1F1F1F;
@@ -77,16 +77,55 @@ div, h1, h2, p, a {
   .loading span {
     position: relative;
     display: flex;
-    font-size: 40px;
+    font-size: 80px;
     color: var(--dark-pink);
     text-transform: uppercase;
     animation: 2s infinite flip; /* infinite as it's scalable */
-    animation-delay: calc(.2s * var(--i))
+    animation-delay: calc(.2s * var(--i));
   }
  
   @keyframes flip {
     0%,80% {
-      transform: rotateY(360deg) 
+      transform: rotateY(360deg);
+    }
+  }
+
+  .middle-container h1 {
+    animation: 4s infinite step-end textAnim;
+    animation-delay: calc(.2s * var(--x));
+    color: #efc3e6;
+    display: block;
+    margin: 20px;
+    text-shadow: 0;
+  }
+
+  @keyframes textAnim {
+    0% {
+      text-shadow:
+        1px 1px #9c89b8,
+        2px 2px #9c89b8,
+        3px 3px #9c89b8,
+        4px 4px #9c89b8,
+        5px 5px #9c89b8,
+        6px 6px #9c89b8,
+        7px 7px #9c89b8,
+        8px 8px #9c89b8,
+        9px 9px #9c89b8,
+        10px 10px #9c89b8,
+        10px 11px #1F1F1F,
+        8px 12px #1F1F1F,
+        6px 13px #1F1F1F,
+        4px 14px #1F1F1F,
+        2px 15px #1F1F1F,
+        0px 16px #1F1F1F,
+        -2px 17px #1F1F1F,
+        -4px 18px #1F1F1F,
+        -6px 19px #1F1F1F,
+        -8px 20px #1F1F1F,
+        -10px 21px #1F1F1F;
+    }
+    25% {
+      text-shadow:none;
     }
   }
 
