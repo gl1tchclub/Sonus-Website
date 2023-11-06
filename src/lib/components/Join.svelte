@@ -1,36 +1,23 @@
-<button class="join-button">
-  <a href="/profile" class="link">
-    <div class="btn-text">Discover Your Sona!</div>
-  </a>
-</button>
+<a href="/profile" class="link">
+  <div class="btn-text">Discover Your Sona!</div>
+</a>
 
 <style>
-  .join-button {
-    align-items: center;
-    display: block;
+  .link {
     position: absolute;
-    padding: 20px;
-    background-color: transparent;
-    border: none;
-    width: fit-content;
-  }
-  
-  .join-button > .link {
     justify-content: center;
     border-radius: 100vw;
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-      sans-serif;
     font-weight: 400;
     font-size: 25px;
-    width: 100%;
-    line-height: 1.4;
+    width: 20%;
+    line-height: 1.4em;
     text-decoration: none;
     display: flex;
     transition: all 0.3s ease-in-out;
     box-shadow: 0px 5px 5px #2d283638,
     0px 8px 10px #2d28364b;
     padding-block: 0.5rem;
-    padding-inline: 1.25rem;
+    /* padding-inline: 1.25rem; */
     background-color: #ac96cc;
     color: #ffff;
     border: 3px solid #ffffff4d;

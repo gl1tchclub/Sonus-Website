@@ -5,7 +5,7 @@
 <div class="home-container">
   <div class="top-section">
     <div class="header-section">
-      <div class="header-section-container">
+      <div class="header-top-container">
         <JoinButton />
         <h1>hello!!!!</h1>
       </div>
@@ -29,11 +29,17 @@
   .header-section {
     z-index: 2;
     width: 100%;
-    height: 80%;
-  }
+    height: 60%;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 75% 25%;
+    padding-top: 200px;
+    flex-wrap: wrap;
+}
 
-  .header-section-container {
-    display: block;
+.header-top-container {
+    justify-content: center;
+    display: flex;
     width: 100%;
     height: 100%;
     background-color: transparent;

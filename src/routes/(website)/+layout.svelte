@@ -64,6 +64,10 @@
     }
   }
 
+  .slot {
+    padding: 0 40px;
+  }
+
   @media (max-width: 1460px) {
     .site-container {
       background-size: 130%;
@@ -73,6 +77,12 @@
   @media (max-width: 1200px) {
     .site-container {
       background-size: 300%;
+    }
+  }
+
+  @media (max-height: 880px) {
+    .site-container {
+      background-size: 200% 110%;
     }
   }
 </style>
