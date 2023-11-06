@@ -32,12 +32,14 @@
           />
         </div>
       </div>
-      <span class="reveal-delay">
-        <div class="btn">
-          <JoinButton>Discover your Sona!</JoinButton>
-        </div>
-      </span>
-      <div class="" />
+      <div class="lower-section">
+        <span class="reveal-delay">
+          <div class="btn">
+            <JoinButton>Discover your Sona!</JoinButton>
+          </div>
+        </span>
+      </div>
+      <div class="arrow-section" />
     </div>
   </div>
   <div class="second-section">
@@ -74,7 +76,7 @@
     z-index: 2;
     align-items: center;
     width: 100%;
-    height: 60%;
+    height: 70%;
     display: grid;
     grid-template-columns: 50%;
     grid-template-areas:
@@ -126,14 +128,23 @@
     animation: fadeIn 4s ease-in 3s;
   }
 
-  .btn {
-}
-
-.header-section:not(.brand) > .reveal-delay {
+  .lower-section {
+    justify-content: center;
     grid-area: button;
+  }
+
+  .btn {
     position: relative;
     justify-content: center;
-    left: 29%;
+    /* left: 35%; */
     align-items: center;
+    width: 280px;
+    height: 60px;
+    padding: 20px;
+  }
+
+  .lower-section > .reveal-delay {
+    width: fit-content;
+    padding: 0 33%;
   }
 </style>
