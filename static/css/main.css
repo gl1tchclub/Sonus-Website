@@ -5,10 +5,10 @@
 
 body {
   background-color: #edede9;
+  font-family: "Agbalumo", serif;
 }
 
 div, h1, h2, p, a {
-    font-family: "Agbalumo", serif;
     overflow: hidden;
 }
 

@@ -17,17 +17,39 @@
 </script>
 
 <div class="home-container">
-  <JoinButton />
-  <div class="fixed-bg" style="background-image: url({bg})" />
+    <div class="top-section">
+        <div class="header-section">
+
+            <JoinButton />
+            
+            <div class="background">
+                <div class="fixed-bg" style="background-image: url({bg})" />
+            </div>
+        </div>
+        
+    </div>
 </div>
 
 <style>
   .home-container {
-    
+    height: 100%;
+    width: 100%;
+    display: block;
+  }
+
+  .top-section {
+    position: relative;
+    display: block;
+  }
+
+  .header-section {
+    height: 100%;
+    display: block;
   }
 
   .fixed-bg {
     height: 100vh;
+    width: 110%;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;

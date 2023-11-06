@@ -1,28 +1,27 @@
-<button class="header-nav">
+<button class="join-button">
   <a href="/profile" class="link">
-    <div class="btn-text">JOIN</div>
+    <div class="btn-text">Discover Your Sona!</div>
   </a>
 </button>
 
 <style>
-  .header-nav {
+  .join-button {
     align-items: center;
-    display: flex;
+    display: block;
     position: absolute;
-    /* float: center; */
-    padding: 10px;
+    padding: 20px;
     background-color: transparent;
     border: none;
   }
   
-  .header-nav > .link {
+  .join-button > .link {
     justify-content: center;
     border-radius: 100vw;
     font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
       sans-serif;
     font-weight: 400;
     font-size: 25px;
-    width: 100px;
+    width: 100%;
     line-height: 1.4;
     text-decoration: none;
     display: flex;
