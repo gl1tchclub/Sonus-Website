@@ -19,7 +19,7 @@
     padding-block: 0.5rem;
     /* padding-inline: 1.25rem; */
     background-color: #ac96cc;
-    color: #ffff;
+    color: #f0e6ef;
     border: 3px solid #ffffff4d;
     outline: none;
     overflow: hidden;
