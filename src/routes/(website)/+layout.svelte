@@ -64,10 +64,6 @@
     }
   }
 
-  .slot {
-    padding: 0 40px;
-  }
-
   @media (max-width: 1460px) {
     .site-container {
       background-size: 130%;

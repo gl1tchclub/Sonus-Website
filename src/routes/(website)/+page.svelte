@@ -1,13 +1,13 @@
 <script>
   import JoinButton from "$lib/components/Join.svelte";
   import { onMount } from "svelte";
-  let loading_arr = "LOADING...".split("")
+  let loading_arr = "LOADING...".split("");
 
   onMount(() => {
-    setTimeout(async() => {
-        document.querySelector(".loading").remove();
+    setTimeout(async () => {
+      document.querySelector(".loading").remove();
     }, 3000);
-})
+  });
 </script>
 
 <!-- <div class="loading">
@@ -28,35 +28,46 @@
             src="./img/just-icon.png"
             class="brand-logo"
             alt="sona small"
-            height="60%"
+            height="100%"
           />
         </div>
-        <div class="btn"><JoinButton /></div>
+        <span class="reveal-delay">
+          <div class="btn">
+            <JoinButton>Discover your Sona!</JoinButton>
+          </div>
+        </span>
       </div>
-      <div class="">lower content</div>
+      <div class="" />
     </div>
   </div>
   <div class="second-section">
     <div class="middle-container">
-        <h1>DISCOVER</h1>
-        <h1>CREATE</h1>
-        <h1>LISTEN</h1>
-        <h1>REPEAT</h1>
+      <h1>DISCOVER</h1>
+      <h1>CREATE</h1>
+      <h1>LISTEN</h1>
+      <h1>REPEAT</h1>
     </div>
   </div>
 </div>
 
 <style>
-  .home-container {
-    width: 100%;
-    height: 100%;
-    display: block;
-  }
-
   .top-section {
     position: relative;
     display: block;
     height: 100vh;
+    padding: 0 40px;
+  }
+
+  .second-section {
+    background-color: #edede9;
+    width: 100%;
+    text-align: center;
+  }
+
+  .home-container {
+    width: 100%;
+    height: 100%;
+    display: block;
   }
 
   .header-section {
@@ -83,7 +94,7 @@
 
   .brand {
     width: 100%;
-    height: 100%;
+    height: 60%;
     justify-content: center;
     text-align: center;
     animation: pulse 2s infinite linear;
@@ -93,36 +104,27 @@
   .brand-name {
     position: absolute;
     z-index: 1;
-    top: -10px;
     font-size: 150px;
-    height: 60%;
+    height: 100%;
     width: 100%;
     color: #f0a6ca;
     overflow: hidden;
-    text-shadow: 1px 1px 1px #efc3e6,
-        1px 2px 1px #efc3e6,
-        1px 3px 1px #efc3e6,
-        1px 4px 1px #efc3e6,
-        1px 5px 1px #efc3e6,
-        1px 6px 1px #efc3e6,
-        1px 7px 1px #efc3e6,
-        1px 8px 1px #efc3e6,
-        1px 9px 1px #efc3e6,
-        1px 10px 1px #efc3e6,
-    1px 18px 6px rgba(16,16,16,0.4),
-    1px 22px 10px rgba(16,16,16,0.2),
-    1px 25px 35px rgba(16,16,16,0.2),
-    1px 30px 60px rgba(16,16,16,0.4);
+    text-shadow: 1px 1px 1px #efc3e6, 1px 2px 1px #efc3e6, 1px 3px 1px #efc3e6,
+      1px 4px 1px #efc3e6, 1px 5px 1px #efc3e6, 1px 6px 1px #efc3e6,
+      1px 7px 1px #efc3e6, 1px 8px 1px #efc3e6, 1px 9px 1px #efc3e6,
+      1px 10px 1px #efc3e6, 1px 18px 6px rgba(16, 16, 16, 0.4),
+      1px 22px 10px rgba(16, 16, 16, 0.2), 1px 25px 35px rgba(16, 16, 16, 0.2),
+      1px 30px 60px rgba(16, 16, 16, 0.4);
   }
 
   .brand-logo {
-    /* opacity: 0.6; */
     animation: fadeIn 4s ease-in 3s;
   }
 
   .btn {
-    width: 300px;
+    width: fit-content;
     display: block;
     z-index: 1;
+    grid-area: main;
   }
 </style>

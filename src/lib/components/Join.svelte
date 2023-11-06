@@ -1,5 +1,5 @@
 <a href="/profile" class="link">
-  <div class="btn-text">Discover Your Sona!</div>
+  <div class="btn-text"><slot /></div>
 </a>
 
 <style>
@@ -9,7 +9,7 @@
     border-radius: 100vw;
     font-weight: 400;
     font-size: 25px;
-    width: 20%;
+    width: fit-content;
     line-height: 1.4em;
     text-decoration: none;
     display: flex;
@@ -17,7 +17,7 @@
     box-shadow: 0px 5px 5px #2d283638,
     0px 8px 10px #2d28364b;
     padding-block: 0.5rem;
-    /* padding-inline: 1.25rem; */
+    padding-inline: 1.25rem;
     background-color: #ac96cc;
     color: #f0e6ef;
     border: 3px solid #ffffff4d;
@@ -29,12 +29,10 @@
     transform: scale(1.1);
     border-color: #fff9;
   }
-
-  .link:hover::before {
-    animation: shine 1.5s ease-out infinite;
-  }
-
+  
   .link::before {
+    animation: shine 3s cubic-bezier(0.7, 0.54, 0.2, 0.3) infinite;
+    /* animation-delay: 5s; */
     content: "";
     position: absolute;
     width: 100px;
