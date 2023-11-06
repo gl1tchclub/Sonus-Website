@@ -4,14 +4,16 @@
   --light-pink: #efc386;
   --gray-pink: #f0e6ef;
   --light-purple: #b8bedd;
+  --text-color: #1F1F1F;
 }
 * {
     margin: 0;
     padding: 0;
 }
 
-.body {
+body {
   background-color: #edede9;
+  color: var(--text-color);
 }
 
 div, h1, h2, p, a {
@@ -54,6 +56,7 @@ div, h1, h2, p, a {
     display:flex;
     align-items:center;
     justify-content:center;
+    z-index: 2;
  }
  
   .loading span {
