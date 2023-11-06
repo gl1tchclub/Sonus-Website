@@ -281,19 +281,7 @@
     animation: pulse 5s infinite linear;
   }
 
-  @keyframes pulse {
-    0% {
-      transform: scale(1.05);
-    }
 
-    50% {
-      transform: scale(0.95);
-    }
-
-    100% {
-      transform: scale(1.05);
-    }
-  }
 
   @media (max-width: 1560px) {
     .left-boxes {

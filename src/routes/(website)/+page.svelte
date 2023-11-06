@@ -24,9 +24,6 @@
           <h1 class="brand-name">
             <span class="reveal-delay"> Sonus </span>
           </h1>
-          <!-- <h1 class="brand-name outer-text">
-            <span class="reveal-delay"> Sonus </span>
-          </h1> -->
           <img
             src="./img/just-icon.png"
             class="brand-logo"
@@ -89,6 +86,7 @@
     height: 100%;
     justify-content: center;
     text-align: center;
+    animation: pulse 2s infinite linear;
     position: relative;
   }
 
@@ -99,7 +97,6 @@
     font-size: 150px;
     height: 60%;
     width: 100%;
-    opacity: 0.95;
     color: #f0a6ca;
     overflow: hidden;
     text-shadow: 1px 1px 1px #efc3e6,
@@ -118,14 +115,9 @@
     1px 30px 60px rgba(16,16,16,0.4);
   }
 
-  /* .brand-name.outer-text {
-    font-size: 155px;
-    color: #efc3e6;
-    height: 50%;
-  } */
-
   .brand-logo {
-    opacity: 0.6;
+    /* opacity: 0.6; */
+    animation: fadeIn 4s ease-in 3s;
   }
 
   .btn {

@@ -43,7 +43,21 @@ div, h1, h2, p, a {
   @keyframes fadeIn {
     0% {opacity: 0;}
     100% {opacity: 1;}
-  }  
+  } 
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1.05);
+    }
+
+    50% {
+      transform: scale(0.95);
+    }
+
+    100% {
+      transform: scale(1.05);
+    }
+  }
 
   .loading {
     background:black;
