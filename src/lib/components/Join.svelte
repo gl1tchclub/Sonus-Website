@@ -12,6 +12,7 @@
     padding: 20px;
     background-color: transparent;
     border: none;
+    width: fit-content;
   }
   
   .join-button > .link {

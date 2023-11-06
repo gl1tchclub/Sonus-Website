@@ -15,7 +15,7 @@
 
 <Dash />
 <SideNav />
-<div class="grid-container">
+<div class="main-container">
   <div class="content">
     <slot />
   </div>
@@ -26,11 +26,10 @@
 
 <style>
   .content {
-    grid-area: main;
     width: fit-content;
   }
 
-  .grid-container {
+  .main-container {
     display: flex;
     top: 10px;
     padding: 20px 10px 10px 280px;
@@ -46,7 +45,7 @@
   }
 
   @media (max-width: 980px) {
-    .grid-container {
+    .main-container {
       padding: 20px 10px 10px 100px;
       justify-content: left;
     }
@@ -64,7 +63,7 @@
   }
 
   @media (max-width: 840px) {
-    .grid-container {
+    .main-container {
       padding: 20px 10px 20px 20px;
       justify-content: center;
     }
@@ -75,7 +74,7 @@
   }
 
   @media (max-width: 720px) {
-    .grid-container {
+    .main-container {
       justify-content: center;
     }
   }
