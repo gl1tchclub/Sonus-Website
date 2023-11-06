@@ -1,31 +1,27 @@
 <script>
-    import Footer from "$lib/components/Footer.svelte";
+  import Footer from "$lib/components/Footer.svelte";
+
 </script>
 
 <svelte:head>
-    <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/main.css" />
 </svelte:head>
 
-<link rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Agbalumo">
-          
-
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css?family=Agbalumo"
+/>
 
 <div class="container">
-    <div class="slot">
-        <slot/>
-    </div>     
+  <div class="slot">
+    <slot />
+  </div>
 </div>
-<Footer/>
-        
+<Footer />
 
 <style>
-    .container {
-        width: 100%;
-        height: 100vh;
-    }
-
-    /* :global(body) {
-        height: 300vh;
-    } */
+  .container {
+    width: 100%;
+    height: 100vh;
+  }
 </style>

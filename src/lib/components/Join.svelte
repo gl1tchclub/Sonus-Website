@@ -1,32 +1,37 @@
-<nav class="header-nav">
+<button class="header-nav">
   <a href="/profile" class="link">
-    <div class="btn-text">Join</div>
+    <div class="btn-text">JOIN</div>
   </a>
-</nav>
+</button>
 
 <style>
   .header-nav {
-    /* column-gap: 0.5em; */
     align-items: center;
     display: flex;
-    position: static;
-    float: right;
+    position: absolute;
+    /* float: center; */
     padding: 10px;
+    background-color: transparent;
+    border: none;
   }
-
+  
   .header-nav > .link {
+    justify-content: center;
     border-radius: 100vw;
     font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
       sans-serif;
     font-weight: 400;
+    font-size: 25px;
+    width: 100px;
     line-height: 1.4;
     text-decoration: none;
     display: flex;
     transition: all 0.3s ease-in-out;
-    box-shadow: 0px 10px 20px rgba(107, 74, 2, 0.2);
+    box-shadow: 0px 5px 5px #2d283638,
+    0px 8px 10px #2d28364b;
     padding-block: 0.5rem;
     padding-inline: 1.25rem;
-    background-color: rgba(224, 193, 17, 0.8);
+    background-color: #ac96cc;
     color: #ffff;
     border: 3px solid #ffffff4d;
     outline: none;
