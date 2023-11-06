@@ -95,7 +95,7 @@ div, h1, h2, p, a {
 
   .middle-container h1 {
     animation: 3s infinite step-end textAnim;
-    animation-delay: calc(.75s * var(--i));
+    animation-delay: calc(.75s * var(--x));
     color: #efc3e6;
     display: block;
     margin: 20px;

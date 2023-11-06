@@ -50,7 +50,7 @@
   <div class="second-section">
     <div class="middle-container">
         {#each textArr as word, x}
-            <h1 style="--i:{x+1}">{word}</h1>
+            <h1 style="--x:{x+1}">{word}</h1>
         {/each}
       <!-- <h1>DISCOVER</h1>
       <h1>CREATE</h1>
