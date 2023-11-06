@@ -10,3 +10,6 @@ background iamge
 
 https://unsplash.com/photos/blue-and-purple-wallpaper-xWSUI7tpiTY
 link to bg image used
+
+https://codepen.io/xtoq/pen/xZmLpK
+middle sectin animation
