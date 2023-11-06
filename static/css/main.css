@@ -3,18 +3,18 @@
     padding: 0;
 }
 
-body {
+.body {
   background-color: #edede9;
-  font-family: "Agbalumo", serif;
 }
 
 div, h1, h2, p, a {
-    overflow: hidden;
+  font-family: "Agbalumo", serif;
+  overflow: hidden;
 }
 
 .reveal {
-    animation: reveal 1.5s cubic-bezier(0.77, 0, 0.175, 1);
-    display: block;
+  animation: reveal 1.5s cubic-bezier(0.77, 0, 0.175, 1);
+  display: block;
 }
 
 

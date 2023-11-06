@@ -17,17 +17,14 @@
 </script>
 
 <div class="home-container">
-    <div class="top-section">
-        <div class="header-section">
-
-            <JoinButton />
-            
-            <div class="background">
-                <div class="fixed-bg" style="background-image: url({bg})" />
-            </div>
-        </div>
-        
+  <div class="top-section">
+    <div class="header-section">
+      <JoinButton />
     </div>
+    <div class="background">
+      <div class="fixed-bg" style="background-image: url({bg})" />
+    </div>
+  </div>
 </div>
 
 <style>
@@ -40,22 +37,28 @@
   .top-section {
     position: relative;
     display: block;
+    height: 100vh;
+  }
+
+  .background {
+    position: static;
+    z-index: -1;
+    height: 100%;
   }
 
   .header-section {
-    height: 100%;
-    display: block;
+    z-index: 2;
   }
 
   .fixed-bg {
     height: 100vh;
     width: 110%;
     background-attachment: fixed;
-    background-position: center;
+    background-position: top;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100%;
     animation: updown 13s infinite ease;
-    z-index: -1;
+    transition: all 0.5s ease-in;
   }
 
   @keyframes updown {
@@ -63,19 +66,31 @@
       background-position: 0 0;
     }
     25% {
-      background-position: 0 20%;
+      background-position: 0 10%;
     }
 
     50% {
-      background-position: 0 50%;
+      background-position: 0 25%;
     }
 
     75% {
-      background-position: 0 20%;
+      background-position: 0 10%;
     }
 
     100% {
       background-position: 0 0;
+    }
+  }
+
+  @media (max-width: 1460px) {
+    .fixed-bg {
+        background-size: 130%;
+    }
+  }
+
+  @media (max-width: 1200px) {
+    .fixed-bg {
+        background-size: 300%;
     }
   }
 </style>
