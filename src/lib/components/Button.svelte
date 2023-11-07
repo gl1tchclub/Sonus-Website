@@ -21,6 +21,8 @@
     border: 3px solid #ffffff4d;
     outline: none;
     overflow: hidden;
+    /* height: fit-content; */
+    white-space: nowrap;
   }
 
   .link:hover {

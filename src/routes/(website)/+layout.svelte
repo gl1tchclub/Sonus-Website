@@ -1,7 +1,10 @@
 <script>
   import Footer from "$lib/components/Footer.svelte";
   import Dash from "../../lib/components/Dashboard.svelte";
+  import Button from "../../lib/components/Button.svelte";
   import { onMount } from "svelte";
+
+  let y;
 
   const BASE_URL = "https://api.unsplash.com/";
   const photoKey = "FkjKMeG-arrW_qolpGUoya8HBCEBUCkjH3j9BB2dwms";
@@ -20,25 +23,45 @@
 <svelte:head>
   <link rel="stylesheet" href="css/main.css" />
 </svelte:head>
+<svelte:window bind:scrollY={y} />
 
 <link
-  rel="stylesheet"
-  href="https://fonts.googleapis.com/css?family=Agbalumo"
+rel="stylesheet"
+href="https://fonts.googleapis.com/css?family=Agbalumo"
 />
 
 <div class="site-container" style="background-image: url({bg})">
+<!-- {#if y > 900} -->
   <div class="site-header">
     <Dash>
-      
+      <Button>Join</Button>
     </Dash>
   </div>
+<!-- {/if} -->
   <div class="slot">
     <slot />
   </div>
 </div>
-<Footer />
+
+<div class="shown-footer">
+<Footer>
+    <Button>Back To Top</Button>
+  </Footer>
+</div>
+
+<div class="hidden-footer">
+<Footer>
+    <Button>▲</Button>
+  </Footer>
+</div>
 
 <style>
+  .site-header {
+    background-color: transparent;
+    box-shadow: 1px 0 5px 2px #986cdac9;
+    height: fit-content;
+    position: sticky;
+  }
   .site-container {
     display: block;
     background-attachment: fixed;
@@ -70,6 +93,10 @@
     }
   }
 
+  .hidden-footer {
+    display: none;
+  }
+
   @media (max-width: 1460px) {
     .site-container {
       background-size: 130%;
@@ -82,9 +109,21 @@
     }
   }
 
+  @media (max-width: 680px) {
+    .hidden-footer {
+    display: block;
+  }
+
+  .shown-footer {
+    display: none;
+  }
+
+  }
+
   @media (max-height: 880px) {
     .site-container {
       background-size: 200% 110%;
     }
+
   }
 </style>

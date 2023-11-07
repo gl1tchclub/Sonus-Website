@@ -46,9 +46,9 @@
       </div>
       <div class="header-button container">
         <span class="reveal-delay">
-          <div class="btn">
-            <JoinButton>Discover your Sona!</JoinButton>
-          </div>
+          <a href="/profile" class="btn">
+            <JoinButton>Join Here</JoinButton>
+          </a>
         </span>
       </div>
     </div>

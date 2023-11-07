@@ -33,12 +33,11 @@
 
 <style>
   header {
-    /* background: rgba(255, 255, 255, 0.788); */
     height: 80px;
-    /* box-shadow: 1px 0 5px 2px rgba(153, 151, 151, 0.75); */
     display: flex;
     align-items: center;
     z-index: 1;
+    position: inherit;
   }
   
   #dashboard {

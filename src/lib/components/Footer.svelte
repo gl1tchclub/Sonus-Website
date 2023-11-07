@@ -1,7 +1,6 @@
 <script>
   import Instagram from "./Instagram.svelte";
   import Twitter from "./Twitter.svelte";
-  import Button from "./Button.svelte";
 </script>
 
 <footer class="footer">
@@ -45,11 +44,13 @@
       <div class="social-div">
         <Twitter />
       </div>
+    </div>
+    <div class="button-height">
       <a href="#dashboard" class="button-anchor">
-        <Button>Back To Top</Button>
+        <slot />
       </a>
     </div>
-    <div class="trademark">© 2023 Sonus NZ</div>
+      <div class="trademark">© 2023 Sonus NZ</div>
   </div>
 </footer>
 
@@ -65,11 +66,11 @@
   .footer-content {
     width: 100%;
     display: grid;
-    grid-template-columns: 300px 300px 225px;
+    grid-template-columns: 300px 300px 225px 300px;
     grid-template-rows: 100px 100px;
     grid-template-areas:
-      "company contact socials"
-      "trademark trademark trademark";
+      "company contact socials button"
+      "trademark trademark trademark trademark";
     position: relative;
     margin: 0 10px 0 0;
   }
@@ -79,6 +80,17 @@
 
   .footer-content > div:nth-of-type(2) {
     grid-area: contact;
+  }
+
+  .button-anchor {
+    grid-area: button;
+    animation: fadeIn 4s ease;
+  }
+
+  .button-height {
+    height: 60px;
+    width: 60%;
+    padding: 5px 0 0 20px;
   }
 
   .footer-content ul,
@@ -106,8 +118,8 @@
 
   .trademark {
     opacity: 0.5;
-    padding: 20px 0 0 0;
-    display: block;
+    padding-top: 20px;
+    display: flex;
     left: 280px;
     transition: all 3s ease;
     grid-area: trademark;
@@ -115,13 +127,17 @@
 
   @media (max-width: 1100px) {
     .footer-content {
-      grid-template-columns: 300px 300px;
+      grid-template-columns: 300px 300px 300px;
       grid-template-rows: 100px 100px;
       grid-template-areas:
-        "company contact"
-        "socials trademark";
+        "company contact button"
+        "socials trademark trademark";
       row-gap: 40px;
-      column-gap: 180px;
+      column-gap: 10px;
+    }
+
+    .button-anchor {
+      padding-left: 10px;
     }
   }
 
@@ -130,11 +146,5 @@
       grid-template-columns: 200px 200px;
       column-gap: normal;
     }
-
-
-  }
-
-  @media (max-width: 840px) {
-
   }
 </style>
