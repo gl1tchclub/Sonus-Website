@@ -25,9 +25,8 @@
     </button>
 </header>
 
-<Modal bind:showModal>
+<Modal bind:showModal />
 
-</Modal>
 
 <style>
   header {
@@ -36,15 +35,6 @@
     align-items: center;
     z-index: 1;
   }
-  
-  /* #dashboard {
-    float: left;
-    position: relative;
-    left: 13em;
-    transition: all 0.5s ease;
-    display: block;
-    z-index: 2;
-  } */
 
   #menu-open {
     border: none;
@@ -54,12 +44,6 @@
     position: relative;
     left: 30px;
   }
-
-  /* @media (max-width: 980px) {
-    #dashboard {
-      left: 5em;
-    }
-  } */
 
   @media (max-width: 840px) {
     #menu-open {

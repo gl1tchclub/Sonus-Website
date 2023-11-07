@@ -114,17 +114,23 @@
       background-size: 300%;
     }
   }
+  
+  @media (max-width: 840px) {
+    .header-brand, .header-button {
+      display: none;
+    }
+  }
 
   @media (max-width: 680px) {
     .hidden-footer {
       display: block;
     }
-
+    
     .shown-footer {
       display: none;
     }
   }
-
+  
   @media (max-height: 880px) {
     .site-container {
       background-size: 200% 110%;

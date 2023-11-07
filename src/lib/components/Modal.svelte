@@ -22,7 +22,11 @@
     </button>
     <hr />
     <nav class="modal-nav">
-      <div class="links">
+      <slot />
+      <!-- <div class="links">
+        <a href="/" class="link">
+          <div class="link-text">Home</div>
+        </a>
         <a href="/profile" class="link">
           <div class="link-text">Profile</div>
         </a>
@@ -32,10 +36,7 @@
         <a href="/discover" class="link">
           <div class="link-text">Discover</div>
         </a>
-        <a href="/" class="link">
-          <div class="link-text">Home</div>
-        </a>
-      </div>
+      </div> -->
     </nav>
     <hr />
   </div>
@@ -86,17 +87,6 @@
 
   .modal-nav {
     padding: 20px;
-  }
-
-  .link {
-    font-size: 50px;
-    letter-spacing: 0.1em;
-    text-decoration: none;
-    color: rgb(32, 20, 30);
-  }
-
-  .link:hover {
-    color: #efc3e6;
   }
 
   .button {
