@@ -39,11 +39,11 @@
     background-position: top;
     background-repeat: no-repeat;
     background-size: 100%;
-    animation: updown 13s infinite ease;
+    animation: bgUpDown 13s infinite ease;
     transition: all 1s ease-in;
   }
 
-  @keyframes updown {
+  @keyframes bgUpDown {
     0% {
       background-position: 0 0;
     }

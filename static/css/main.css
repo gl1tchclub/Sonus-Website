@@ -114,8 +114,8 @@ div, h1, h2, p, a {
         7px 7px #9c89b8,
         8px 8px #9c89b8,
         9px 9px #9c89b8,
-        10px 10px #9c89b8;
-        /* 10px 11px #1F1F1F,
+        10px 10px #9c89b8,
+        10px 11px #1F1F1F,
         8px 12px #1F1F1F,
         6px 13px #1F1F1F,
         4px 14px #1F1F1F,
@@ -125,10 +125,34 @@ div, h1, h2, p, a {
         -4px 18px #1F1F1F,
         -6px 19px #1F1F1F,
         -8px 20px #1F1F1F,
-        -10px 21px #1F1F1F; */
+        -10px 21px #1F1F1F;
     }
     25% {
       text-shadow:none;
+    }
+  }
+
+  .upDown {
+    animation: positionUpDown 2s infinite 3s;
+    transition: all 1s ease-in;
+    position: relative;
+  }
+
+  @keyframes positionUpDown {
+    0% {
+      top: 0;
+    }
+    25% {
+      top: 4px;
+    }
+    50% {
+      top: 8px;
+    }
+    75% {
+      top: 4px;
+    }
+    100% {
+      top: 0;
     }
   }
 

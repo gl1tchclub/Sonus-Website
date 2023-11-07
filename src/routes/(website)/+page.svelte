@@ -24,7 +24,7 @@
 <div class="home-container">
   <div class="top-section">
     <div class="header-section">
-      <div class="header-top-container">
+      <div class="header-top container">
         <div class="brand">
           <h1 class="brand-name">
             <span class="reveal-delay"> Sonus </span>
@@ -37,25 +37,29 @@
           />
         </div>
       </div>
-      <div class="lower-section">
+      <div class="header-lower container">
+        <span class="reveal-delay">
+            <div class="slogan upDown">
+              <h1>Want to see your music persona?</h1>
+            </div>
+        </span>
+      </div>
+      <div class="header-button container">
         <span class="reveal-delay">
           <div class="btn">
             <JoinButton>Discover your Sona!</JoinButton>
           </div>
         </span>
       </div>
-      <div class="arrow-section" />
     </div>
   </div>
-  <div class="second-section">
+  <div class="second-section reveal-delay">
     <div class="middle-container">
+      <span class="reveal-delay">
         {#each textArr as word, x}
-            <h1 style="--x:{x+1}">{word}</h1>
+          <h1 style="--x:{x + 1}">{word}</h1>
         {/each}
-      <!-- <h1>DISCOVER</h1>
-      <h1>CREATE</h1>
-      <h1>LISTEN</h1>
-      <h1>REPEAT</h1> -->
+      </span>
     </div>
   </div>
 </div>
@@ -100,12 +104,16 @@
     justify-content: center;
   }
 
-  .header-top-container {
+  .container {
     justify-content: center;
+    position: relative;
     display: flex;
     width: 100%;
     height: 100%;
     background-color: transparent;
+  }
+
+  .header-top {
     grid-area: main;
   }
 
@@ -135,11 +143,16 @@
       1px 30px 60px rgba(16, 16, 16, 0.4);
   }
 
+  .brand-name > .reveal-delay {
+    height: 100%;
+  }
+
   .brand-logo {
     animation: fadeIn 4s ease-in 3s;
   }
 
-  .lower-section {
+  .header-button {
+    align-items: center;
     justify-content: center;
     grid-area: button;
   }
@@ -147,15 +160,17 @@
   .btn {
     position: relative;
     justify-content: center;
-    /* left: 35%; */
     align-items: center;
     width: 280px;
     height: 60px;
     padding: 20px;
   }
 
-  .lower-section > .reveal-delay {
-    width: fit-content;
-    padding: 0 33%;
+  .slogan {
+    transition: all 1s ease-in;
   }
+
+  /* .header-button.container > .reveal-delay {
+    width: fit-content;
+  } */
 </style>

@@ -37,7 +37,6 @@
         </a>
       </div>
     </nav>
-    <slot />
     <hr />
   </div>
 </dialog>
@@ -96,6 +95,10 @@
     color: rgb(32, 20, 30);
   }
 
+  .link:hover {
+    color: #efc3e6;
+  }
+
   .button {
     display: block;
     border: none;
@@ -141,7 +144,7 @@
     background-color: inherit;
     color: #000;
     border: 1px solid #000;
-    cursor: pointer;
+    cursor: text;
     opacity: 0;
   }
 
