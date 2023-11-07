@@ -33,7 +33,7 @@
           <div class="link-text">Discover</div>
         </a>
         <a href="/" class="link">
-          <div class="link-text">About</div>
+          <div class="link-text">Home</div>
         </a>
       </div>
     </nav>

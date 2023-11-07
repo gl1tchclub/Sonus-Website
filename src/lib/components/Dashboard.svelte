@@ -4,9 +4,9 @@
 </script>
 
 <header>
-    <h2 class="dashboard">
+    <h2 id="dashboard">
       <span class="reveal">
-        Dashboard
+        <slot />
       </span>
     </h2>
 
@@ -33,15 +33,15 @@
 
 <style>
   header {
-    background: rgba(255, 255, 255, 0.788);
+    /* background: rgba(255, 255, 255, 0.788); */
     height: 80px;
-    box-shadow: 1px 2px 11px 2px rgba(153, 151, 151, 0.75);
+    /* box-shadow: 1px 0 5px 2px rgba(153, 151, 151, 0.75); */
     display: flex;
     align-items: center;
     z-index: 1;
   }
   
-  .dashboard {
+  #dashboard {
     float: left;
     position: relative;
     left: 13em;
@@ -60,13 +60,13 @@
   }
 
   @media (max-width: 980px) {
-    .dashboard {
+    #dashboard {
       left: 5em;
     }
   }
 
   @media (max-width: 840px) {
-    .dashboard {
+    #dashboard {
       display: none;
     }
     #menu-open {

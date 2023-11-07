@@ -1,6 +1,7 @@
 <script>
   import Instagram from "./Instagram.svelte";
   import Twitter from "./Twitter.svelte";
+  import Button from "./Button.svelte";
 </script>
 
 <footer class="footer">
@@ -44,6 +45,9 @@
       <div class="social-div">
         <Twitter />
       </div>
+      <a href="#dashboard" class="button-anchor">
+        <Button>Back To Top</Button>
+      </a>
     </div>
     <div class="trademark">© 2023 Sonus NZ</div>
   </div>

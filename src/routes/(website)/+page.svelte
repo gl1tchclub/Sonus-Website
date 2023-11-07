@@ -1,5 +1,5 @@
 <script>
-  import JoinButton from "$lib/components/Join.svelte";
+  import JoinButton from "$lib/components/Button.svelte";
   import { onMount } from "svelte";
   let loading_arr = "LOADING...".split("");
   let textArr = ["DISCOVER", "CREATE", "LISTEN", "REPEAT"];
@@ -15,11 +15,11 @@
   <link rel="stylesheet" href="css/main.css" />
 </svelte:head>
 
-<div class="loading">
+<!-- <div class="loading">
     {#each loading_arr as letter, i}
         <span style="--i:{i+1}">{letter}</span>
     {/each}
-</div>
+</div> -->
 
 <div class="home-container">
   <div class="top-section">
@@ -173,4 +173,10 @@
   /* .header-button.container > .reveal-delay {
     width: fit-content;
   } */
+
+  @media (max-width: 1120px) {
+    .header-section {
+      grid-template-columns: 100%;
+    }
+  }
 </style>

@@ -1,6 +1,4 @@
-<a href="/profile" class="link">
-  <div class="btn-text"><slot /></div>
-</a>
+<div class="link"><slot /></div>
 
 <style>
   .link {
@@ -32,7 +30,6 @@
   
   .link::before {
     animation: shine 3s cubic-bezier(0.7, 0.54, 0.2, 0.3) infinite;
-    /* animation-delay: 5s; */
     content: "";
     position: absolute;
     width: 100px;

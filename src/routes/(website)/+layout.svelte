@@ -1,5 +1,6 @@
 <script>
   import Footer from "$lib/components/Footer.svelte";
+  import Dash from "../../lib/components/Dashboard.svelte";
   import { onMount } from "svelte";
 
   const BASE_URL = "https://api.unsplash.com/";
@@ -26,6 +27,11 @@
 />
 
 <div class="site-container" style="background-image: url({bg})">
+  <div class="site-header">
+    <Dash>
+      
+    </Dash>
+  </div>
   <div class="slot">
     <slot />
   </div>

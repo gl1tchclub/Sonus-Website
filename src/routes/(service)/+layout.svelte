@@ -13,7 +13,11 @@
   href="https://fonts.googleapis.com/css?family=Agbalumo"
 />
 
-<Dash />
+<div class="header-div">
+  <Dash>
+    Dashboard
+  </Dash>
+</div>
 <SideNav />
 <div class="main-container">
   <div class="content">
@@ -25,6 +29,10 @@
 </div>
 
 <style>
+  .header-div {
+    background: rgba(255, 255, 255, 0.788);
+    box-shadow: 1px 0 5px 2px rgba(153, 151, 151, 0.75);
+  }
   .content {
     width: fit-content;
   }
