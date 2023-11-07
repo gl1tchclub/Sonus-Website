@@ -4,11 +4,9 @@
 </script>
 
 <header>
-    <h2 id="dashboard">
-      <span class="reveal">
-        <slot />
-      </span>
-    </h2>
+  <div id="header-comp">
+    <slot />
+  </div>
 
     <button id="menu-open" on:click={() => (showModal = true)}>
       <i class="fa-solid fa-bars"></i>
@@ -37,17 +35,16 @@
     display: flex;
     align-items: center;
     z-index: 1;
-    position: inherit;
   }
   
-  #dashboard {
+  /* #dashboard {
     float: left;
     position: relative;
     left: 13em;
     transition: all 0.5s ease;
     display: block;
     z-index: 2;
-  }
+  } */
 
   #menu-open {
     border: none;
@@ -58,18 +55,15 @@
     left: 30px;
   }
 
-  @media (max-width: 980px) {
+  /* @media (max-width: 980px) {
     #dashboard {
       left: 5em;
     }
-  }
+  } */
 
   @media (max-width: 840px) {
-    #dashboard {
-      display: none;
-    }
     #menu-open {
-      display: block;
+      display: contents;
     }
   } 
 </style>

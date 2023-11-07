@@ -26,31 +26,36 @@
 <svelte:window bind:scrollY={y} />
 
 <link
-rel="stylesheet"
-href="https://fonts.googleapis.com/css?family=Agbalumo"
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css?family=Agbalumo"
 />
 
 <div class="site-container" style="background-image: url({bg})">
-<!-- {#if y > 900} -->
+  <!-- {#if y > 900} -->
   <div class="site-header">
     <Dash>
-      <Button>Join</Button>
+      <h2 class="header-brand">
+        <span class="reveal-delay"> Sonus </span>
+      </h2>
+      <div class="header-button">
+        <Button>Join</Button>
+      </div>
     </Dash>
   </div>
-<!-- {/if} -->
+  <!-- {/if} -->
   <div class="slot">
     <slot />
   </div>
 </div>
 
 <div class="shown-footer">
-<Footer>
+  <Footer>
     <Button>Back To Top</Button>
   </Footer>
 </div>
 
 <div class="hidden-footer">
-<Footer>
+  <Footer>
     <Button>▲</Button>
   </Footer>
 </div>
@@ -60,7 +65,8 @@ href="https://fonts.googleapis.com/css?family=Agbalumo"
     background-color: transparent;
     box-shadow: 1px 0 5px 2px #986cdac9;
     height: fit-content;
-    position: sticky;
+    display: flex;
+    z-index: 3;
   }
   .site-container {
     display: block;
@@ -111,19 +117,17 @@ href="https://fonts.googleapis.com/css?family=Agbalumo"
 
   @media (max-width: 680px) {
     .hidden-footer {
-    display: block;
-  }
+      display: block;
+    }
 
-  .shown-footer {
-    display: none;
-  }
-
+    .shown-footer {
+      display: none;
+    }
   }
 
   @media (max-height: 880px) {
     .site-container {
       background-size: 200% 110%;
     }
-
   }
 </style>

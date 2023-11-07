@@ -14,9 +14,13 @@
 />
 
 <div class="header-div">
-  <Dash>
-    Dashboard
-  </Dash>
+  <div id="dashboard">
+    <Dash>
+      <h2 id="header-text">
+        <span class="reveal"> Dashboard </span>
+      </h2>
+    </Dash>
+  </div>
 </div>
 <SideNav />
 <div class="main-container">
@@ -45,6 +49,15 @@
     justify-content: center;
   }
 
+  #dashboard {
+    float: left;
+    position: relative;
+    left: 18em;
+    transition: all 0.5s ease;
+    display: block;
+    z-index: 2;
+  }
+
   .footer-container {
     width: fit-content;
     display: flex;
@@ -56,6 +69,10 @@
     .main-container {
       padding: 20px 10px 10px 100px;
       justify-content: left;
+    }
+
+    #dashboard {
+      left: 7em;
     }
 
     .content {
@@ -79,6 +96,18 @@
     .footer-container {
       left: 10px;
     }
+
+    #dashboard h2 {
+      display: none;
+    }
+
+    #dashboard {
+      float: none;
+      transition: all 0.5s ease;
+      display: block;
+      left: 40px;
+      z-index: 2;
+    }
   }
 
   @media (max-width: 720px) {
@@ -86,5 +115,4 @@
       justify-content: center;
     }
   }
-
 </style>
