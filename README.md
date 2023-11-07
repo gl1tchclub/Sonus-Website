@@ -36,17 +36,17 @@ The idea is that each Sona is developed using an AI program that takes in user d
 ___
 
 ## Project Description
-To make this project come true, I used VSCode as the IDE and Sveltekit as the framework. Using this framework, I coded the entire project in HTML, CSS, and Javascript.
 
-All user data and images is fetched from the [Unsplash API](https://api.unsplash.com/) and the sona description is fetched from the [WordNinjas API.](https://api.api-ninjas.com/)
 
 ### What does the Website Do?
 
-Sonus is a web-based music service that provides its users access to millions of songs, artists, and playlists. Using AI, a Sona is uniquely crafted for each user depending on their listening habits.
-
+Sonus is a web-based music service that provides its users access to millions of songs, artists, and playlists. Additionally, using AI, a Sona is uniquely crafted for each user depending on their listening habits.
+Users can connect with others through their Sonas!
 
 ### Technology Usage
-//apis and AI images, frameworks, languages
+To make this project come true, I used VSCode as the IDE and Sveltekit as the framework. Using this framework, I coded the entire project in HTML, CSS, and Javascript.
+
+All user data and images is fetched from the [Unsplash API](https://api.unsplash.com/) and the sona description is fetched from the [WordNinjas API.](https://api.api-ninjas.com/)
 
 ### Known Bugs
 
