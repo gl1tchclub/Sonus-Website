@@ -15,11 +15,11 @@
 
 * [Future Features](https://github.com/mintep1-student/mintep1-web#future-features)
 
-[Installing the ARC](https://github.com/mintep1-student/mintep1-web#installing-Sonus)
+[Installing Sonus](https://github.com/mintep1-student/mintep1-web#installing-Sonus)
 
 //screenshots here
 
-[Using the Mimi Shrine]() //may not need this
+[Using Sonus]() //may not need this
 
 [Credits](https://github.com/mintep1-student/intro-web-minty#credits)
 
@@ -29,7 +29,7 @@ ___
 
 Sonus is a music web service that offers access to millions of songs. Sonus is a more personal platform where each user, as they listen and develop their music taste, can see their own unique, individually crafted Sona, a musical persona.
 
-Each Sona is developed using an AI that takes in user data such as favourite songs, genres, artists, those they don't like, their playlists, vibe, mood, how often they listen to music, and more!
+The idea is that each Sona is developed using an AI program that takes in user data such as favourite songs, genres, artists, those they don't like, their playlists, vibe, mood, how often they listen to music, and more to generate their Sona!
 
 
 <div align="center">
@@ -40,13 +40,14 @@ Each Sona is developed using an AI that takes in user data such as favourite son
 ___
 
 ## Project Description
+To make this project come true, I used VSCode as the IDE and Sveltekit as the framework. Using this framework, the entire project was coded just using HTML, CSS, and Javascript.
 
-
-//language/framework usage
+All user data and images is fetched from the [Unsplash API](https://api.unsplash.com/) and the sona description is fetched from the [WordNinjas API.](https://api.api-ninjas.com/)
 
 ### What does the Website Do?
 
-Sonus is a web-based music service that provides its users access to millions of songs, artists, and playlists. Using AI, a Sona is uniquely crafted for each user depending on theri 
+Sonus is a web-based music service that provides its users access to millions of songs, artists, and playlists. Using AI, a Sona is uniquely crafted for each user depending on their listening habits.
+
 
 ### Technology Usage
 //apis and AI images, frameworks, languages
