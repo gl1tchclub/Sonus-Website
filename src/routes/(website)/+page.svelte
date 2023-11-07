@@ -39,17 +39,16 @@
       </div>
       <div class="header-lower container">
         <span class="reveal-delay">
-            <div class="slogan upDown">
-              <h1>Want to see your music persona?</h1>
-            </div>
+          <div class="slogan upDown">
+            <h1>A million songs - One Sona</h1>
+          </div>
         </span>
       </div>
-      <div class="header-button container">
-        <span class="reveal-delay">
-          <a href="/profile" class="btn">
-            <JoinButton>Join Here</JoinButton>
-          </a>
-        </span>
+      <div class="header-arrow container">
+        <div class="scroll-down">
+          <span class="arrow-down reveal" />
+          <span class="scroll-title reveal"> Scroll down </span>
+        </div>
       </div>
     </div>
   </div>
@@ -151,7 +150,7 @@
     animation: fadeIn 4s ease-in 3s;
   }
 
-  .header-button {
+  .header-arrow {
     align-items: center;
     justify-content: center;
     grid-area: button;
@@ -168,6 +167,38 @@
 
   .slogan {
     transition: all 1s ease-in;
+  }
+
+  .scroll-down {
+    display: block;
+    position: relative;
+    padding-top: 79px;
+    text-align: center;
+  }
+
+  .arrow-down {
+    display: block;
+    margin: 0 auto;
+    width: 10px;
+    height: 38px;
+  }
+  .arrow-down:after {
+    content: "";
+    display: block;
+    margin: 0;
+    padding: 0;
+    width: 8px;
+    height: 8px;
+    border-top: 2px solid #f0a6ca;
+    border-right: 2px solid #f0a6ca;
+    transform: rotate(135deg);
+  }
+
+  .scroll-title {
+    display: block;
+    text-transform: uppercase;
+    color: #f0a6ca;
+    letter-spacing: 0.1em;
   }
 
   /* .header-button.container > .reveal-delay {
