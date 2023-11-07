@@ -17,10 +17,6 @@
 
 [Installing Sonus](https://github.com/mintep1-student/mintep1-web#installing-Sonus)
 
-//screenshots here
-
-[Using Sonus]() //may not need this
-
 [Credits](https://github.com/mintep1-student/intro-web-minty#credits)
 
 ___
@@ -40,7 +36,7 @@ The idea is that each Sona is developed using an AI program that takes in user d
 ___
 
 ## Project Description
-To make this project come true, I used VSCode as the IDE and Sveltekit as the framework. Using this framework, the entire project was coded just using HTML, CSS, and Javascript.
+To make this project come true, I used VSCode as the IDE and Sveltekit as the framework. Using this framework, I coded the entire project in HTML, CSS, and Javascript.
 
 All user data and images is fetched from the [Unsplash API](https://api.unsplash.com/) and the sona description is fetched from the [WordNinjas API.](https://api.api-ninjas.com/)
 
@@ -64,29 +60,26 @@ Sonus is a web-based music service that provides its users access to millions of
 
 ___
 
-## Installing the Mimi Shrine
+## Installing Sonus
 To run the ARC locally, you first need to have:
 * Git Bash
 * Node
-* An IDE that can run HTML, CSS, and Javascript ([VSCode](https://code.visualstudio.com/download) recommended)
+* An IDE that can run HTML, CSS, and Javascript. ([VSCode](https://code.visualstudio.com/download) is recommended
 
 Once you have the necessary software installed, clone down and open the folder in your IDE. Also download the svelte extension for better code readability.
 
-If using VSCode, open a new terminal and type the following commands:
-
+If using VSCode, open a new terminal and type the following script:
+```bash
+npm run start
+```
+OR the following commands:
 ```bash
 npm i
-npm run open
+npm run dev -- --open
 ```
-
-It is also recommended that you install the svelte extension available on VSCode for improved readability.
 
 ___
 
 ## Credits
 **Developer:** Elizabeth Minty
-
-**Shadow Consultant:** Anonymous Devotee 
-
-**Assistant Consultant:** Adon "O Wise One" Moskal
 ___
