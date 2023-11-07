@@ -201,9 +201,32 @@
     letter-spacing: 0.1em;
   }
 
-  /* .header-button.container > .reveal-delay {
-    width: fit-content;
-  } */
+  .scroll-down::before {
+    animation: arrowShaft 1.2s cubic-bezier(1, 0, 0, 1) infinite;
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    margin-left: -1px;
+    width: 2px;
+    height: 90px;
+    background: #f0a6ca;
+    content: ' ';
+  }
+
+  @keyframes arrowShaft {
+    0% {
+        transform: scale(1, 0);
+    }
+    50% {
+        transform: scale(1, 1);
+    }
+    50.1% {
+        transform: scale(1, 1);
+    }
+    100% {
+        transform: scale(1, 0);
+    }
+}
 
   @media (max-width: 1120px) {
     .header-section {
