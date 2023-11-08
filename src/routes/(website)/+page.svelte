@@ -283,6 +283,11 @@
     background-color: transparent;
   }
 
+  .header-lower {
+    display: flex;
+    justify-content: center;
+  }
+
   .header-top {
     grid-area: main;
   }
@@ -326,9 +331,13 @@
     font-size: 20px;
     color: #efc3e6;
     text-shadow: -8px 4px 2px rgba(16, 16, 16, 0.6);
-    width: 500px;
+    width: 100%;
     text-align: center;
     /* animation: pulse 2.4s infinite ease; */
+  }
+
+  .header-lower > .reveal-delay {
+    width: 100%;
   }
 
   .header-arrow {

@@ -95,12 +95,6 @@
       background-size: 300%;
     }
   }
-  
-  @media (max-width: 840px) {
-    .header-brand, .header-button {
-      display: none;
-    }
-  }
 
   @media (max-width: 680px) {
     .hidden-footer {
