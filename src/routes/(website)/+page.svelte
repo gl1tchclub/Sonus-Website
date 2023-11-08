@@ -58,11 +58,11 @@
   </div>
   <div class="second-section reveal-delay">
     <div class="middle-container">
-      {#each textArr as word, x}
-        <span class="reveal-delay">
-          <h1 style="--x:{x + 1}">{word}</h1>
-        </span>
-      {/each}
+      <div class="words">
+        {#each textArr as word, x}
+            <h2 style="--x:{x + 1}">{word}</h2>
+        {/each}
+      </div>
     </div>
   </div>
 </div>
@@ -80,22 +80,30 @@
     width: 100%;
     text-align: center;
     font-size: 40px;
-    height: 150vh;
+    height: 200vh;
   }
 
   .middle-container {
     width: 100%;
     margin-top: 50px;
+    height: 50%;
+    align-items: center;
   }
 
-  .middle-container > .reveal-delay {
+  .words {
+    justify-content: center;
+    display: flex;
+  }
+
+  .words h2 {
+    animation: 3s infinite step-end textAnim;
+    animation-delay: calc(0.75s * var(--x));
+    color: #efc3e6;
+    display: block;
+    margin: 20px;
     padding: 10px;
     max-width: 500px;
-  }
-
-  .middle-container h1 {
-    margin: 0;
-    width: 100%;
+    float: left;
   }
 
   .home-container {

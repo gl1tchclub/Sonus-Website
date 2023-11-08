@@ -80,8 +80,8 @@ div, h1, h2, p, a {
     font-size: 80px;
     color: var(--dark-pink);
     text-transform: uppercase;
-    animation: 2s infinite flip; /* infinite as it's scalable */
-    animation-delay: calc(.2s * var(--i));
+    animation: 3s infinite flip; /* infinite as it's scalable */
+    /* animation-delay: calc(2s * var(--i)); */
     text-shadow: 1px 18px 6px #ac96cc96,
     1px 22px 10px #ac96cc57, 1px 25px 35px #ac96cc4b,
     1px 30px 60px #ac96cc93;
@@ -91,15 +91,6 @@ div, h1, h2, p, a {
     0%,80% {
       transform: rotateY(360deg);
     }
-  }
-
-  .middle-container h1 {
-    animation: 3s infinite step-end textAnim;
-    animation-delay: calc(.75s * var(--x));
-    color: #efc3e6;
-    display: block;
-    margin: 20px;
-    text-shadow: 0;
   }
 
   @keyframes textAnim {
@@ -114,18 +105,7 @@ div, h1, h2, p, a {
         7px 7px #9c89b8,
         8px 8px #9c89b8,
         9px 9px #9c89b8,
-        10px 10px #9c89b8,
-        10px 11px #1F1F1F,
-        8px 12px #1F1F1F,
-        6px 13px #1F1F1F,
-        4px 14px #1F1F1F,
-        2px 15px #1F1F1F,
-        0px 16px #1F1F1F,
-        -2px 17px #1F1F1F,
-        -4px 18px #1F1F1F,
-        -6px 19px #1F1F1F,
-        -8px 20px #1F1F1F,
-        -10px 21px #1F1F1F;
+        10px 10px #9c89b8;
     }
     25% {
       text-shadow:none;
@@ -138,7 +118,7 @@ div, h1, h2, p, a {
     position: relative;
   }
 
-  /* @keyframes positionUpDown {
+  @keyframes positionUpDown {
     0% {
       top: 0;
     }
@@ -154,7 +134,7 @@ div, h1, h2, p, a {
     100% {
       top: 0;
     }
-  } */
+  }
 
   @keyframes mover {
     0% { transform: translateY(0); }
