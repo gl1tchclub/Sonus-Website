@@ -45,9 +45,9 @@
         </span>
       </div>
       <div class="header-arrow container">
-        <div class="scroll-down">
-          <span class="arrow-down reveal" />
-          <span class="scroll-title reveal"> Scroll down </span>
+        <div class="scroll-down reveal-delay">
+          <span class="arrow-down reveal-delay" />
+          <span class="scroll-title reveal-delay"> Scroll down </span>
         </div>
       </div>
     </div>
@@ -156,15 +156,6 @@
     grid-area: button;
   }
 
-  .btn {
-    position: relative;
-    justify-content: center;
-    align-items: center;
-    width: 280px;
-    height: 60px;
-    padding: 20px;
-  }
-
   .slogan {
     transition: all 1s ease-in;
   }
@@ -199,6 +190,7 @@
     text-transform: uppercase;
     color: #f0a6ca;
     letter-spacing: 0.1em;
+    animation: positionUpDown 1s ease infinite;
   }
 
   .scroll-down::before {
