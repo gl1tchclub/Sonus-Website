@@ -31,18 +31,6 @@
 />
 
 <div class="site-container" style="background-image: url({bg})">
-  <!-- {#if y > 900} -->
-  <!-- <div class="site-header">
-    <Dash>
-      <h2 class="header-brand">
-        <span class="reveal-delay"> Sonus </span>
-      </h2>
-      <div class="header-button">
-        <Button>Join</Button>
-      </div>
-    </Dash>
-  </div> -->
-  <!-- {/if} -->
   <div class="slot">
     <slot />
   </div>
@@ -61,13 +49,6 @@
 </div>
 
 <style>
-  .site-header {
-    background-color: transparent;
-    box-shadow: 1px 0 5px 2px #986cdac9;
-    height: fit-content;
-    display: flex;
-    z-index: 3;
-  }
   .site-container {
     display: block;
     background-attachment: fixed;

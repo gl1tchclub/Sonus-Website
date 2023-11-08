@@ -3,14 +3,23 @@
   import { onMount } from "svelte";
   let loading_arr = "LOADING...".split("");
   let textArr = ["DISCOVER", "CREATE", "LISTEN", "REPEAT"];
+  const BASE_URL = "https://api.unsplash.com/";
+  const photoKey = "FkjKMeG-arrW_qolpGUoya8HBCEBUCkjH3j9BB2dwms";
+  let y;
+  let middlePhoto = [];
 
-  onMount(() => {
+  onMount(async () => {
     setTimeout(async () => {
       document.querySelector(".loading").remove();
     }, 3000);
+
+    const res = await fetch(`${BASE_URL}photos/Hxoh7VU?client_id=${key}`);
+    const json = await res.json();
+    middlePhoto = json.urls.regular;
   });
 </script>
 
+<svelte:window bind:scrollY={y} />
 <svelte:head>
   <link rel="stylesheet" href="css/main.css" />
 </svelte:head>
@@ -46,7 +55,7 @@
       </div>
       <div class="header-arrow container">
         <div class="scroll reveal-delay">
-          <span class="scroll-title"> Scroll down </span>
+          <span class="scroll-title reveal-delay"> Scroll down </span>
           <div class="arrow reveal-delay">
             <span class="scroll-down reveal-delay">
               <span class="arrow-down reveal-delay" />
@@ -56,15 +65,36 @@
       </div>
     </div>
   </div>
-  <div class="second-section reveal-delay">
-    <div class="middle-container">
-      <div class="words">
-        {#each textArr as word, x}
-            <h2 style="--x:{x + 1}">{word}</h2>
-        {/each}
+  {#if y > 100}
+    <div class="second-section reveal">
+      <div class="middle-container">
+        <div class="words">
+          {#each textArr as word, x}
+            <h2 style="--x:{x + 1}">• {word} •</h2>
+          {/each}
+        </div>
+      </div>
+      <div class="about-card">
+        <div class="about-inner">
+          <div class="about-front">
+            <div
+              class="about-image"
+              style="background-image: url({middlePhoto})"
+            />
+          </div>
+          <div class="about-back">
+            <h2>Sed ultricies, dui in ullamcorper eleifend</h2>
+            <p>Est risus sollicitudin tortor.</p>
+            <p>In semper ipsum ligula at nunc.</p>
+            <p>
+              Ut vitae tristique ligula. Nullam tincidunt dignissim felis, eu
+              venenatis odio pellentesque sed.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
+  {/if}
 </div>
 
 <style>
@@ -81,6 +111,11 @@
     text-align: center;
     font-size: 40px;
     height: 200vh;
+    transition: all 1s ease;
+  }
+
+  .second-section.reveal {
+    animation-duration: 0.8s;
   }
 
   .middle-container {
@@ -88,6 +123,7 @@
     margin-top: 50px;
     height: 50%;
     align-items: center;
+    justify-content: center;
   }
 
   .words {
@@ -104,6 +140,23 @@
     padding: 10px;
     max-width: 500px;
     float: left;
+  }
+
+  .about-card {
+    background-color: transparent;
+    width: 300px;
+    height: 200px;
+    border: 1px solid #f1f1f1;
+    perspective: 1000px;
+  }
+
+  .about-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
   }
 
   .home-container {
