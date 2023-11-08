@@ -45,9 +45,13 @@
         </span>
       </div>
       <div class="header-arrow container">
-        <span class="scroll-title reveal-delay"> Scroll down </span>
-        <div class="scroll-down reveal-delay">
-          <span class="arrow-down reveal-delay" />
+        <div class="scroll reveal-delay">
+          <span class="scroll-title"> Scroll down </span>
+          <div class="arrow reveal-delay">
+            <span class="scroll-down reveal-delay">
+              <span class="arrow-down reveal-delay" />
+            </span>
+          </div>
         </div>
       </div>
     </div>
@@ -55,10 +59,10 @@
   <div class="second-section reveal-delay">
     <div class="middle-container">
       {#each textArr as word, x}
-      <span class="reveal-delay">
+        <span class="reveal-delay">
           <h1 style="--x:{x + 1}">{word}</h1>
         </span>
-        {/each}
+      {/each}
     </div>
   </div>
 </div>
@@ -81,6 +85,7 @@
 
   .middle-container {
     width: 100%;
+    margin-top: 50px;
   }
 
   .middle-container > .reveal-delay {
@@ -103,14 +108,15 @@
     z-index: 2;
     align-items: center;
     width: 100%;
-    height: 70%;
+    height: 90%;
     display: grid;
     grid-template-columns: 60%;
     grid-template-areas:
       "main"
       "lower"
       "button";
-    grid-template-rows: 60% 15% 25%;
+    grid-template-rows: 50% 10% 40%;
+    row-gap: 30px;
     padding-top: 100px;
     flex-wrap: wrap;
     justify-content: center;
@@ -142,7 +148,7 @@
   .brand-name {
     position: absolute;
     z-index: 1;
-    font-size: 150px;
+    font-size: 180px;
     height: 100%;
     width: 100%;
     color: #f0a6ca;
@@ -164,33 +170,35 @@
   }
 
   .slogan {
-    transition: all 1s ease-in;
+    /* transition: all 1s ease-in; */
     font-size: 20px;
     color: #efc3e6;
     text-shadow: -8px 4px 2px rgba(16, 16, 16, 0.6);
     width: 500px;
     text-align: center;
-    animation: mover 0.6s infinite alternate;
+    /* animation: pulse 2.4s infinite ease; */
   }
 
   .header-arrow {
     align-items: center;
     justify-content: center;
     grid-area: button;
+    flex-wrap: wrap;
   }
   .scroll-down {
     display: block;
     position: relative;
     padding: 79px 10px 0;
+    margin-top: 15px;
     text-align: center;
-    text-shadow: -4px 3px 2px rgba(16, 16, 16, 0.6);
+    animation: mover 0.5s infinite alternate;
   }
 
   .arrow-down {
     display: block;
     margin: 0 auto;
     width: 10px;
-    height: 38px;
+    height: 20px;
   }
   .arrow-down:after {
     content: "";
@@ -210,12 +218,12 @@
     text-transform: uppercase;
     color: #f0a6ca;
     letter-spacing: 0.1em;
-    animation: mover 0.6s infinite alternate;
     font-size: 20px;
+    text-shadow: -4px 3px 2px rgba(16, 16, 16, 0.6);
+    margin: 0 10px;
   }
 
   .scroll-down::before {
-    animation: arrowShaft 2s cubic-bezier(1, 0, 0, 1) infinite;
     position: absolute;
     top: 0px;
     left: 50%;
@@ -224,8 +232,7 @@
     height: 90px;
     background: #f0a6ca;
     content: " ";
-    box-shadow: -1px -3px 6px #efc3e68a,
-    1px -3px 4px #efc3e68a;
+    box-shadow: -1px -3px 6px #efc3e68a, 1px -3px 4px #efc3e68a;
   }
 
   @keyframes arrowShaft {
