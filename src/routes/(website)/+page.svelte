@@ -76,18 +76,31 @@
             <h2 style="--x:{x + 1}">• {word} •</h2>
           {/each}
         </div>
-        <div class="about-card">
-          <div class="about-inner">
-            <div class="about-front">
-              <img class="about-image" src={middlePhoto} alt="tapes" />
+        <div class="about-section">
+          <div class="about-card">
+            <div class="about-inner">
+              <div class="about-front">
+                <img class="about-image" src={middlePhoto} alt="tapes" />
+              </div>
+              <div class="about-back">
+                <h3>Sed ultricies</h3>
+                <p>
+                  Est risus sollicitudin tortor. In semper ipsum ligula at nunc.
+                  Ut vitae tristique ligula.
+                </p>
+              </div>
             </div>
-            <div class="about-back">
-              <h3>Sed ultricies</h3>
-              <p>
-                Est risus sollicitudin tortor. In semper ipsum ligula at nunc.
-                Ut vitae tristique ligula.
-              </p>
-            </div>
+          </div>
+            <div class="about-description">
+              <h2>What is a Sona?</h2>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
+              vestibulum, neque at scelerisque pharetra, libero nisi condimentum
+              massa, nec aliquet leo tellus at orci. Vestibulum varius sapien id
+              ipsum scelerisque, eget efficitur lacus auctor. Vestibulum
+              vulputate, justo vitae interdum cursus, lectus augue scelerisque
+              lectus, vel consequat turpis magna sed nulla. Aliquam erat volutpat.
+              Aenean dapibus velit est, a pulvinar enim gravida eu. Praesent
+              sodales gravida sapien ac convallis. Praesent at neque orci.
           </div>
         </div>
       </div>
@@ -124,6 +137,15 @@
     justify-content: center;
   }
 
+  .about-section {
+    height: 80%;
+    display: grid;
+    grid-template-columns: 30% 70%;
+    grid-template-rows: 100%;
+    grid-template-areas: "card description";
+    margin: 50px 40px 0;
+  }
+
   .words {
     justify-content: center;
     display: flex;
@@ -141,14 +163,26 @@
     float: left;
   }
 
+  .about-description {
+    grid-area: description;
+    font-size: 35px;
+    margin: 0 20px;
+    color: #1F1F1F;
+  }
+
+  .about-description h2 {
+    text-align: center;
+    color: #9c89b8;
+  }
+
   .about-card {
     background-color: transparent;
     position: absolute;
     width: 400px;
     height: 520px;
     border-radius: 30px;
-    margin: 50px 40px 0;
     transition: transform 0.8s;
+    grid-area: card;
   }
 
   .about-inner {
