@@ -39,26 +39,26 @@
       </div>
       <div class="header-lower container">
         <span class="reveal-delay">
-          <div class="slogan upDown">
-            <h1> A million songs - One Sona</h1>
+          <div class="slogan">
+            <h1>A million songs - One Sona</h1>
           </div>
         </span>
       </div>
       <div class="header-arrow container">
+        <span class="scroll-title reveal-delay"> Scroll down </span>
         <div class="scroll-down reveal-delay">
           <span class="arrow-down reveal-delay" />
-          <span class="scroll-title reveal-delay"> Scroll down </span>
         </div>
       </div>
     </div>
   </div>
   <div class="second-section reveal-delay">
     <div class="middle-container">
+      {#each textArr as word, x}
       <span class="reveal-delay">
-        {#each textArr as word, x}
           <h1 style="--x:{x + 1}">{word}</h1>
+        </span>
         {/each}
-      </span>
     </div>
   </div>
 </div>
@@ -77,7 +77,20 @@
     text-align: center;
     font-size: 40px;
     height: 150vh;
-    align-items: center;
+  }
+
+  .middle-container {
+    width: 100%;
+  }
+
+  .middle-container > .reveal-delay {
+    padding: 10px;
+    max-width: 500px;
+  }
+
+  .middle-container h1 {
+    margin: 0;
+    width: 100%;
   }
 
   .home-container {
@@ -92,7 +105,7 @@
     width: 100%;
     height: 70%;
     display: grid;
-    grid-template-columns: 50%;
+    grid-template-columns: 60%;
     grid-template-areas:
       "main"
       "lower"
@@ -150,24 +163,27 @@
     animation: fadeIn 3.5s ease-in 3s;
   }
 
+  .slogan {
+    transition: all 1s ease-in;
+    font-size: 20px;
+    color: #efc3e6;
+    text-shadow: -8px 4px 2px rgba(16, 16, 16, 0.6);
+    width: 500px;
+    text-align: center;
+    animation: mover 0.6s infinite alternate;
+  }
+
   .header-arrow {
     align-items: center;
     justify-content: center;
     grid-area: button;
   }
-
-  .slogan {
-    transition: all 1s ease-in;
-    font-size: 20px;
-    color: #1F1F1F;
-  }
-
   .scroll-down {
     display: block;
     position: relative;
     padding: 79px 10px 0;
     text-align: center;
-    text-shadow: -4px 1px 2px rgba(16,16,16,0.6);
+    text-shadow: -4px 3px 2px rgba(16, 16, 16, 0.6);
   }
 
   .arrow-down {
@@ -186,7 +202,7 @@
     border-top: 2px solid #f0a6ca;
     border-right: 2px solid #f0a6ca;
     transform: rotate(135deg);
-    box-shadow: 4px -3px 6px rgba(16,16,16,0.6);
+    box-shadow: 4px -3px 6px rgba(16, 16, 16, 0.425);
   }
 
   .scroll-title {
@@ -194,7 +210,7 @@
     text-transform: uppercase;
     color: #f0a6ca;
     letter-spacing: 0.1em;
-    animation: positionUpDown 1s ease infinite;
+    animation: mover 0.6s infinite alternate;
     font-size: 20px;
   }
 
@@ -208,6 +224,8 @@
     height: 90px;
     background: #f0a6ca;
     content: " ";
+    box-shadow: -1px -3px 6px #efc3e68a,
+    1px -3px 4px #efc3e68a;
   }
 
   @keyframes arrowShaft {

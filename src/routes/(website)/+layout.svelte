@@ -32,7 +32,7 @@
 
 <div class="site-container" style="background-image: url({bg})">
   <!-- {#if y > 900} -->
-  <div class="site-header">
+  <!-- <div class="site-header">
     <Dash>
       <h2 class="header-brand">
         <span class="reveal-delay"> Sonus </span>
@@ -41,7 +41,7 @@
         <Button>Join</Button>
       </div>
     </Dash>
-  </div>
+  </div> -->
   <!-- {/if} -->
   <div class="slot">
     <slot />
