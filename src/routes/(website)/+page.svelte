@@ -11,10 +11,11 @@
   onMount(async () => {
     setTimeout(async () => {
       document.querySelector(".loading").remove();
-    }, 3000);
+    }, 1);
 
-    const res = await fetch(`${BASE_URL}photos/Hxoh7VU?client_id=${key}`);
+    const res = await fetch(`${BASE_URL}photos/6-Y_Hxoh7VU?client_id=${photoKey}`);
     const json = await res.json();
+    console.log(json)
     middlePhoto = json.urls.regular;
   });
 </script>
@@ -24,11 +25,11 @@
   <link rel="stylesheet" href="css/main.css" />
 </svelte:head>
 
-<!-- <div class="loading">
+<div class="loading">
     {#each loading_arr as letter, i}
         <span style="--i:{i+1}">{letter}</span>
     {/each}
-</div> -->
+</div>
 
 <div class="home-container">
   <div class="top-section">
@@ -73,23 +74,24 @@
             <h2 style="--x:{x + 1}">• {word} •</h2>
           {/each}
         </div>
-      </div>
-      <div class="about-card">
-        <div class="about-inner">
-          <div class="about-front">
-            <div
-              class="about-image"
-              style="background-image: url({middlePhoto})"
-            />
-          </div>
-          <div class="about-back">
-            <h2>Sed ultricies, dui in ullamcorper eleifend</h2>
-            <p>Est risus sollicitudin tortor.</p>
-            <p>In semper ipsum ligula at nunc.</p>
-            <p>
-              Ut vitae tristique ligula. Nullam tincidunt dignissim felis, eu
-              venenatis odio pellentesque sed.
-            </p>
+        <div class="about-card">
+          <div class="about-inner">
+            <div class="about-front">
+              <img
+                class="about-image"
+                src={middlePhoto}
+                alt="tapes"
+              />
+            </div>
+            <div class="about-back">
+              <h2>Sed ultricies, dui in ullamcorper eleifend</h2>
+              <p>Est risus sollicitudin tortor.</p>
+              <p>In semper ipsum ligula at nunc.</p>
+              <p>
+                Ut vitae tristique ligula. Nullam tincidunt dignissim felis, eu
+                venenatis odio pellentesque sed.
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -129,6 +131,7 @@
   .words {
     justify-content: center;
     display: flex;
+    margin-bottom: 40px;
   }
 
   .words h2 {
@@ -144,9 +147,11 @@
 
   .about-card {
     background-color: transparent;
-    width: 300px;
-    height: 200px;
-    border: 1px solid #f1f1f1;
+    width: 400px;
+    height: 520px;
+    border-radius: 30px;
+    float: right;
+    margin: 50px 40px 0;
     perspective: 1000px;
   }
 
@@ -157,6 +162,24 @@
     text-align: center;
     transition: transform 0.8s;
     transform-style: preserve-3d;
+  }
+
+  .about-card:hover .about-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .about-front,
+  .about-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    color: #1F1F1F;
+    background-color: #9c89b8;
+  }
+
+  .about-back {
+    transform: rotateY(180deg);
   }
 
   .home-container {

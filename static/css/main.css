@@ -80,8 +80,8 @@ div, h1, h2, p, a {
     font-size: 80px;
     color: var(--dark-pink);
     text-transform: uppercase;
-    animation: 3s infinite flip; /* infinite as it's scalable */
-    /* animation-delay: calc(2s * var(--i)); */
+    animation: 2s infinite flip; /* infinite as it's scalable */
+    animation-delay: calc(.2s * var(--i));
     text-shadow: 1px 18px 6px #ac96cc96,
     1px 22px 10px #ac96cc57, 1px 25px 35px #ac96cc4b,
     1px 30px 60px #ac96cc93;

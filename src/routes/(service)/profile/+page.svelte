@@ -271,17 +271,12 @@
     display: inline-block;
     margin: 20px;
     box-shadow: 0px 0px 12px 8px rgb(240, 166, 202, 0.5);
+    animation: pulse 5s infinite linear;
   }
 
   .sona {
     animation: fadeIn 1s;
   }
-
-  .img {
-    animation: pulse 5s infinite linear;
-  }
-
-
 
   @media (max-width: 1560px) {
     .left-boxes {
