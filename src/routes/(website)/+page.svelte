@@ -13,9 +13,11 @@
       document.querySelector(".loading").remove();
     }, 1);
 
-    const res = await fetch(`${BASE_URL}photos/6-Y_Hxoh7VU?client_id=${photoKey}`);
+    const res = await fetch(
+      `${BASE_URL}photos/6-Y_Hxoh7VU?client_id=${photoKey}`
+    );
     const json = await res.json();
-    console.log(json)
+    console.log(json);
     middlePhoto = json.urls.regular;
   });
 </script>
@@ -26,9 +28,9 @@
 </svelte:head>
 
 <div class="loading">
-    {#each loading_arr as letter, i}
-        <span style="--i:{i+1}">{letter}</span>
-    {/each}
+  {#each loading_arr as letter, i}
+    <span style="--i:{i + 1}">{letter}</span>
+  {/each}
 </div>
 
 <div class="home-container">
@@ -77,19 +79,13 @@
         <div class="about-card">
           <div class="about-inner">
             <div class="about-front">
-              <img
-                class="about-image"
-                src={middlePhoto}
-                alt="tapes"
-              />
+              <img class="about-image" src={middlePhoto} alt="tapes" />
             </div>
             <div class="about-back">
-              <h2>Sed ultricies, dui in ullamcorper eleifend</h2>
-              <p>Est risus sollicitudin tortor.</p>
-              <p>In semper ipsum ligula at nunc.</p>
+              <h3>Sed ultricies</h3>
               <p>
-                Ut vitae tristique ligula. Nullam tincidunt dignissim felis, eu
-                venenatis odio pellentesque sed.
+                Est risus sollicitudin tortor. In semper ipsum ligula at nunc.
+                Ut vitae tristique ligula.
               </p>
             </div>
           </div>
@@ -147,12 +143,12 @@
 
   .about-card {
     background-color: transparent;
+    position: absolute;
     width: 400px;
     height: 520px;
     border-radius: 30px;
-    float: right;
     margin: 50px 40px 0;
-    perspective: 1000px;
+    transition: transform 0.8s;
   }
 
   .about-inner {
@@ -160,26 +156,63 @@
     width: 100%;
     height: 100%;
     text-align: center;
-    transition: transform 0.8s;
-    transform-style: preserve-3d;
   }
 
-  .about-card:hover .about-inner {
-    transform: rotateY(180deg);
+  .about-image {
+    transition: transform 0.8s;
   }
-  
+
+  .about-card:hover .about-back {
+    z-index: 1;
+  }
+
   .about-front,
   .about-back {
     position: absolute;
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
-    color: #1F1F1F;
+    justify-content: center;
+    color: #1f1f1f;
     background-color: #9c89b8;
+    transition: all 0.5s ease;
+  }
+
+  .about-image {
+    width: 200%;
+    height: 100%;
+  }
+
+  .about-card:hover .about-front {
+    transform: rotateX(90deg);
+    transform: scaleX(0);
+  }
+
+  .about-card:hover .about-back {
+    transform: rotateX(0deg);
+  }
+
+  .about-front {
+    border-radius: 30px;
   }
 
   .about-back {
     transform: rotateY(180deg);
+    flex-direction: column;
+    z-index: -1;
+    display: flex;
+    border-radius: 30px;
+    color: #1f1f1f;
+    background-color: #9c89b8;
+  }
+
+  .about-back p {
+    font-size: 25px;
+    margin-top: 20px;
+  }
+
+  .about-back h3 {
+    margin-bottom: 40px;
   }
 
   .home-container {
