@@ -11,7 +11,7 @@
   onMount(async () => {
     setTimeout(async () => {
       document.querySelector(".loading").remove();
-    }, 1);
+    }, 3000);
 
     const res = await fetch(
       `${BASE_URL}photos/6-Y_Hxoh7VU?client_id=${photoKey}`
@@ -33,6 +33,7 @@
   {/each}
 </div>
 
+<div id="dashboard"></div>
 <div class="home-container">
   <div class="top-section">
     <div class="header-section">
