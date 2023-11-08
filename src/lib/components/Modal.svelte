@@ -22,8 +22,7 @@
     </button>
     <hr />
     <nav class="modal-nav">
-      <slot />
-      <!-- <div class="links">
+      <div class="links">
         <a href="/" class="link">
           <div class="link-text">Home</div>
         </a>
@@ -36,7 +35,7 @@
         <a href="/discover" class="link">
           <div class="link-text">Discover</div>
         </a>
-      </div> -->
+      </div>
     </nav>
     <hr />
   </div>
