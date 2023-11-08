@@ -40,7 +40,7 @@
       <div class="header-lower container">
         <span class="reveal-delay">
           <div class="slogan upDown">
-            <h1>A million songs - One Sona</h1>
+            <h1> A million songs - One Sona</h1>
           </div>
         </span>
       </div>
@@ -97,8 +97,8 @@
       "main"
       "lower"
       "button";
-    grid-template-rows: 60% 20% 20%;
-    padding-top: 200px;
+    grid-template-rows: 60% 15% 25%;
+    padding-top: 100px;
     flex-wrap: wrap;
     justify-content: center;
   }
@@ -147,7 +147,7 @@
   }
 
   .brand-logo {
-    animation: fadeIn 4s ease-in 3s;
+    animation: fadeIn 3.5s ease-in 3s;
   }
 
   .header-arrow {
@@ -158,13 +158,16 @@
 
   .slogan {
     transition: all 1s ease-in;
+    font-size: 20px;
+    color: #1F1F1F;
   }
 
   .scroll-down {
     display: block;
     position: relative;
-    padding-top: 79px;
+    padding: 79px 10px 0;
     text-align: center;
+    text-shadow: -4px 1px 2px rgba(16,16,16,0.6);
   }
 
   .arrow-down {
@@ -183,6 +186,7 @@
     border-top: 2px solid #f0a6ca;
     border-right: 2px solid #f0a6ca;
     transform: rotate(135deg);
+    box-shadow: 4px -3px 6px rgba(16,16,16,0.6);
   }
 
   .scroll-title {
@@ -191,6 +195,7 @@
     color: #f0a6ca;
     letter-spacing: 0.1em;
     animation: positionUpDown 1s ease infinite;
+    font-size: 20px;
   }
 
   .scroll-down::before {
