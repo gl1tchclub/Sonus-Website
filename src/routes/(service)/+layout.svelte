@@ -113,6 +113,7 @@
   @media (max-width: 720px) {
     .main-container {
       justify-content: center;
+      padding-left: 5px;
     }
   }
 </style>

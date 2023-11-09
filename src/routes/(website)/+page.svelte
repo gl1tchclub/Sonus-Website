@@ -11,7 +11,7 @@
   onMount(async () => {
     setTimeout(async () => {
       document.querySelector(".loading").remove();
-    }, 3000);
+    }, 1);
 
     const res = await fetch(
       `${BASE_URL}photos/6-Y_Hxoh7VU?client_id=${photoKey}`
@@ -151,17 +151,24 @@
     justify-content: center;
     display: flex;
     margin-bottom: 40px;
+    width: 100%;
+    transition: all 1s ease;
   }
 
   .words h2 {
     animation: 3s infinite step-end textAnim;
     animation-delay: calc(0.75s * var(--x));
+    transition: all 1s ease;
     color: #efc3e6;
     display: block;
     margin: 20px;
     padding: 10px;
-    max-width: 500px;
+    max-width: 50%;
     float: left;
+  }
+
+  @media (max-width: 1400px) {
+    
   }
 
   .about-description {
