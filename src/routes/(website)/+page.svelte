@@ -8,6 +8,7 @@
   let y;
   $: innerHeight = 0;
   $: outerHeight = 0;
+  let bg = [];
   let middlePhoto = [];
 
   onMount(async () => {
@@ -15,12 +16,15 @@
       document.querySelector(".loading").remove();
     }, 1);
 
-    const res = await fetch(
+    let res = await fetch(
       `${BASE_URL}photos/6-Y_Hxoh7VU?client_id=${photoKey}`
     );
-    const json = await res.json();
-    console.log(json);
+    let json = await res.json();
     middlePhoto = json.urls.regular;
+
+    res = await fetch(`${BASE_URL}photos/rdmJc2Os4EM?client_id=${photoKey}`);
+    json = await res.json();
+    bg = json.urls.full;
   });
 </script>
 
@@ -72,57 +76,82 @@
     </div>
   </div>
   {#if y > 100}
-    <div class="second-bg">
-      <div class="second-section reveal">
-        <div class="middle-container">
-          <div class="words">
-            {#each textArr as word, x}
-              <h2 style="--x:{x + 1}">• {word} •</h2>
-            {/each}
-          </div>
-          <div class="about-section">
-            {#if y > 700 || innerHeight == 800}
-              <div class="card-container reveal">
-                <div class="about-card">
-                  <div class="about-inner">
-                    <div class="about-front">
-                      <img class="about-image" src={middlePhoto} alt="tapes" />
-                    </div>
-                    <div class="about-back">
-                      <h3>Sed ultricies</h3>
-                      <p>
-                        Est risus sollicitudin tortor. In semper ipsum ligula at
-                        nunc. Ut vitae tristique ligula.
-                      </p>
-                    </div>
+    <div class="second-section reveal">
+      <div class="middle-container">
+        <div class="words">
+          {#each textArr as word, x}
+            <h2 style="--x:{x + 1}">• {word} •</h2>
+          {/each}
+        </div>
+        <div class="about-section">
+          {#if y > 400 || innerHeight <= 800}
+            <div class="card-container reveal">
+              <div class="about-card">
+                <div class="about-inner">
+                  <div class="about-front">
+                    <img class="about-image" src={middlePhoto} alt="tapes" />
+                  </div>
+                  <div class="about-back">
+                    <h3>Sed ultricies</h3>
+                    <p>
+                      Est risus sollicitudin tortor. In semper ipsum ligula at
+                      nunc. Ut vitae tristique ligula.
+                    </p>
                   </div>
                 </div>
               </div>
-              <div class="about-title">
-                <h1>
-                  <span class="reveal"> What is a Sona? </span>
-                </h1>
+            </div>
+            <div class="about-title">
+              <h1>
+                <span class="reveal"> What is a Sona? </span>
+              </h1>
+            </div>
+            <div class="desc-container">
+              <div class="about-description">
+                <p class="reveal">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
+                  vestibulum, neque at scelerisque pharetra, libero nisi
+                  condimentum massa, nec aliquet leo tellus at orci. Vestibulum
+                  varius sapien id ipsum scelerisque, eget efficitur lacus
+                  auctor.
+                </p>
               </div>
-              <div class="desc-container">
-                <div class="about-description">
-                  <p class="reveal">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Cras vestibulum, neque at scelerisque pharetra, libero nisi
-                    condimentum massa, nec aliquet leo tellus at orci.
-                    Vestibulum varius sapien id ipsum scelerisque, eget
-                    efficitur lacus auctor.
-                  </p>
-                </div>
-              </div>
-            {/if}
-          </div>
+            </div>
+          {/if}
         </div>
       </div>
+    </div>
+    {/if}
+    {#if y > 700}
+    <div class="fixed-bg ">
+      <img src={bg} alt="purple" class="reveal"/>
+    </div>
+    <div class="last-section">
+        <div class="join-section">
+          <h1>Want to see your Sona?</h1>
+        </div>
     </div>
   {/if}
 </div>
 
 <style>
+  .last-section {
+    position: relative;
+    display: block;
+    background-color: #edede9;
+  }
+
+  .fixed-bg {
+    height: 80vh;
+  }
+
+  .fixed-bg img {
+    position: relative;
+    bottom: 200px;
+    width: 100%;
+    z-index: 1;
+  }
+  
   .top-section {
     position: relative;
     display: block;
@@ -135,8 +164,10 @@
     width: 100%;
     text-align: center;
     font-size: 40px;
-    height: 190vh;
+    height: fit-content;
     transition: all 1s ease;
+    box-shadow: 10px 0px 20px 5px rgba(0,0,0,0.76);
+    z-index: 2;
   }
 
   .second-section.reveal {
@@ -385,7 +416,7 @@
     text-shadow: -4px 3px 1px rgba(16, 16, 16, 0.6);
     font-size: 40px;
   }
-  
+
   .slogan {
     width: 100%;
     text-align: center;
@@ -449,25 +480,6 @@
     background: #f0a6ca;
     content: " ";
     box-shadow: -1px -3px 6px #efc3e68a, 1px -3px 4px #efc3e68a;
-  }
-
-  @keyframes arrowShaft {
-    0% {
-      transform-origin: 0% 0%;
-      transform: scale(1, 0);
-    }
-    50% {
-      transform-origin: 0% 0%;
-      transform: scale(1, 1);
-    }
-    58% {
-      transform-origin: 0% 100%;
-      transform: scale(1, 1);
-    }
-    100% {
-      transform-origin: 0% 100%;
-      transform: scale(1, 0);
-    }
   }
 
   @media (max-width: 1400px) {
@@ -618,7 +630,7 @@
 
     .header-section {
       height: 80%;
-      grid-template-rows: 40% 20% 20%;
+      grid-template-rows: 40%;
     }
 
     .slogan h1 {
@@ -650,7 +662,7 @@
     }
 
     .top-section {
-      padding: 10px; 
+      padding: 10px;
     }
   }
 
@@ -686,16 +698,16 @@
 
   @media (max-width: 420px) {
     .brand-name {
-      font-size: 40%;
+      font-size: 45%;
     }
 
     .brand-logo {
-      height: 65%;
+      height: 70%;
+      width: 80%;
     }
 
     .header-section {
       row-gap: 0px;
-      grid-template-rows: 40%;
     }
   }
 

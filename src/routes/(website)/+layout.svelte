@@ -56,8 +56,13 @@
     background-position: top;
     background-repeat: no-repeat;
     background-size: 100%;
+    height: 400vh;
     animation: bgUpDown 13s infinite ease;
     transition: all 1s ease-in;
+  }
+
+  .slot {
+    height: 100%;
   }
 
   @keyframes bgUpDown {

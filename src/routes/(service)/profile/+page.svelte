@@ -19,6 +19,10 @@
   }
 
   onMount(async () => {
+    setTimeout(async () => {
+      document.querySelector(".load-welcome").remove();
+    }, 9000);
+
     let res = await fetch(
       `${BASE_URL}photos/hNrd99q5peI?client_id=${photoKey}`
     );
@@ -65,6 +69,17 @@
     finalWords = tempWords.join(" || ");
   });
 </script>
+
+<div class="load-welcome">
+  <div class="load-text">
+    <h2>
+      <span class="reveal"> Welcome to </span>
+    </h2>
+    <div class="load-h1 reveal">
+      <h1>Sonus</h1>
+    </div>
+  </div>
+</div>
 
 <div class="box-border">
   <div class="left-boxes">
@@ -183,6 +198,32 @@
 </div>
 
 <style>
+  .load-welcome > .load-text {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    position: relative;
+    bottom: 100px;
+    font-size: 50px;
+    color: #f0a6ca;
+  }
+
+  .load-h1 {
+    margin-top: 50px;
+    font-size: 100px;
+    width: 800px;
+  }
+
+  .load-h1 > h1 {
+    animation: mover 1s infinite alternate;
+    text-shadow: 1px 1px 1px #efc3e6, 1px 2px 1px #efc3e6, 1px 3px 1px #efc3e6,
+      1px 4px 1px #efc3e6, 1px 5px 1px #efc3e6, 1px 6px 1px #efc3e6,
+      1px 7px 1px #efc3e6, 1px 8px 1px #efc3e6, 1px 9px 1px #efc3e6,
+      1px 10px 1px #efc3e6, 1px 18px 6px #b8bedd44,
+      1px 22px 10px #b8bedd35, 1px 20px 30px #b8bedd35;
+  }
+
   .box-border {
     border-radius: 20px;
     display: grid;

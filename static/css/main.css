@@ -45,6 +45,11 @@ div, h1, h2, p, a {
     0% {opacity: 0;}
     100% {opacity: 1;}
   } 
+
+  @keyframes fadeOut {
+    0% {opacity: 1;}
+    100% {opacity: 0;}
+  }
   
   @keyframes pulse {
     0% {
@@ -61,8 +66,7 @@ div, h1, h2, p, a {
   }
 
   .loading {
-    background:black;
-    color:white;
+    background: #6f5695;
     position:fixed;
     top:0;
     left:0;
@@ -72,6 +76,17 @@ div, h1, h2, p, a {
     align-items:center;
     justify-content:center;
     z-index: 2;
+ }
+
+ .loading, .load-welcome {
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
  }
  
   .loading span {
@@ -86,6 +101,17 @@ div, h1, h2, p, a {
     1px 22px 10px #ac96cc57, 1px 25px 35px #ac96cc4b,
     1px 30px 60px #ac96cc93;
   }
+
+  .load-welcome {
+    background: #483760;
+    z-index: 10;
+    animation-name: fadeOut;
+    animation-duration: 2s;
+    animation-delay: 8s;
+    animation-iteration-count: 1;
+  }
+
+
  
   @keyframes flip {
     0%,80% {
