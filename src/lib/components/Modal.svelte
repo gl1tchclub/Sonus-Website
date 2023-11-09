@@ -42,6 +42,17 @@
 </dialog>
 
 <style>
+  .link {
+    text-decoration: none;
+    font-size: 60px;
+    color: #1f1f1f;
+    transition: all 0.5s ease;
+  }
+
+  .link:hover {
+    color:#efc3e6;
+  }
+
   dialog {
     max-width: 32em;
     width: 50%;
