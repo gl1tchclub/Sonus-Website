@@ -30,7 +30,7 @@ The idea is that each Sona is developed using an AI program that takes in user d
 
 <div align="center">
 
-**A million songs, one Sona**
+**A million songs, _one Sona_**
 
 </div>
 ___
@@ -41,7 +41,22 @@ ___
 ### What does the Website Do?
 
 Sonus is a web-based music service that provides its users access to millions of songs, artists, and playlists. Additionally, using AI, a Sona is uniquely crafted for each user depending on their listening habits.
-Users can connect with others through their Sonas!
+
+A Sona can look soft and glowy like an aura, or clear and spikey. 
+
+Each Sona will have a description explaining the look of it. 
+
+Is it chaotic, yet soft? 
+
+Is it rough and textured, but also elegant? 
+
+Each user's Sona develops over time the more they listen to music. A Sona may look bright and watery today, but could change completely the next.
+
+Sonas are like clouds in the sky - they're shaped based on their environment and look unique to everyone!
+
+Users can connect with others through their Sonas! Often times, people are very conservative with their music tastes, worrying that others may dislike it. This can lead to being embarrassed and feeling shame about their unique tastes.
+
+Comparing your Sonas with friends and family, seeing the similarities and differences, and having more open dialogues about how different tastes in music can look visually will hopefully lead to more positivity around the different types of music others listen to.
 
 ### Technology Usage
 To make this project come true, I used VSCode as the IDE and Sveltekit as the framework. Using this framework, I coded the entire project in HTML, CSS, and Javascript.
