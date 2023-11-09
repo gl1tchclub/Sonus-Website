@@ -80,7 +80,7 @@
         </div>
         <div class="about-section">
           {#if y > 700}
-          <div class="about-container reveal">
+          <div class="card-container reveal">
             <div class="about-card">
               <div class="about-inner">
                 <div class="about-front">
@@ -189,10 +189,11 @@
     display: flex;
     justify-content: center;
     height: 100%;
+    margin-top: 20px;
   }
 
   .about-title h1 {
-    height: 80%;
+    height: 100%;
   }
 
   .desc-container {
@@ -213,7 +214,7 @@
     justify-content: center;
   }
 
-  .about-container {
+  .card-container {
     width: 100%;
     display: flex;
     position: relative;
@@ -314,14 +315,22 @@
 
   @media (max-width: 1200px) {
     .middle-container {
-      height: 80%;
+      height: fit-content;
     }
 
     .about-section {
-      height: 40%;
+      height: 50%;
+      grid-template-columns: auto;
+      grid-template-rows: 20% 40% 40%;
       grid-template-areas:
-        "title title"
-        "card description";
+        "title"
+        "description"
+        "card";
+        margin-top: 100px;
+    }
+
+    .about-title {
+      padding-bottom: 40px;
     }
 
     .desc-container {
@@ -339,8 +348,27 @@
       max-width: 100%;
     }
 
+    .about-description p {
+      font-size: 30px;
+    }
+
+    .about-title {
+      padding: 0;
+    }
+
+    .card-container {
+      justify-content: center;
+    }
+
     .about-card {
-      height: 400px;
+      height: 300px;
+      width: 50%;
+      margin-top: 40px;
+    }
+
+    .about-image {
+      width: 200%;
+      height: 200%;
     }
 
     .about-back h3 {
@@ -349,6 +377,27 @@
 
     .about-back p {
       margin: 0;
+    }
+  }
+
+  @media (max-width: 870px) {
+
+    .about-section {
+      grid-template-rows: 20% 30% 50%;
+    }
+    .about-description p {
+      font-size: 22px;
+      line-height: 2em;
+    }
+  }
+
+  @media (max-width: 660px) {
+    
+  }
+
+  @media (max-height: 910px) {
+    .second-section {
+      height: 100%;
     }
   }
 
@@ -369,7 +418,7 @@
       "main"
       "lower"
       "button";
-    grid-template-rows: 50% 10% 40%;
+    grid-template-rows: 50% 10% 25%;
     row-gap: 30px;
     padding-top: 100px;
     flex-wrap: wrap;
