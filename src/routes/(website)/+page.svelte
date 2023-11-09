@@ -70,52 +70,53 @@
     </div>
   </div>
   {#if y > 100}
-  <div class="second-bg">
-    <div class="second-section reveal">
-      <div class="middle-container">
-        <div class="words">
-          {#each textArr as word, x}
-            <h2 style="--x:{x + 1}">• {word} •</h2>
-          {/each}
-        </div>
-        <div class="about-section">
-          {#if y > 700}
-          <div class="card-container reveal">
-            <div class="about-card">
-              <div class="about-inner">
-                <div class="about-front">
-                  <img class="about-image" src={middlePhoto} alt="tapes" />
+    <div class="second-bg">
+      <div class="second-section reveal">
+        <div class="middle-container">
+          <div class="words">
+            {#each textArr as word, x}
+              <h2 style="--x:{x + 1}">• {word} •</h2>
+            {/each}
+          </div>
+          <div class="about-section">
+            {#if y > 700}
+              <div class="card-container reveal">
+                <div class="about-card">
+                  <div class="about-inner">
+                    <div class="about-front">
+                      <img class="about-image" src={middlePhoto} alt="tapes" />
+                    </div>
+                    <div class="about-back">
+                      <h3>Sed ultricies</h3>
+                      <p>
+                        Est risus sollicitudin tortor. In semper ipsum ligula at
+                        nunc. Ut vitae tristique ligula.
+                      </p>
+                    </div>
+                  </div>
                 </div>
-                <div class="about-back">
-                  <h3>Sed ultricies</h3>
-                  <p>
-                    Est risus sollicitudin tortor. In semper ipsum ligula at
-                    nunc. Ut vitae tristique ligula.
+              </div>
+              <div class="about-title">
+                <h1>
+                  <span class="reveal"> What is a Sona? </span>
+                </h1>
+              </div>
+              <div class="desc-container">
+                <div class="about-description">
+                  <p class="reveal">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Cras vestibulum, neque at scelerisque pharetra, libero nisi
+                    condimentum massa, nec aliquet leo tellus at orci.
+                    Vestibulum varius sapien id ipsum scelerisque, eget
+                    efficitur lacus auctor.
                   </p>
                 </div>
               </div>
-            </div>
+            {/if}
           </div>
-          <div class="about-title">
-            <span class="reveal">
-              <h1>What is a Sona?</h1>
-            </span>
-          </div>
-          <div class="desc-container">
-            <div class="about-description">
-              <p class="reveal">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
-                vestibulum, neque at scelerisque pharetra, libero nisi
-                condimentum massa, nec aliquet leo tellus at orci. Vestibulum
-                varius sapien id ipsum scelerisque, eget efficitur lacus auctor.
-              </p>
-            </div>
-          </div>
-          {/if}
         </div>
       </div>
     </div>
-  </div>
   {/if}
 </div>
 
@@ -212,6 +213,7 @@
     color: #1f1f1f;
     height: fit-content;
     justify-content: center;
+    display: flex;
   }
 
   .card-container {
@@ -319,14 +321,14 @@
     }
 
     .about-section {
-      height: 50%;
+      height: 80%;
       grid-template-columns: auto;
       grid-template-rows: 20% 40% 40%;
       grid-template-areas:
         "title"
         "description"
         "card";
-        margin-top: 100px;
+      margin-top: 100px;
     }
 
     .about-title {
@@ -381,18 +383,65 @@
   }
 
   @media (max-width: 870px) {
-
     .about-section {
-      grid-template-rows: 20% 30% 50%;
+      grid-template-rows: 15% 35% 45%;
+      justify-content: center;
     }
     .about-description p {
       font-size: 22px;
       line-height: 2em;
     }
+
+    .about-description {
+      display: flex;
+    }
+
+    .about-card {
+      width: 100%;
+    }
   }
 
   @media (max-width: 660px) {
-    
+    .about-description p {
+      /* max-width: 80%; */
+      line-height: 1.8em;
+    }
+
+    .about-description {
+      height: 100%;
+    }
+
+    .desc-container {
+      height: 100%;
+      padding: 40px 0;
+    }
+
+    .words h2 {
+      font-size: 80px;
+    }
+
+    .about-title {
+      font-size: 30px;
+    }
+  }
+
+  @media (max-width: 520px) {
+    .words h2 {
+      font-size: 50px;
+    }
+
+    .about-title {
+      font-size: 25px;
+    }
+
+    .about-image {
+      width: 250%;
+      height: 150%;
+    }
+
+    .about-back p, h3 {
+      font-size: 50%;
+    }
   }
 
   @media (max-height: 910px) {
