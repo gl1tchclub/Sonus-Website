@@ -684,6 +684,21 @@
     }
   }
 
+  @media (max-width: 420px) {
+    .brand-name {
+      font-size: 40%;
+    }
+
+    .brand-logo {
+      height: 65%;
+    }
+
+    .header-section {
+      row-gap: 0px;
+      grid-template-rows: 40%;
+    }
+  }
+
   @media (max-height: 910px) {
     .second-section {
       height: 100%;
