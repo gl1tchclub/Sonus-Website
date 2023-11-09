@@ -1,11 +1,13 @@
 <script>
-  export let showModal; // boolean
+  // Svelte script to manage a modal dialog
+  export let showModal;
 
   let dialog; // HTMLDialogElement
 
   $: if (dialog && showModal) dialog.showModal();
 </script>
 
+<!-- Binds the dialog reference, handles close event, and stops propagation on inner div click. -->
 <!-- svelte-ignore a11y-click-events-have-key-events a11y-no-noninteractive-element-interactions -->
 <dialog
   bind:this={dialog}
@@ -16,8 +18,8 @@
   <div on:click|stopPropagation>
     <!-- svelte-ignore a11y-autofocus -->
     <button class="button" autofocus on:click={() => dialog.close()}>
-      <span class="X"></span>
-      <span class="Y"></span>
+      <span class="X close-icon" />
+      <span class="Y close-icon" />
       <div class="close">Close</div>
     </button>
     <hr />
@@ -50,7 +52,7 @@
   }
 
   .link:hover {
-    color:#efc3e6;
+    color: #efc3e6;
   }
 
   dialog {
@@ -66,15 +68,19 @@
     padding-bottom: 20px;
     text-align: center;
   }
+
   dialog::backdrop {
     background: rgba(0, 0, 0, 0.3);
   }
+
   dialog > div {
     padding: 1em;
   }
+
   dialog[open] {
     animation: zoom 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
   }
+
   @keyframes zoom {
     from {
       transform: scale(0.95);
@@ -83,9 +89,11 @@
       transform: scale(1);
     }
   }
+
   dialog[open]::backdrop {
     animation: fade 0.2s ease-out;
   }
+
   @keyframes fade {
     from {
       opacity: 0;
@@ -109,26 +117,23 @@
     color: black;
   }
 
-  .X {
-    content: '';
+  .close-icon {
+    content: "";
     position: absolute;
     top: 50%;
     left: 33%;
     width: 2em;
     height: 1.5px;
-    transform: rotate(45deg);
     background-color: black;
+
+  }
+
+  .X {
+    transform: rotate(45deg);
   }
 
   .Y {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 33%;
-    width: 2em;
-    height: 1.5px;
     transform: rotate(-45deg);
-    background-color: black;
   }
 
   .close {

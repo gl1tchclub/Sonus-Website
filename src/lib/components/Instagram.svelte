@@ -1,9 +1,6 @@
+<!-- Instagram icon -->
 <i class="fa-brands fa-instagram" />
-<svg
-  xmlns="http://www.w3.org/2000/svg"
-  height="2em"
-  viewBox="0 0 448 512"
->
+<svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 0 448 512">
   <path
     d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 
             114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 
@@ -25,7 +22,7 @@
 </svg>
 
 <style>
-    svg {
-        padding: 10px 10px 4px 10px;
-    }
+  svg {
+    padding: 10px 10px 4px 10px;
+  }
 </style>

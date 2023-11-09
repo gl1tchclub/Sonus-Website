@@ -1,6 +1,7 @@
 <div class="link"><slot /></div>
 
 <style>
+  /* position the inner text */
   .link {
     position: absolute;
     justify-content: center;
@@ -12,8 +13,7 @@
     text-decoration: none;
     display: flex;
     transition: all 0.3s ease-in-out;
-    box-shadow: 0px 5px 5px #2d283638,
-    0px 8px 10px #2d28364b;
+    box-shadow: 0px 5px 5px #2d283638, 0px 8px 10px #2d28364b;
     padding-block: 0.5rem;
     padding-inline: 1.25rem;
     background-color: #ac96cc;
@@ -29,7 +29,8 @@
     transform: scale(1.1);
     border-color: #fff9;
   }
-  
+
+  /* Create a shining effect on the left side of "link" class elements. */
   .link::before {
     animation: shine 3s cubic-bezier(0.7, 0.54, 0.2, 0.3) infinite;
     content: "";
@@ -60,5 +61,4 @@
       left: 100%;
     }
   }
-
 </style>

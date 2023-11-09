@@ -1,9 +1,6 @@
+<!-- Twitter icon -->
 <i class="fa-brands fa-twitter" />
-<svg
-  xmlns="http://www.w3.org/2000/svg"
-  height="2em"
-  viewBox="0 0 512 512"
->
+<svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 0 512 512">
   <path
     d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0
             138.72-105.583 298.558-298.558 298.558-59.452 
@@ -25,7 +22,7 @@
 </svg>
 
 <style>
-    svg {
-        padding: 10px 10px 4px 10px;
-    }
+  svg {
+    padding: 10px 10px 4px 10px;
+  }
 </style>

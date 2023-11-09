@@ -50,7 +50,7 @@
         <slot />
       </a>
     </div>
-      <div class="trademark">© 2023 Sonus NZ</div>
+    <div class="trademark">© 2023 Sonus NZ</div>
   </div>
 </footer>
 
