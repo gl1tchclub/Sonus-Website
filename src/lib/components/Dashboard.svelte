@@ -7,7 +7,6 @@
   <div>
     <slot />
   </div>
-
   <button id="menu-open" on:click={() => (showModal = true)}>
     <i class="fa-solid fa-bars" />
     <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 0 448 512">

@@ -1,6 +1,7 @@
 <!-- Side navigation bar -->
 <div class="sidenav">
   <nav class="nav-container">
+    <!-- Logo section -->
     <a href="/" class="branding">
       <img
         src="./img/Sonus-logos_transparent.png"
@@ -15,7 +16,7 @@
         class="icon"
       />
     </a>
-    <!-- pages section -->
+    <!-- Pages section -->
     <div class="top-side-nav">
       <a href="/profile" class="nav-link">
         <i class="fa-solid fa-user" style="color: rgb(18, 10, 19)" />
@@ -76,7 +77,7 @@
       </div>
     </div>
   </nav>
-  <!-- exit section -->
+  <!-- Exit section -->
   <div class="bottom-side-nav">
     <a href="/goodbye" class="nav-link">
       <i class="fa-solid-icons" style="color: #ffffff;" />
@@ -99,31 +100,9 @@
 </div>
 
 <style>
-  .sidenav svg {
-    fill: rgb(18, 10, 19);
-  }
-
-  .sidenav svg,
-  .nav-text {
-    display: inline-flex;
-    animation: grow 1s;
-  }
-
-  @keyframes grow {
-    0% {
-      font-size: 1px;
-      opacity: 0;
-    }
-    80% {
-      font-size: 100%;
-      opacity: 1;
-    }
-  }
-
-  .nav-text {
-    position: relative;
-    padding: 15px 0 0 15px;
-    top: -4px;
+  .nav-container {
+    display: flex;
+    flex-wrap: wrap;
   }
 
   .sidenav {
@@ -149,9 +128,29 @@
     border-radius: 50px;
   }
 
-  .nav-container {
-    display: flex;
-    flex-wrap: wrap;
+  .sidenav .nav-link:hover {
+    background-color: #efc3e6;
+  }
+
+  .sidenav svg {
+    fill: rgb(18, 10, 19);
+  }
+
+  .sidenav svg,
+  .nav-text {
+    display: inline-flex;
+    animation: grow 1s;
+  }
+
+  @keyframes grow {
+    0% {
+      font-size: 1px;
+      opacity: 0;
+    }
+    80% {
+      font-size: 100%;
+      opacity: 1;
+    }
   }
 
   .branding {
@@ -171,7 +170,7 @@
     display: none;
     transition: all 0.8s ease;
   }
-
+  
   .top-side-nav {
     border-top: solid 1px rgb(18, 10, 19);
     margin: 40px 0 0 0;
@@ -183,6 +182,12 @@
     animation: fadeIn 2s;
   }
 
+  .nav-text {
+    position: relative;
+    padding: 15px 0 0 15px;
+    top: -4px;
+  }
+
   .bottom-side-nav {
     position: absolute;
     border-top: solid 1px rgb(18, 10, 19);
@@ -191,10 +196,6 @@
     padding: 10px;
     height: fit-content;
     animation: fadeIn 2s;
-  }
-
-  .sidenav .nav-link:hover {
-    background-color: #efc3e6;
   }
 
   @media (max-width: 980px) {
@@ -215,6 +216,7 @@
     .branding .logo {
       display: none;
     }
+
     .branding {
       left: 1px;
     }

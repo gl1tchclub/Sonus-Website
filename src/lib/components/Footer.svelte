@@ -4,7 +4,9 @@
 </script>
 
 <footer class="footer">
+  <!-- Container -->
   <div class="footer-content">
+    <!-- Column one -->
     <div class="footer-list">
       <h2 class="footer-title">
         <span class="reveal">Company</span>
@@ -22,6 +24,7 @@
         </span>
       </ul>
     </div>
+    <!-- Column two -->
     <div class="footer-list">
       <h2 class="footer-title">
         <span class="reveal">Contact</span>
@@ -37,6 +40,7 @@
         </span>
       </ul>
     </div>
+    <!-- Social buttons right section -->
     <div class="section-right">
       <div class="social-div">
         <Instagram />
@@ -45,6 +49,7 @@
         <Twitter />
       </div>
     </div>
+    <!-- Back to top button -->
     <div class="button-height">
       <a href="#dashboard" class="button-anchor">
         <slot />
@@ -74,6 +79,7 @@
     position: relative;
     margin: 0 10px 0 0;
   }
+  
   .footer-content > div:nth-of-type(1) {
     grid-area: company;
   }
