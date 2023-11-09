@@ -122,8 +122,8 @@
       </div>
     </div>
   {/if}
-  {#if y > 700}
-    <div class="fixed-bg" style="background-image:url({bg})">
+  {#if y > 800}
+    <div class="fixed-bg reveal" style="background-image:url({bg})">
       <div class="last-section">
         <div class="last-container">
           <div class="top-grid">
