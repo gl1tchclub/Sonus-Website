@@ -14,7 +14,7 @@
   onMount(async () => {
     setTimeout(async () => {
       document.querySelector(".loading").remove();
-    }, 1);
+    }, 3000);
 
     let res = await fetch(
       `${BASE_URL}photos/6-Y_Hxoh7VU?client_id=${photoKey}`
