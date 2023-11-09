@@ -342,6 +342,7 @@
 
   .header-top {
     grid-area: main;
+    font-size: 200px;
   }
 
   .brand {
@@ -352,12 +353,13 @@
     animation: pulse 2s infinite linear;
     position: relative;
     grid-area: main;
+    font-size: 100%;
   }
 
   .brand-name {
     position: absolute;
     z-index: 1;
-    font-size: 180px;
+    font-size: inherit;
     height: 100%;
     width: 100%;
     color: #f0a6ca;
@@ -367,7 +369,7 @@
       1px 7px 1px #efc3e6, 1px 8px 1px #efc3e6, 1px 9px 1px #efc3e6,
       1px 10px 1px #efc3e6, 1px 18px 6px rgba(16, 16, 16, 0.4),
       1px 22px 10px rgba(16, 16, 16, 0.2), 1px 25px 35px rgba(16, 16, 16, 0.2),
-      1px 30px 60px rgba(16, 16, 16, 0.4);
+      1px 30px 40px rgba(16, 16, 16, 0.4);
   }
 
   .brand-name > .reveal-delay {
@@ -381,12 +383,12 @@
   .slogan h1 {
     color: #efc3e6;
     text-shadow: -4px 3px 1px rgba(16, 16, 16, 0.6);
+    font-size: 40px;
   }
   
   .slogan {
     width: 100%;
     text-align: center;
-    
   }
 
   .header-lower > .reveal-delay {
@@ -433,7 +435,7 @@
     color: #f0a6ca;
     letter-spacing: 0.1em;
     font-size: 20px;
-    text-shadow: -4px 3px 2px rgba(16, 16, 16, 0.6);
+    text-shadow: -2px 3px 1px rgba(16, 16, 16, 0.6);
     margin: 0 10px;
   }
 
@@ -554,6 +556,10 @@
     .header-section {
       grid-template-columns: 100%;
     }
+
+    .brand-name {
+      font-size: 80%;
+    }
   }
 
   @media (max-width: 870px) {
@@ -572,6 +578,15 @@
 
     .about-card {
       width: 100%;
+    }
+
+    .brand-logo {
+      width: 50%;
+      height: 80%;
+    }
+
+    .brand-name {
+      font-size: 70%;
     }
   }
 
@@ -601,13 +616,41 @@
       width: 100%;
     }
 
+    .header-section {
+      height: 80%;
+      grid-template-rows: 40% 20% 20%;
+    }
+
     .slogan h1 {
       font-size: 30px;
       text-shadow: -3px 3px 1px rgba(16, 16, 16, 0.6);
+      margin-top: 40px;
+    }
+
+    .brand {
+      width: 80%;
+      display: flex;
+    }
+
+    .brand-name {
+      font-size: 60%;
+    }
+
+    .brand-logo {
+      height: 100%;
+      width: 70%;
+    }
+
+    .scroll-title {
+      text-shadow: -2px 3px 1px rgba(16, 16, 16, 0.6);
+    }
+
+    .scroll {
+      height: 100%;
     }
 
     .top-section {
-      padding: 0 
+      padding: 10px; 
     }
   }
 
@@ -629,6 +672,16 @@
     h3 {
       font-size: 50%;
     }
+
+    .brand-name {
+      width: 100%;
+      font-size: 50%;
+    }
+
+    .brand-logo {
+      height: 80%;
+      width: 70%;
+    }
   }
 
   @media (max-height: 910px) {
@@ -640,6 +693,14 @@
   @media (max-height: 600px) {
     .scroll-down {
       display: none;
+    }
+
+    .brand-name {
+      font-size: 60%;
+    }
+
+    .slogan h1 {
+      font-size: 30px;
     }
   }
 </style>
