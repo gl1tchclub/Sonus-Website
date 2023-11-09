@@ -6,6 +6,8 @@
   const BASE_URL = "https://api.unsplash.com/";
   const photoKey = "FkjKMeG-arrW_qolpGUoya8HBCEBUCkjH3j9BB2dwms";
   let y;
+  $: innerHeight = 0;
+  $: outerHeight = 0;
   let middlePhoto = [];
 
   onMount(async () => {
@@ -22,7 +24,7 @@
   });
 </script>
 
-<svelte:window bind:scrollY={y} />
+<svelte:window bind:scrollY={y} bind:innerHeight bind:outerHeight />
 <svelte:head>
   <link rel="stylesheet" href="css/main.css" />
 </svelte:head>
@@ -79,7 +81,7 @@
             {/each}
           </div>
           <div class="about-section">
-            {#if y > 700}
+            {#if y > 700 || innerHeight == 800}
               <div class="card-container reveal">
                 <div class="about-card">
                   <div class="about-inner">
@@ -376,14 +378,15 @@
     animation: fadeIn 3.5s ease-in 3s;
   }
 
-  .slogan {
-    /* transition: all 1s ease-in; */
-    font-size: 20px;
+  .slogan h1 {
     color: #efc3e6;
-    text-shadow: -8px 4px 2px rgba(16, 16, 16, 0.6);
+    text-shadow: -4px 3px 1px rgba(16, 16, 16, 0.6);
+  }
+  
+  .slogan {
     width: 100%;
     text-align: center;
-    /* animation: pulse 2.4s infinite ease; */
+    
   }
 
   .header-lower > .reveal-delay {
@@ -593,9 +596,22 @@
     .about-title {
       font-size: 30px;
     }
+
+    .header-top {
+      width: 100%;
+    }
+
+    .slogan h1 {
+      font-size: 30px;
+      text-shadow: -3px 3px 1px rgba(16, 16, 16, 0.6);
+    }
+
+    .top-section {
+      padding: 0 
+    }
   }
 
-  @media (max-width: 520px) {
+  @media (max-width: 570px) {
     .words h2 {
       font-size: 50px;
     }

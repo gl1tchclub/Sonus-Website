@@ -30,6 +30,7 @@
   href="https://fonts.googleapis.com/css?family=Agbalumo"
 />
 
+
 <div class="site-container" style="background-image: url({bg})">
   <div class="slot">
     <slot />
@@ -103,6 +104,12 @@
     
     .shown-footer {
       display: none;
+    }
+  }
+
+  @media (max-width: 460px) {
+    .site-container {
+      animation: none;
     }
   }
   
