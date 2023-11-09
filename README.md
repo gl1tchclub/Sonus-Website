@@ -61,22 +61,45 @@ Comparing your Sonas with friends and family, seeing the similarities and differ
 ### Technology Usage
 To make this project come true, I used VSCode as the IDE and Sveltekit as the framework. Using this framework, I coded the entire project in HTML, CSS, and Javascript.
 
-All user data and images is fetched from the [Unsplash API](https://api.unsplash.com/) and the sona description is fetched from the [WordNinjas API.](https://api.api-ninjas.com/)
+All user data and images are fetched from the [Unsplash API](https://api.unsplash.com/) and the sona description is fetched from the [WordNinjas API.](https://api.api-ninjas.com/)
+
+I found a lot of inspiration for css animations and components by looking at websites that listed some cool ones. I found it hard to find out how to code for them, so I often resorted to refering to [W3Schools](https://www.w3schools.com/), the [Svelte Tutorial](https://kit.svelte.dev/docs/introduction), and of course the [MDN Web Docs](https://developer.mozilla.org/en-US/) for this.
+
+Lastly, I used [Coolors](https://coolors.co/) to generate a color palette that would give me an idea for my website and become the theme.
 
 ### Known Bugs
+The website is not responsive for every single dimension possible, but is responsive for 90% of devices.
+
+The fetching of the sona description takes a while to load as once it fetches, there is Javascript that also randomizes which words to use. Fetching the home page background also takes 4 seconds to show.
+These issues are resolved through the use of a loading screen.
 
 ### Challenges
-//making this while learning HTML, JS, and CSS in svelte from scratch
-//scope creep
-//apis
-//making aniamted components using code framework others developed -- learning what they coded
+
+I initially started this project in week 2 on a different repository. I used it as an opportunity to apply the concepts I was learning in context of the project. However, although it did help with my learning, I found that come week 12 after I studied hard for the SBA, I realized that the state of my project at the time was a mess. There were so many components and pages, scope creep had been an issue despite not having a clear idea of my website's purpose, almost everything was half-finished, and a lot of the code was based on early html/css knowledge. 
+
+Overwhelmed, I made a new repository, took the modal component and the buttons I'd made from the old repo, and started from there. That was also when I came across my biggest inspiration that allowed me to push through with this project to the end - a cute, pinky purple color palette.
+
+With this, I had a huge eureka moment and instantly came up with Sonus on the spot.
+
+Naturally, I couldn't just go to work and code right then. I was always confronted with concepts that I didn't entirely understand, but I consistently dedicated myself to learn and work to implement what I'd learned. I used a lot of open source resources and communicated with others to learn these concepts.
+
+I also tried to find music APIs that I could use. I started with the Spotify API, however, getting an access token to that was a whole beast of its own that we hadn't covered in class. This was the same with other music APIs that I came across. This was because you had to create code that would ask the user for permission to use their data, even if you just wanted to get pictures of album covers and artist names. Only if you got permission would you then receive an access key which would only last a couple hours at _most_ before expiring.
+
+My biggest challenge was that I had restarted a 70% project I'd been working on since week 2 and I only had 2 weeks to finish it. This caused a lot of anxiety and stress since I also had other big projects I needed to complete. I worked everyday for 2 weeks from early morning to 10-11pm at school in order to not just barely pass, but to maximize the grade I can get for it. I dedicated myself to showing my best work. 
+
+Of course, this was at the expense of my mental and physical health. I would work so hard for 12hrs a day that I would forget to eat, take breaks, exercise, and I couldn't sleep due to my peaking anxiety. Of course I cried, but I've managed to produce something that I can be proud to hand in. 
+
 
 ### Future Features
+In the future, I wish to develop the discover, library, and exit pages. I also want to create my own API for this website.
 
+I hope to add a search function with html/css attached so that users can look up music.
+
+I also want to add a dark theme mode, more content to the home page, and actual descriptions instead of lorem ipsum.
 ___
 
 ## Installing Sonus
-To run the ARC locally, you first need to have:
+To run Sonus locally, you first need to have:
 * Git Bash
 * Node
 * An IDE that can run HTML, CSS, and Javascript. ([VSCode](https://code.visualstudio.com/download) is recommended
