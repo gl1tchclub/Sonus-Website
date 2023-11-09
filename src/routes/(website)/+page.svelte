@@ -300,156 +300,6 @@
     margin-bottom: 40px;
   }
 
-  @media (max-width: 1400px) {
-    .words h2 {
-      font-size: 50px;
-    }
-
-    .about-description p {
-      font-size: 35px;
-    }
-
-    .about-image {
-      width: 300%;
-      height: 150%;
-    }
-  }
-
-  @media (max-width: 1200px) {
-    .middle-container {
-      height: fit-content;
-    }
-
-    .about-section {
-      height: 80%;
-      grid-template-columns: auto;
-      grid-template-rows: 20% 40% 40%;
-      grid-template-areas:
-        "title"
-        "description"
-        "card";
-      margin-top: 100px;
-    }
-
-    .about-title {
-      padding-bottom: 40px;
-    }
-
-    .desc-container {
-      height: 100%;
-    }
-
-    .words {
-      display: block;
-      margin: 0;
-      height: 60%;
-    }
-
-    .words h2 {
-      font-size: 100px;
-      max-width: 100%;
-    }
-
-    .about-description p {
-      font-size: 30px;
-    }
-
-    .about-title {
-      padding: 0;
-    }
-
-    .card-container {
-      justify-content: center;
-    }
-
-    .about-card {
-      height: 300px;
-      width: 50%;
-      margin-top: 40px;
-    }
-
-    .about-image {
-      width: 200%;
-      height: 200%;
-    }
-
-    .about-back h3 {
-      margin: 0;
-    }
-
-    .about-back p {
-      margin: 0;
-    }
-  }
-
-  @media (max-width: 870px) {
-    .about-section {
-      grid-template-rows: 15% 35% 45%;
-      justify-content: center;
-    }
-    .about-description p {
-      font-size: 22px;
-      line-height: 2em;
-    }
-
-    .about-description {
-      display: flex;
-    }
-
-    .about-card {
-      width: 100%;
-    }
-  }
-
-  @media (max-width: 660px) {
-    .about-description p {
-      /* max-width: 80%; */
-      line-height: 1.8em;
-    }
-
-    .about-description {
-      height: 100%;
-    }
-
-    .desc-container {
-      height: 100%;
-      padding: 40px 0;
-    }
-
-    .words h2 {
-      font-size: 80px;
-    }
-
-    .about-title {
-      font-size: 30px;
-    }
-  }
-
-  @media (max-width: 520px) {
-    .words h2 {
-      font-size: 50px;
-    }
-
-    .about-title {
-      font-size: 25px;
-    }
-
-    .about-image {
-      width: 250%;
-      height: 150%;
-    }
-
-    .about-back p, h3 {
-      font-size: 50%;
-    }
-  }
-
-  @media (max-height: 910px) {
-    .second-section {
-      height: 100%;
-    }
-  }
-
   .home-container {
     width: 100%;
     height: 100%;
@@ -615,9 +465,165 @@
     }
   }
 
+  @media (max-width: 1400px) {
+    .words h2 {
+      font-size: 50px;
+    }
+
+    .about-description p {
+      font-size: 35px;
+    }
+
+    .about-image {
+      width: 300%;
+      height: 150%;
+    }
+  }
+
+  @media (max-width: 1200px) {
+    .middle-container {
+      height: fit-content;
+    }
+
+    .about-section {
+      height: 80%;
+      grid-template-columns: auto;
+      grid-template-rows: 20% 40% 40%;
+      grid-template-areas:
+        "title"
+        "description"
+        "card";
+      margin-top: 100px;
+    }
+
+    .about-title {
+      padding-bottom: 40px;
+    }
+
+    .desc-container {
+      height: 100%;
+    }
+
+    .words {
+      display: block;
+      margin: 0;
+      height: 60%;
+    }
+
+    .words h2 {
+      font-size: 100px;
+      max-width: 100%;
+    }
+
+    .about-description p {
+      font-size: 30px;
+    }
+
+    .about-title {
+      padding: 0;
+    }
+
+    .card-container {
+      justify-content: center;
+    }
+
+    .about-card {
+      height: 300px;
+      width: 50%;
+      margin-top: 40px;
+    }
+
+    .about-image {
+      width: 200%;
+      height: 200%;
+    }
+
+    .about-back h3 {
+      margin: 0;
+    }
+
+    .about-back p {
+      margin: 0;
+    }
+  }
+
   @media (max-width: 1120px) {
     .header-section {
       grid-template-columns: 100%;
+    }
+  }
+
+  @media (max-width: 870px) {
+    .about-section {
+      grid-template-rows: 15% 35% 45%;
+      justify-content: center;
+    }
+    .about-description p {
+      font-size: 22px;
+      line-height: 2em;
+    }
+
+    .about-description {
+      display: flex;
+    }
+
+    .about-card {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 660px) {
+    .about-description p {
+      line-height: 1.8em;
+    }
+
+    .about-description {
+      height: 100%;
+    }
+
+    .desc-container {
+      height: 100%;
+      padding: 40px 0;
+    }
+
+    .words h2 {
+      font-size: 80px;
+    }
+
+    .about-title {
+      font-size: 30px;
+    }
+  }
+
+  @media (max-width: 520px) {
+    .words h2 {
+      font-size: 50px;
+    }
+
+    .about-title {
+      font-size: 25px;
+    }
+
+    .about-image {
+      width: 250%;
+      height: 150%;
+    }
+
+    .about-back p,
+    h3 {
+      font-size: 50%;
+    }
+  }
+
+  @media (max-height: 910px) {
+    .second-section {
+      height: 100%;
+    }
+  }
+
+  @media (max-height: 600px) {
+    .scroll-down {
+      display: none;
     }
   }
 </style>
