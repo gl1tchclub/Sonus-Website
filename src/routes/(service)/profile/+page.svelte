@@ -220,8 +220,8 @@
     text-shadow: 1px 1px 1px #efc3e6, 1px 2px 1px #efc3e6, 1px 3px 1px #efc3e6,
       1px 4px 1px #efc3e6, 1px 5px 1px #efc3e6, 1px 6px 1px #efc3e6,
       1px 7px 1px #efc3e6, 1px 8px 1px #efc3e6, 1px 9px 1px #efc3e6,
-      1px 10px 1px #efc3e6, 1px 18px 6px #b8bedd44,
-      1px 22px 10px #b8bedd35, 1px 20px 30px #b8bedd35;
+      1px 10px 1px #efc3e6, 1px 18px 6px #b8bedd44, 1px 22px 10px #b8bedd35,
+      1px 20px 30px #b8bedd35;
   }
 
   .box-border {

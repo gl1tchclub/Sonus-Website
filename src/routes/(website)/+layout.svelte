@@ -56,7 +56,7 @@
     background-position: top;
     background-repeat: no-repeat;
     background-size: 100%;
-    height: 400vh;
+    height: 100%;
     animation: bgUpDown 13s infinite ease;
     transition: all 1s ease-in;
   }

@@ -121,15 +121,15 @@
         </div>
       </div>
     </div>
-    {/if}
-    {#if y > 700}
-    <div class="fixed-bg ">
-      <img src={bg} alt="purple" class="reveal"/>
-    </div>
-    <div class="last-section">
-        <div class="join-section">
+  {/if}
+  {#if y > 700}
+    <div class="fixed-bg" style="background-image:url({bg})">
+      <div class="last-container">
+        <div class="last-section">
           <h1>Want to see your Sona?</h1>
+          <div class="join-section" />
         </div>
+      </div>
     </div>
   {/if}
 </div>
@@ -138,20 +138,41 @@
   .last-section {
     position: relative;
     display: block;
-    background-color: #edede9;
   }
 
   .fixed-bg {
-    height: 80vh;
+    height: 150vh;
+    background-size: 150%;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #efc3e6;
+    justify-content: center;
+    text-align: center;
   }
 
   .fixed-bg img {
+    width: 150%;
+    height: 100%;
     position: relative;
-    bottom: 200px;
-    width: 100%;
+    right: 35%;
     z-index: 1;
   }
-  
+
+  .last-container {
+    height: 100%;
+    padding: 100px;
+    position: relative;
+    display: block;
+  }
+
+  .last-section {
+    width: 100%;
+    height: 60%;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 40% 20% 20%;
+  }
+
   .top-section {
     position: relative;
     display: block;
@@ -166,7 +187,7 @@
     font-size: 40px;
     height: fit-content;
     transition: all 1s ease;
-    box-shadow: 10px 0px 20px 5px rgba(0,0,0,0.76);
+    box-shadow: 10px 0px 20px 5px rgba(0, 0, 0, 0.76);
     z-index: 2;
   }
 
