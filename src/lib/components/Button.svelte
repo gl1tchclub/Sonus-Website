@@ -21,7 +21,7 @@
     border: 3px solid #ffffff4d;
     outline: none;
     overflow: hidden;
-    /* height: fit-content; */
+    height: fit-content;
     white-space: nowrap;
   }
 

@@ -124,9 +124,29 @@
   {/if}
   {#if y > 700}
     <div class="fixed-bg" style="background-image:url({bg})">
-      <div class="last-container">
-        <div class="last-section">
-          <h1>Want to see your Sona?</h1>
+      <div class="last-section">
+        <div class="last-container">
+          <div class="top-grid">
+            <h1>
+              <span class="reveal"> Discover Your Sona! </span>
+            </h1>
+          </div>
+          <div class="middle-grid">
+            <p>
+              <span class="reveal">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
+                vestibulum, neque at scelerisque pharetra, libero nisi
+                condimentum massa, nec aliquet leo tellus at orci.
+              </span>
+            </p>
+          </div>
+          <div class="button-grid reveal">
+            <a href="/profile" class="button-link">
+            <JoinButton>
+              <p id="button-text">Join Sonus</p>
+            </JoinButton>
+          </a>
+          </div>
           <div class="join-section" />
         </div>
       </div>
@@ -142,35 +162,74 @@
 
   .fixed-bg {
     height: 150vh;
-    background-size: 150%;
-    background-position: center;
+    position: relative;
+    background-size: cover;
+    background-position: right;
     background-repeat: no-repeat;
-    color: #efc3e6;
     justify-content: center;
     text-align: center;
   }
 
-  .fixed-bg img {
-    width: 150%;
-    height: 100%;
-    position: relative;
-    right: 35%;
-    z-index: 1;
-  }
-
-  .last-container {
+  .last-section {
     height: 100%;
     padding: 100px;
     position: relative;
     display: block;
   }
 
-  .last-section {
+  .last-container {
     width: 100%;
     height: 60%;
     display: grid;
     grid-template-columns: auto;
-    grid-template-rows: 40% 20% 20%;
+    grid-template-rows: 33% 33% 33%;
+    grid-template-areas:
+      "top"
+      "middle"
+      "button";
+    font-size: 100px;
+    flex-direction: column;
+  }
+
+  .top-grid h1 {
+    font-size: 85%;
+    text-shadow: -4px 3px 1px #e688d3;
+    color: #edede9;
+  }
+
+  .top-grid {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    grid-area: top;
+  }
+
+  .middle-grid {
+    font-size: 35%;
+    line-height: 2em;
+    color: #efc3e6;
+    text-shadow: -4px 3px 4px #1f1f1f;
+    grid-area: middle;
+  }
+
+  .button-grid {
+    display: flex;
+    justify-content: center;
+  }
+
+  .button-link {
+    height: 77px;
+    width: 263px;
+    align-items: center;
+  }
+
+  #button-text:hover {
+    animation: mover 0.5s infinite alternate;
+  }
+
+  #button-text {
+    padding: 10px;
+    font-size: 40px;
   }
 
   .top-section {
