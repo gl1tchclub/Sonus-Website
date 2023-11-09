@@ -33,7 +33,7 @@
   {/each}
 </div>
 
-<div id="dashboard"></div>
+<div id="dashboard" />
 <div class="home-container">
   <div class="top-section">
     <div class="header-section">
@@ -70,6 +70,7 @@
     </div>
   </div>
   {#if y > 100}
+  <div class="second-bg">
     <div class="second-section reveal">
       <div class="middle-container">
         <div class="words">
@@ -78,34 +79,43 @@
           {/each}
         </div>
         <div class="about-section">
-          <div class="about-card">
-            <div class="about-inner">
-              <div class="about-front">
-                <img class="about-image" src={middlePhoto} alt="tapes" />
-              </div>
-              <div class="about-back">
-                <h3>Sed ultricies</h3>
-                <p>
-                  Est risus sollicitudin tortor. In semper ipsum ligula at nunc.
-                  Ut vitae tristique ligula.
-                </p>
+          {#if y > 700}
+          <div class="about-container reveal">
+            <div class="about-card">
+              <div class="about-inner">
+                <div class="about-front">
+                  <img class="about-image" src={middlePhoto} alt="tapes" />
+                </div>
+                <div class="about-back">
+                  <h3>Sed ultricies</h3>
+                  <p>
+                    Est risus sollicitudin tortor. In semper ipsum ligula at
+                    nunc. Ut vitae tristique ligula.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
-            <div class="about-description">
-              <h2>What is a Sona?</h2>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
-              vestibulum, neque at scelerisque pharetra, libero nisi condimentum
-              massa, nec aliquet leo tellus at orci. Vestibulum varius sapien id
-              ipsum scelerisque, eget efficitur lacus auctor. Vestibulum
-              vulputate, justo vitae interdum cursus, lectus augue scelerisque
-              lectus, vel consequat turpis magna sed nulla. Aliquam erat volutpat.
-              Aenean dapibus velit est, a pulvinar enim gravida eu. Praesent
-              sodales gravida sapien ac convallis. Praesent at neque orci.
+          <div class="about-title">
+            <span class="reveal">
+              <h1>What is a Sona?</h1>
+            </span>
           </div>
+          <div class="desc-container">
+            <div class="about-description">
+              <p class="reveal">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
+                vestibulum, neque at scelerisque pharetra, libero nisi
+                condimentum massa, nec aliquet leo tellus at orci. Vestibulum
+                varius sapien id ipsum scelerisque, eget efficitur lacus auctor.
+              </p>
+            </div>
+          </div>
+          {/if}
         </div>
       </div>
     </div>
+  </div>
   {/if}
 </div>
 
@@ -122,7 +132,7 @@
     width: 100%;
     text-align: center;
     font-size: 40px;
-    height: 200vh;
+    height: 190vh;
     transition: all 1s ease;
   }
 
@@ -133,24 +143,15 @@
   .middle-container {
     width: 100%;
     margin-top: 50px;
-    height: 50%;
+    height: fit-content;
     align-items: center;
     justify-content: center;
-  }
-
-  .about-section {
-    height: 80%;
-    display: grid;
-    grid-template-columns: 30% 70%;
-    grid-template-rows: 100%;
-    grid-template-areas: "card description";
-    margin: 50px 40px 0;
   }
 
   .words {
     justify-content: center;
     display: flex;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     width: 100%;
     transition: all 1s ease;
   }
@@ -164,33 +165,69 @@
     margin: 20px;
     padding: 10px;
     max-width: 50%;
-    float: left;
   }
 
-  @media (max-width: 1400px) {
-    
+  .about-section {
+    height: 70%;
+    display: grid;
+    grid-template-columns: 30% 70%;
+    grid-template-rows: 20% 80%;
+    grid-template-areas:
+      "none title"
+      "card description";
+    margin: 0 40px 0;
+    align-items: center;
+  }
+
+  .about-title {
+    /* padding-bottom: 50px; */
+    position: relative;
+    text-align: bottom;
+    color: #9c89b8;
+    animation: mover 1s infinite alternate;
+    grid-area: title;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+  }
+
+  .about-title h1 {
+    height: 80%;
+  }
+
+  .desc-container {
+    display: flex;
+    grid-area: description;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
   }
 
   .about-description {
     grid-area: description;
-    font-size: 35px;
-    margin: 0 20px;
-    color: #1F1F1F;
+    font-size: 40px;
+    line-height: 2em;
+    width: 90%;
+    color: #1f1f1f;
+    height: fit-content;
+    justify-content: center;
   }
 
-  .about-description h2 {
-    text-align: center;
-    color: #9c89b8;
+  .about-container {
+    width: 100%;
+    display: flex;
+    position: relative;
+    grid-area: card;
   }
 
   .about-card {
     background-color: transparent;
-    position: absolute;
-    width: 400px;
+    width: 100%;
     height: 520px;
     border-radius: 30px;
     transition: transform 0.8s;
     grid-area: card;
+    margin: 20px;
   }
 
   .about-inner {
@@ -223,6 +260,7 @@
   .about-image {
     width: 200%;
     height: 100%;
+    transition: all 1s ease;
   }
 
   .about-card:hover .about-front {
@@ -251,10 +289,67 @@
   .about-back p {
     font-size: 25px;
     margin-top: 20px;
+    padding: 20px;
+    line-height: 2em;
   }
 
   .about-back h3 {
     margin-bottom: 40px;
+  }
+
+  @media (max-width: 1400px) {
+    .words h2 {
+      font-size: 50px;
+    }
+
+    .about-description p {
+      font-size: 35px;
+    }
+
+    .about-image {
+      width: 300%;
+      height: 150%;
+    }
+  }
+
+  @media (max-width: 1200px) {
+    .middle-container {
+      height: 80%;
+    }
+
+    .about-section {
+      height: 40%;
+      grid-template-areas:
+        "title title"
+        "card description";
+    }
+
+    .desc-container {
+      height: 100%;
+    }
+
+    .words {
+      display: block;
+      margin: 0;
+      height: 60%;
+    }
+
+    .words h2 {
+      font-size: 100px;
+      max-width: 100%;
+    }
+
+    .about-card {
+      height: 400px;
+    }
+
+    .about-back h3 {
+      margin: 0;
+    }
+
+    .about-back p {
+      margin: 0;
+    }
   }
 
   .home-container {
