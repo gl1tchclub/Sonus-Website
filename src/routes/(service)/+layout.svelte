@@ -13,6 +13,7 @@
   href="https://fonts.googleapis.com/css?family=Agbalumo"
 />
 
+<!-- Header container -->
 <div class="header-div">
   <div id="dashboard">
     <Dash>
@@ -22,7 +23,10 @@
     </Dash>
   </div>
 </div>
+
 <SideNav />
+
+<!-- Slot content container -->
 <div class="main-container">
   <div class="content">
     <slot />

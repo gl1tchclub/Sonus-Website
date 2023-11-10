@@ -272,7 +272,6 @@
     z-index: 1;
   }
 
-  
   /* Second user bio css */
   .user-bio {
     display: none;
@@ -305,12 +304,12 @@
     border-radius: 20px;
     box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.3);
   }
-  
+
   /* Social icons */
   .socials {
     display: inline-flex;
   }
-  
+
   /* Sona css */
   .wrapper {
     display: flex;
