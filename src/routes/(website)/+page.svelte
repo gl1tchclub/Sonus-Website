@@ -1,7 +1,7 @@
 <script>
   import JoinButton from "$lib/components/Button.svelte";
   import { onMount } from "svelte";
-  let loading_arr = "LOADING...".split("");
+  let loadingArr = "LOADING...".split("");
   let textArr = ["DISCOVER", "CREATE", "LISTEN", "REPEAT"];
   const BASE_URL = "https://api.unsplash.com/";
   const photoKey = "FkjKMeG-arrW_qolpGUoya8HBCEBUCkjH3j9BB2dwms";
@@ -12,10 +12,17 @@
   let middlePhoto = [];
 
   onMount(async () => {
+    /**
+     * Delays the execution of a function to remove the loading screen
+     * after a specified time interval (3 seconds in this case).
+     */
     setTimeout(async () => {
       document.querySelector(".loading").remove();
     }, 3000);
 
+    /**
+     * Fetches photo data from the Unsplash API for two specific photos using their IDs.
+     */
     let res = await fetch(
       `${BASE_URL}photos/6-Y_Hxoh7VU?client_id=${photoKey}`
     );
@@ -28,22 +35,32 @@
   });
 </script>
 
-<svelte:window bind:scrollY={y} bind:innerHeight bind:outerHeight />
+<!-- Store the value of the scrollbar's Y position and the inner height of the window -->
+<svelte:window bind:scrollY={y} bind:innerHeight />
 <svelte:head>
   <link rel="stylesheet" href="css/main.css" />
 </svelte:head>
 
+<!-- Loading screen -->
 <div class="loading">
-  {#each loading_arr as letter, i}
+  <!-- Renders each letter in the loading array inside a span element.
+  The '--i' custom CSS property is used to stagger the animation delay of each span. -->
+  {#each loadingArr as letter, i}
     <span style="--i:{i + 1}">{letter}</span>
   {/each}
 </div>
 
+<!-- Dashboard div used for footer button to bring scroll back to top -->
 <div id="dashboard" />
+
+<!-- Container for page content -->
 <div class="home-container">
+  <!-- First section content and container -->
   <div class="top-section">
     <div class="header-section">
+      <!-- Top section content and container -->
       <div class="header-top container">
+        <!-- Logo -->
         <div class="brand">
           <h1 class="brand-name">
             <span class="reveal-delay"> Sonus </span>
@@ -56,6 +73,7 @@
           />
         </div>
       </div>
+      <!-- Slogan container -->
       <div class="header-lower container">
         <span class="reveal-delay">
           <div class="slogan">
@@ -63,6 +81,7 @@
           </div>
         </span>
       </div>
+      <!-- Scroll and arrow container -->
       <div class="header-arrow container">
         <div class="scroll reveal-delay">
           <span class="scroll-title reveal-delay"> Scroll down </span>
@@ -75,6 +94,7 @@
       </div>
     </div>
   </div>
+  <!-- Reveal content when scroll reaches 100px -->
   {#if y > 100}
     <div class="second-section reveal">
       <div class="middle-container">
@@ -83,7 +103,9 @@
             <h2 style="--x:{x + 1}">• {word} •</h2>
           {/each}
         </div>
+        <!-- About card and description -->
         <div class="about-section">
+          <!-- Reveal content when scrollbar reaches 400px OR if the screen height is smaller than usual -->
           {#if y > 400 || innerHeight <= 800}
             <div class="card-container reveal">
               <div class="about-card">
@@ -122,15 +144,18 @@
       </div>
     </div>
   {/if}
+  <!-- Reveal last section when scrollbar reaches 800px -->
   {#if y > 800}
     <div class="fixed-bg reveal" style="background-image:url({bg})">
       <div class="last-section">
         <div class="last-container">
+          <!-- title container -->
           <div class="top-grid">
             <h1>
               <span class="reveal"> Discover Your Sona! </span>
             </h1>
           </div>
+          <!-- Description container -->
           <div class="middle-grid">
             <p>
               <span class="reveal">
@@ -140,12 +165,13 @@
               </span>
             </p>
           </div>
+          <!-- Button container -->
           <div class="button-grid reveal">
             <a href="/profile" class="button-link">
-            <JoinButton>
-              <p id="button-text">Join Sonus</p>
-            </JoinButton>
-          </a>
+              <JoinButton>
+                <p id="button-text">Join Sonus</p>
+              </JoinButton>
+            </a>
           </div>
         </div>
       </div>
@@ -154,85 +180,10 @@
 </div>
 
 <style>
-  .fixed-bg {
-    height: 150vh;
-    position: relative;
-    background-size: cover;
-    background-position: right;
-    background-repeat: no-repeat;
-    justify-content: center;
-    text-align: center;
-  }
-
-  .last-section {
-    height: 100%;
-    padding: 100px;
-    position: relative;
-    display: block;
-  }
-
-  .last-container {
+  .home-container {
     width: 100%;
-    height: 60%;
-    display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: 30% 40% 30%;
-    grid-template-areas:
-      "top"
-      "middle"
-      "button";
-    font-size: 100px;
-    flex-direction: column;
-  }
-
-  .top-grid h1 {
-    font-size: 85%;
-    text-shadow: -4px 3px 1px #e688d3;
-    color: #edede9;
-  }
-
-  .top-grid {
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    grid-area: top;
-  }
-
-  .middle-grid {
-    font-size: 35%;
-    line-height: 2.4em;
-    color: #efc3e6;
-    text-shadow: -4px 3px 4px #1f1f1f;
-    grid-area: middle;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .middle-grid p {
-    width: 80%;
-  }
-
-  .button-grid {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-  }
-
-  .button-link {
-    height: 77px;
-    width: 263px;
-    align-items: center;
-  }
-
-  #button-text:hover {
-    animation: mover 0.5s infinite alternate;
-  }
-
-  #button-text {
-    padding: 10px;
-    font-size: 40px;
+    height: 100%;
+    display: block;
   }
 
   .top-section {
@@ -240,187 +191,6 @@
     display: block;
     height: 100vh;
     padding: 0 40px;
-  }
-
-  .second-section {
-    background-color: #edede9;
-    width: 100%;
-    text-align: center;
-    font-size: 40px;
-    height: fit-content;
-    transition: all 1s ease;
-    box-shadow: 10px 0px 20px 5px rgba(0, 0, 0, 0.76);
-    z-index: 2;
-    padding-bottom: 40px;
-  }
-
-  .second-section.reveal {
-    animation-duration: 0.8s;
-  }
-
-  .middle-container {
-    width: 100%;
-    margin-top: 50px;
-    height: fit-content;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .words {
-    justify-content: center;
-    display: flex;
-    margin-bottom: 20px;
-    width: 100%;
-    transition: all 1s ease;
-  }
-
-  .words h2 {
-    animation: 3s infinite step-end textAnim;
-    animation-delay: calc(0.75s * var(--x));
-    transition: all 1s ease;
-    color: #efc3e6;
-    display: block;
-    margin: 20px;
-    padding: 10px;
-    max-width: 50%;
-  }
-
-  .about-section {
-    height: 70%;
-    display: grid;
-    grid-template-columns: 30% 70%;
-    grid-template-rows: 20% 80%;
-    grid-template-areas:
-      "none title"
-      "card description";
-    margin: 0 40px 0;
-    align-items: center;
-  }
-
-  .about-title {
-    /* padding-bottom: 50px; */
-    position: relative;
-    text-align: bottom;
-    color: #9c89b8;
-    animation: mover 1s infinite alternate;
-    grid-area: title;
-    display: flex;
-    justify-content: center;
-    height: 100%;
-    margin-top: 20px;
-  }
-
-  .about-title h1 {
-    height: 100%;
-  }
-
-  .desc-container {
-    display: flex;
-    grid-area: description;
-    justify-content: center;
-    height: 100%;
-    align-items: center;
-  }
-
-  .about-description {
-    grid-area: description;
-    font-size: 40px;
-    line-height: 2em;
-    width: 90%;
-    color: #1f1f1f;
-    height: fit-content;
-    justify-content: center;
-    display: flex;
-  }
-
-  .card-container {
-    width: 100%;
-    display: flex;
-    position: relative;
-    grid-area: card;
-  }
-
-  .about-card {
-    background-color: transparent;
-    width: 100%;
-    height: 520px;
-    border-radius: 30px;
-    transition: transform 0.8s;
-    grid-area: card;
-    margin: 20px;
-  }
-
-  .about-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-  }
-
-  .about-image {
-    transition: transform 0.8s;
-  }
-
-  .about-card:hover .about-back {
-    z-index: 1;
-  }
-
-  .about-front,
-  .about-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    justify-content: center;
-    color: #1f1f1f;
-    background-color: #9c89b8;
-    transition: all 0.5s ease;
-  }
-
-  .about-image {
-    width: 200%;
-    height: 100%;
-    transition: all 1s ease;
-  }
-
-  .about-card:hover .about-front {
-    transform: rotateX(90deg);
-    transform: scaleX(0);
-  }
-
-  .about-card:hover .about-back {
-    transform: rotateX(0deg);
-  }
-
-  .about-front {
-    border-radius: 30px;
-  }
-
-  .about-back {
-    transform: rotateY(180deg);
-    flex-direction: column;
-    z-index: -1;
-    display: flex;
-    border-radius: 30px;
-    color: #1f1f1f;
-    background-color: #9c89b8;
-  }
-
-  .about-back p {
-    font-size: 25px;
-    margin-top: 20px;
-    padding: 20px;
-    line-height: 2em;
-  }
-
-  .about-back h3 {
-    margin-bottom: 40px;
-  }
-
-  .home-container {
-    width: 100%;
-    height: 100%;
-    display: block;
   }
 
   .header-section {
@@ -566,6 +336,260 @@
     box-shadow: -1px -3px 6px #efc3e68a, 1px -3px 4px #efc3e68a;
   }
 
+  .second-section {
+    background-color: #edede9;
+    width: 100%;
+    text-align: center;
+    font-size: 40px;
+    height: fit-content;
+    transition: all 1s ease;
+    box-shadow: 10px 0px 20px 5px rgba(0, 0, 0, 0.76);
+    z-index: 2;
+    padding-bottom: 40px;
+  }
+
+  .second-section.reveal {
+    animation-duration: 0.8s;
+  }
+
+  .middle-container {
+    width: 100%;
+    margin-top: 50px;
+    height: fit-content;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .words {
+    justify-content: center;
+    display: flex;
+    margin-bottom: 20px;
+    width: 100%;
+    transition: all 1s ease;
+  }
+
+  .words h2 {
+    animation: 3s infinite step-end textAnim;
+    animation-delay: calc(0.75s * var(--x));
+    transition: all 1s ease;
+    color: #efc3e6;
+    display: block;
+    margin: 20px;
+    padding: 10px;
+    max-width: 50%;
+  }
+
+  .about-section {
+    height: 70%;
+    display: grid;
+    grid-template-columns: 30% 70%;
+    grid-template-rows: 20% 80%;
+    grid-template-areas:
+      "none title"
+      "card description";
+    margin: 0 40px 0;
+    align-items: center;
+  }
+
+  .about-title {
+    position: relative;
+    text-align: bottom;
+    color: #9c89b8;
+    animation: mover 1s infinite alternate;
+    grid-area: title;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    margin-top: 20px;
+  }
+
+  .about-title h1 {
+    height: 100%;
+  }
+
+  .desc-container {
+    display: flex;
+    grid-area: description;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+  }
+
+  .about-description {
+    grid-area: description;
+    font-size: 40px;
+    line-height: 2em;
+    width: 90%;
+    color: #1f1f1f;
+    height: fit-content;
+    justify-content: center;
+    display: flex;
+  }
+
+  .card-container {
+    width: 100%;
+    display: flex;
+    position: relative;
+    grid-area: card;
+  }
+
+  .about-card {
+    background-color: transparent;
+    width: 100%;
+    height: 520px;
+    border-radius: 30px;
+    transition: transform 0.8s;
+    grid-area: card;
+    margin: 20px;
+  }
+
+  .about-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+  }
+
+  .about-image {
+    transition: transform 0.8s;
+  }
+
+  .about-card:hover .about-back {
+    z-index: 1;
+  }
+
+  .about-front,
+  .about-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    justify-content: center;
+    color: #1f1f1f;
+    background-color: #9c89b8;
+    transition: all 0.5s ease;
+  }
+
+  .about-image {
+    width: 200%;
+    height: 100%;
+    transition: all 1s ease;
+  }
+
+  .about-card:hover .about-front {
+    transform: rotateX(90deg);
+    transform: scaleX(0);
+  }
+
+  .about-card:hover .about-back {
+    transform: rotateX(0deg);
+  }
+
+  .about-front {
+    border-radius: 30px;
+  }
+
+  .about-back {
+    transform: rotateY(180deg);
+    flex-direction: column;
+    z-index: -1;
+    display: flex;
+    border-radius: 30px;
+    color: #1f1f1f;
+    background-color: #9c89b8;
+  }
+
+  .about-back p {
+    font-size: 25px;
+    margin-top: 20px;
+    padding: 20px;
+    line-height: 2em;
+  }
+
+  .about-back h3 {
+    margin-bottom: 40px;
+  }
+
+  .fixed-bg {
+    height: 150vh;
+    position: relative;
+    background-size: cover;
+    background-position: right;
+    background-repeat: no-repeat;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .last-section {
+    height: 100%;
+    padding: 100px;
+    position: relative;
+    display: block;
+  }
+
+  .last-container {
+    width: 100%;
+    height: 60%;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 30% 40% 30%;
+    grid-template-areas:
+      "top"
+      "middle"
+      "button";
+    font-size: 100px;
+    flex-direction: column;
+  }
+
+  .top-grid h1 {
+    font-size: 85%;
+    text-shadow: -4px 3px 1px #e688d3;
+    color: #edede9;
+  }
+
+  .top-grid {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    grid-area: top;
+  }
+
+  .middle-grid {
+    font-size: 35%;
+    line-height: 2.4em;
+    color: #efc3e6;
+    text-shadow: -4px 3px 4px #1f1f1f;
+    grid-area: middle;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .middle-grid p {
+    width: 80%;
+  }
+
+  .button-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  .button-link {
+    height: 77px;
+    width: 263px;
+    align-items: center;
+  }
+
+  #button-text:hover {
+    animation: mover 0.5s infinite alternate;
+  }
+
+  #button-text {
+    padding: 10px;
+    font-size: 40px;
+  }
 
   @media (max-width: 1400px) {
     .words h2 {
@@ -852,7 +876,7 @@
     .last-section {
       padding: 0 30px;
       align-items: center;
-      display: flex;;
+      display: flex;
     }
 
     .fixed-bg {
@@ -883,23 +907,23 @@
     }
   }
 
-@media (max-height: 910px) {
-  .second-section {
-    height: 100%;
-  }
-}
-
-@media (max-height: 600px) {
-  .scroll-down {
-    display: none;
+  @media (max-height: 910px) {
+    .second-section {
+      height: 100%;
+    }
   }
 
-  .brand-name {
-    font-size: 60%;
-  }
+  @media (max-height: 600px) {
+    .scroll-down {
+      display: none;
+    }
 
-  .slogan h1 {
-    font-size: 30px;
+    .brand-name {
+      font-size: 60%;
+    }
+
+    .slogan h1 {
+      font-size: 30px;
+    }
   }
-}
 </style>
