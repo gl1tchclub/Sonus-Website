@@ -11,6 +11,9 @@
   let bg = [];
 
   onMount(async () => {
+    /**
+     * Fetch photo data from Unsplash API and store the full version of the image in bg
+     */
     let res = await fetch(
       `${BASE_URL}photos/xWSUI7tpiTY?client_id=${photoKey}`
     );
@@ -23,6 +26,8 @@
 <svelte:head>
   <link rel="stylesheet" href="css/main.css" />
 </svelte:head>
+
+<!-- Bind the scrollbar position of the window to 'y' -->
 <svelte:window bind:scrollY={y} />
 
 <link
@@ -30,19 +35,21 @@
   href="https://fonts.googleapis.com/css?family=Agbalumo"
 />
 
-
+<!-- Container for page content -->
 <div class="site-container" style="background-image: url({bg})">
   <div class="slot">
     <slot />
   </div>
 </div>
 
+<!-- This footer is displayed on non-phone screens -->
 <div class="shown-footer">
   <Footer>
     <Button>Back To Top</Button>
   </Footer>
 </div>
 
+<!-- displayed only on phone screens/small widths -->
 <div class="hidden-footer">
   <Footer>
     <Button>▲</Button>
