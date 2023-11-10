@@ -31,12 +31,12 @@
         <a href="/profile" class="link">
           <div class="link-text">Profile</div>
         </a>
-        <a href="/library" class="link">
+        <div class="link">
           <div class="link-text">Library</div>
-        </a>
-        <a href="/discover" class="link">
+        </div>
+        <div class="link">
           <div class="link-text">Discover</div>
-        </a>
+        </div>
       </div>
     </nav>
     <hr />

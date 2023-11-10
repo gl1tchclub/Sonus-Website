@@ -434,12 +434,32 @@
     .user-bio p {
       display: none;
     }
+
+    .load-text h1 {
+      padding-bottom: 20px;
+      margin: 0;
+      width: 50%;
+    }
+
+    .load-text {
+      width: 100%;
+    }
+
+    .load-h1 {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .load-text h1, h2 {
+      height: 100%;
+      font-size: 100%;
+    }
   }
 
   @media (max-width: 720px) {
     .box-border {
       position: relative;
-      /* right: 200px; */
     }
 
     .follow {
@@ -453,6 +473,10 @@
 
     .user-bio {
       text-align: center;
+    }
+
+    .load-text h1, h2 {
+      font-size: 70%;
     }
   }
 </style>

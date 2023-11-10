@@ -147,7 +147,6 @@
             </JoinButton>
           </a>
           </div>
-          <div class="join-section" />
         </div>
       </div>
     </div>
@@ -155,11 +154,6 @@
 </div>
 
 <style>
-  .last-section {
-    position: relative;
-    display: block;
-  }
-
   .fixed-bg {
     height: 150vh;
     position: relative;
@@ -182,7 +176,7 @@
     height: 60%;
     display: grid;
     grid-template-columns: auto;
-    grid-template-rows: 33% 33% 33%;
+    grid-template-rows: 30% 40% 30%;
     grid-template-areas:
       "top"
       "middle"
@@ -206,15 +200,24 @@
 
   .middle-grid {
     font-size: 35%;
-    line-height: 2em;
+    line-height: 2.4em;
     color: #efc3e6;
     text-shadow: -4px 3px 4px #1f1f1f;
     grid-area: middle;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .middle-grid p {
+    width: 80%;
   }
 
   .button-grid {
     display: flex;
     justify-content: center;
+    align-items: center;
+    margin-top: 20px;
   }
 
   .button-link {
@@ -248,6 +251,7 @@
     transition: all 1s ease;
     box-shadow: 10px 0px 20px 5px rgba(0, 0, 0, 0.76);
     z-index: 2;
+    padding-bottom: 40px;
   }
 
   .second-section.reveal {
@@ -562,6 +566,7 @@
     box-shadow: -1px -3px 6px #efc3e68a, 1px -3px 4px #efc3e68a;
   }
 
+
   @media (max-width: 1400px) {
     .words h2 {
       font-size: 50px;
@@ -652,6 +657,14 @@
     .brand-name {
       font-size: 80%;
     }
+
+    .middle-grid {
+      line-height: 1.8em;
+    }
+
+    .middle-grid p {
+      font-size: 85%;
+    }
   }
 
   @media (max-width: 870px) {
@@ -674,11 +687,19 @@
 
     .brand-logo {
       width: 50%;
-      height: 80%;
+      height: 70%;
     }
 
     .brand-name {
       font-size: 70%;
+    }
+
+    .middle-grid {
+      line-height: 1.4em;
+    }
+
+    .middle-grid p {
+      font-size: 80%;
     }
   }
 
@@ -744,6 +765,26 @@
     .top-section {
       padding: 10px;
     }
+
+    .middle-grid {
+      line-height: 1em;
+    }
+
+    .middle-grid p {
+      font-size: 85%;
+    }
+
+    .last-container {
+      height: 60%;
+    }
+
+    .middle-grid p {
+      width: 100%;
+    }
+
+    .top-grid h1 {
+      font-size: 70%;
+    }
   }
 
   @media (max-width: 570px) {
@@ -774,6 +815,24 @@
       height: 80%;
       width: 70%;
     }
+
+    .top-grid h1 {
+      font-size: 45%;
+      padding: 10px;
+    }
+
+    .middle-grid p {
+      font-size: 70%;
+    }
+
+    #button-text {
+      font-size: 30px;
+      padding: 0;
+    }
+
+    .button-link {
+      width: 55%;
+    }
   }
 
   @media (max-width: 420px) {
@@ -789,25 +848,58 @@
     .header-section {
       row-gap: 0px;
     }
-  }
 
-  @media (max-height: 910px) {
-    .second-section {
-      height: 100%;
+    .last-section {
+      padding: 0 30px;
+      align-items: center;
+      display: flex;;
+    }
+
+    .fixed-bg {
+      height: 100vh;
+    }
+
+    .last-container {
+      height: 50%;
+      grid-template-rows: 20% 40% 40%;
+    }
+
+    .top-grid h1 {
+      font-size: 35%;
+    }
+
+    .middle-grid p {
+      font-size: 50%;
+    }
+
+    .button-link {
+      width: 50%;
+      height: 35%;
+    }
+
+    #button-text {
+      font-size: 90%;
+      padding: 0;
     }
   }
 
-  @media (max-height: 600px) {
-    .scroll-down {
-      display: none;
-    }
-
-    .brand-name {
-      font-size: 60%;
-    }
-
-    .slogan h1 {
-      font-size: 30px;
-    }
+@media (max-height: 910px) {
+  .second-section {
+    height: 100%;
   }
+}
+
+@media (max-height: 600px) {
+  .scroll-down {
+    display: none;
+  }
+
+  .brand-name {
+    font-size: 60%;
+  }
+
+  .slogan h1 {
+    font-size: 30px;
+  }
+}
 </style>
