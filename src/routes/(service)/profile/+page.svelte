@@ -14,15 +14,30 @@
   const firstWords = ["elegant", "spiky", "chaotic"];
   let finalWords = "";
 
+  /**
+   * Generates a random whole number between 0 and the specified maximum value (inclusive).
+   * @param {number} max - The maximum value for the random number.
+   * @returns {number} - A random whole number between 0 and max.
+   */
   function getRandomNumber(max) {
     return Math.round(Math.random() * max);
   }
 
   onMount(async () => {
+    /**
+     * Delays the execution of a function to remove the element with the class "load-welcome"
+     * i.e. the loading screen
+     * after a specified time interval (9 seconds in this case).
+     */
     setTimeout(async () => {
       document.querySelector(".load-welcome").remove();
     }, 9000);
 
+    /**
+     * Fetches data from the Unsplash API to retrieve a specific photo and user information.
+     * The fetched data is then processed and assigned
+     * to the 'sona' variable (photo URL) and 'user' object (user details).
+     */
     let res = await fetch(
       `${BASE_URL}photos/hNrd99q5peI?client_id=${photoKey}`
     );
@@ -43,10 +58,16 @@
     };
 
     user = temp;
+
     bio = `I'm ${user.name}, a music aficionado on a quest to find the perfect
             track for every moment. I create unique playlists for all occasions,
             and I'm here to show the world my Sona! 🎶🕺💃`;
 
+    /**
+     * Fetches word data from the WordNinjas API for each word in the 'firstWords' array.
+     * For each word, it retrieves either a random synonym or antonym and adds it to the 'tempWords' array.
+     * The decision to fetch a synonym or antonym is based on a random number.
+     */
     for (let i = 0; i < firstWords.length; i++) {
       res = await fetch(`${WORD_URL}word=${firstWords[i]}`, {
         headers: {
@@ -58,9 +79,11 @@
 
       let max;
       if (getRandomNumber(2.1) % 2 === 1) {
+        // Fetch random antonym
         max = json.antonyms.length - 1;
         tempWords.push(json.antonyms[getRandomNumber(max)]);
       } else {
+        // Fetch random synonym
         max = json.synonyms.length - 1;
         tempWords.push(json.synonyms[getRandomNumber(max)]);
       }
@@ -451,7 +474,8 @@
       width: 100%;
     }
 
-    .load-text h1, h2 {
+    .load-text h1,
+    h2 {
       height: 100%;
       font-size: 100%;
     }
@@ -475,7 +499,8 @@
       text-align: center;
     }
 
-    .load-text h1, h2 {
+    .load-text h1,
+    h2 {
       font-size: 70%;
     }
   }
