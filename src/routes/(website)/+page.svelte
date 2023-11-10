@@ -857,6 +857,10 @@
     .button-link {
       width: 55%;
     }
+
+    .loading span {
+      font-size: 50px;
+    }
   }
 
   @media (max-width: 420px) {
