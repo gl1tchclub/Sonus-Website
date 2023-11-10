@@ -4,13 +4,13 @@
   --light-pink: #efc3e6;
   --gray-pink: #f0e6ef;
   --light-purple: #b8bedd;
-  --text-color: #1F1F1F;
+  --text-color: #1f1f1f;
   --bg-color: #edede9;
 }
 
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 html {
@@ -40,7 +40,11 @@ body {
   color: var(--text-color);
 }
 
-div, h1, h2, p, a {
+div,
+h1,
+h2,
+p,
+a {
   font-family: "Agbalumo", serif;
   overflow: hidden;
 }
@@ -56,152 +60,155 @@ div, h1, h2, p, a {
 }
 
 @keyframes reveal {
-    0% {
-      transform: translate(0,100%);
-    }
-    100% {
-      transform: translate(0,0);
-    }
+  0% {
+    transform: translate(0, 100%);
   }
-
-  @keyframes fadeIn {
-    0% {opacity: 0;}
-    100% {opacity: 1;}
-  } 
-
-  @keyframes fadeOut {
-    0% {opacity: 1;}
-    100% {opacity: 0;}
+  100% {
+    transform: translate(0, 0);
   }
-  
-  @keyframes pulse {
-    0% {
-      transform: scale(1.05);
-    }
-
-    50% {
-      transform: scale(0.95);
-    }
-
-    100% {
-      transform: scale(1.05);
-    }
-  }
-
-  .loading {
-    background: #6f5695;
-    position:fixed;
-    top:0;
-    left:0;
-    right:0;
-    bottom:0;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    z-index: 2;
- }
-
- .loading, .load-welcome {
-  position:fixed;
-  top:0;
-  left:0;
-  right:0;
-  bottom:0;
-  display:flex;
-  align-items:center;
-  justify-content:center;
- }
- 
-  .loading span {
-    position: relative;
-    display: flex;
-    font-size: 80px;
-    color: var(--dark-pink);
-    text-transform: uppercase;
-    animation: 2s infinite flip; /* infinite as it's scalable */
-    animation-delay: calc(.2s * var(--i));
-    text-shadow: 1px 18px 6px #ac96cc96,
-    1px 22px 10px #ac96cc57, 1px 25px 35px #ac96cc4b,
-    1px 30px 60px #ac96cc93;
-  }
-
-  .load-welcome {
-    background: #483760;
-    z-index: 10;
-    animation-name: fadeOut;
-    animation-duration: 2s;
-    animation-delay: 8s;
-    animation-iteration-count: 1;
-  }
-
-
- 
-  @keyframes flip {
-    0%,80% {
-      transform: rotateY(360deg);
-    }
-  }
-
-  @keyframes textAnim {
-    0% {
-      text-shadow:
-        1px 1px #9c89b8,
-        2px 2px #9c89b8,
-        3px 3px #9c89b8,
-        4px 4px #9c89b8,
-        5px 5px #9c89b8,
-        6px 6px #9c89b8,
-        7px 7px #9c89b8,
-        8px 8px #9c89b8,
-        9px 9px #9c89b8,
-        10px 10px #9c89b8;
-    }
-    25% {
-      text-shadow:none;
-    }
-  }
-
-  .upDown {
-    animation: positionUpDown 2s infinite 3s;
-    transition: all 1s ease-in;
-    position: relative;
-  }
-
-  @keyframes positionUpDown {
-    0% {
-      top: 0;
-    }
-    25% {
-      top: 4px;
-    }
-    50% {
-      top: 8px;
-    }
-    75% {
-      top: 4px;
-    }
-    100% {
-      top: 0;
-    }
-  }
-
-  @keyframes mover {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(-10px); }
 }
 
-  @media (max-width: 980px) {
-    .grid-container {
-        padding: 0;
-    }
-    .content {
-        left: 5.2em;
-        width: 100%;
-    }
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1.05);
+  }
+
+  50% {
+    transform: scale(0.95);
+  }
+
+  100% {
+    transform: scale(1.05);
+  }
+}
+
+.loading {
+  background: #6f5695;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.loading,
+.load-welcome {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading span {
+  position: relative;
+  display: flex;
+  font-size: 80px;
+  color: var(--dark-pink);
+  text-transform: uppercase;
+  animation: 2s infinite flip; /* infinite as it's scalable */
+  animation-delay: calc(0.2s * var(--i));
+  text-shadow: 1px 18px 6px #ac96cc96, 1px 22px 10px #ac96cc57,
+    1px 25px 35px #ac96cc4b, 1px 30px 60px #ac96cc93;
+}
+
+.load-welcome {
+  background: #483760;
+  z-index: 10;
+  animation-name: fadeOut;
+  animation-duration: 2s;
+  animation-delay: 8s;
+  animation-iteration-count: 1;
+}
+
+@keyframes flip {
+  0%,
+  80% {
+    transform: rotateY(360deg);
+  }
+}
+
+@keyframes textAnim {
+  0% {
+    text-shadow: 1px 1px #9c89b8, 2px 2px #9c89b8, 3px 3px #9c89b8,
+      4px 4px #9c89b8, 5px 5px #9c89b8, 6px 6px #9c89b8, 7px 7px #9c89b8,
+      8px 8px #9c89b8, 9px 9px #9c89b8, 10px 10px #9c89b8;
+  }
+  25% {
+    text-shadow: none;
+  }
+}
+
+.upDown {
+  animation: positionUpDown 2s infinite 3s;
+  transition: all 1s ease-in;
+  position: relative;
+}
+
+@keyframes positionUpDown {
+  0% {
+    top: 0;
+  }
+  25% {
+    top: 4px;
+  }
+  50% {
+    top: 8px;
+  }
+  75% {
+    top: 4px;
+  }
+  100% {
+    top: 0;
+  }
+}
+
+@keyframes mover {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
+
+@media (max-width: 980px) {
+  .grid-container {
+    padding: 0;
+  }
+  .content {
+    left: 5.2em;
+    width: 100%;
+  }
 }
 
 @media (max-width: 1000px) {
-    .content .text {
-        display: none;
-    }
+  .content .text {
+    display: none;
+  }
 }
