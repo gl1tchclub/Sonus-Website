@@ -93,6 +93,7 @@
   });
 </script>
 
+<!-- Loading screen -->
 <div class="load-welcome">
   <div class="load-text">
     <h2>
@@ -104,8 +105,11 @@
   </div>
 </div>
 
+<!-- Page content container -->
 <div class="box-border">
+  <!-- All boxes on the left side -->
   <div class="left-boxes">
+    <!-- Name -->
     <div class="small-box" style="background-color: rgb(240, 166, 202)">
       <p>Name:</p>
       <h1 class="details">
@@ -114,6 +118,7 @@
         </span>
       </h1>
     </div>
+    <!-- Username -->
     <div
       class="small-box username"
       style="background-color: rgb(239, 195, 230)"
@@ -125,6 +130,7 @@
         </span>
       </h1>
     </div>
+    <!-- Bio -->
     <div class="small-box bio" style="background-color: rgb(245,224,236)">
       <p>Bio:</p>
       <h2>
@@ -137,12 +143,15 @@
       </p>
     </div>
   </div>
+  <!-- Sona box container -->
   <div class="wrapper">
     <div class="sona-wrapper">
+      <!-- Sona image -->
       <span class="sona">
         <div class="img" style="background-image: url({sona})" />
       </span>
     </div>
+    <!-- Sona text description and title -->
     <div class="welcome">
       <div class="sona-text title">
         <h1>
@@ -155,6 +164,7 @@
           shaped by your distinctive and defined taste in music!
         </span>
       </p>
+      <!-- Displays user bio - only displayed at certain screen width -->
       <div class="user-bio">
         <h1>
           <span class="reveal">
@@ -172,7 +182,9 @@
       </div>
     </div>
   </div>
+  <!-- All boxes on the right container -->
   <div class="right-boxes">
+    <!-- Sona description -->
     <div class="small-box sona-desc">
       <SonaDesc>
         <h3>
@@ -180,6 +192,7 @@
         </h3>
       </SonaDesc>
     </div>
+    <!-- Followers box and container -->
     <div class="small-box follow change-color followers">
       <p>Followers:</p>
       <h1 class="details">
@@ -188,6 +201,7 @@
         </span>
       </h1>
     </div>
+    <!-- Following box and container -->
     <div
       class="small-box follow following"
       style="background-color: rgb(245,224,236)"
@@ -199,6 +213,7 @@
         </span>
       </h1>
     </div>
+    <!-- Social icon and links containers -->
     <div class="small-box social" style="background-color: rgb(184, 190, 221)">
       <p>Social:</p>
       <h2>
@@ -221,6 +236,7 @@
 </div>
 
 <style>
+  /* Loading css */
   .load-welcome > .load-text {
     display: flex;
     justify-content: center;
@@ -247,6 +263,7 @@
       1px 20px 30px #b8bedd35;
   }
 
+  /* Page content css */
   .box-border {
     border-radius: 20px;
     display: grid;
@@ -255,23 +272,8 @@
     z-index: 1;
   }
 
-  .wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    position: relative;
-    text-align: center;
-    font-size: 20px;
-    width: 700px;
-    padding: 40px 20px 80px 20px;
-    transition: all 1s ease;
-    background-color: whitesmoke;
-    margin: 10px;
-    border-radius: 20px;
-    box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.3);
-    z-index: 1;
-  }
-
+  
+  /* Second user bio css */
   .user-bio {
     display: none;
   }
@@ -280,6 +282,7 @@
     padding-bottom: 10px;
   }
 
+  /* Box column containers css */
   .left-boxes,
   .right-boxes {
     display: block;
@@ -302,9 +305,28 @@
     border-radius: 20px;
     box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.3);
   }
-
+  
+  /* Social icons */
   .socials {
     display: inline-flex;
+  }
+  
+  /* Sona css */
+  .wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+    font-size: 20px;
+    width: 700px;
+    padding: 40px 20px 80px 20px;
+    transition: all 1s ease;
+    background-color: whitesmoke;
+    margin: 10px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.3);
+    z-index: 1;
   }
 
   .welcome {
@@ -342,6 +364,7 @@
     animation: fadeIn 1s;
   }
 
+  /* All media queries */
   @media (max-width: 1560px) {
     .left-boxes {
       display: none;
