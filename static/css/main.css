@@ -77,6 +77,52 @@ a {
   }
 }
 
+.loading {
+  background: #6f5695;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.loading,
+.load-welcome {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading span {
+  position: relative;
+  display: flex;
+  font-size: 80px;
+  color: var(--dark-pink);
+  text-transform: uppercase;
+  animation: 2s infinite flip; /* infinite as it's scalable */
+  animation-delay: calc(0.2s * var(--i));
+  text-shadow: 1px 18px 6px #ac96cc96, 1px 22px 10px #ac96cc57,
+    1px 25px 35px #ac96cc4b, 1px 30px 60px #ac96cc93;
+}
+
+.load-welcome {
+  background: #483760;
+  z-index: 10;
+  animation-name: fadeOut;
+  animation-duration: 2s;
+  animation-delay: 8s;
+  animation-iteration-count: 1;
+}
+
 @keyframes fadeOut {
   0% {
     opacity: 1;
